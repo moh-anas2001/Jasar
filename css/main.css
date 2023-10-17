@@ -2568,7 +2568,7 @@ html.no-csstransitions .home-content__main {
 .s-services {
     padding-top: 16.2rem;
     padding-bottom: 13.2rem;
-    background: linear-gradient(to bottom, #d9d9d9, #c0c0c0);
+    background:linear-gradient(45deg, #b7b7b7, #ffffff);
     color: #757575;
     position: relative;
 }

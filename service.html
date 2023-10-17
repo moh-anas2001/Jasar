@@ -260,10 +260,15 @@
             </div> -->
 
         </div> <!-- end services-list -->
-        <div id="chartdiv" style=" margin: -.5em auto; text-align:center; width: 90%; height: 390px"></div>
+       
         
 
     </section> <!-- end s-services -->
+
+    <div style="background-color: antiquewhite;">
+
+        <div id="chartdiv" style=" text-align:center; width: 100%; height: 500px"></div>
+    </div>
 
     
   
@@ -315,7 +320,7 @@
 
             <div class="col-twelve">
                 <div class="copyright">
-                    <span>© Copyright Just DaCentric Technologies</span> 
+                    <span>© Copyright DaCentric Technologies</span> 
                     	
                 </div>
 
@@ -395,62 +400,44 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src='https://www.amcharts.com/lib/amcharts.js'></script>
 
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
 
-  <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-<script src="https://www.amcharts.com/lib/3/pie.js"></script>
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Category', ''],
+                ['HVAC', 1],
+                ['Electrical', 1],
+                ['Plumbing', 1],
+                ['Office Fit Out', 1],
+                ['Glass Enclosure', 1],
+                ['Tiles Work', 1],
+                ['Ducting & Cladding', 1],
+                ['Door & Window', 1],
+                ['Painting', 1],
+                ['Maintenance', 1]
+            ]);
 
+            var options = {
+                title: 'MEP and Other Services',
+                is3D: true,
+                sliceVisibilityThreshold: 0,  // Hide both numbers and percentages
+                pieSliceText: 'none',
+                colors: ['#3a63ab', '#d06d29', '#909090', '#e0a800', '#4f87ba', '#61973d', '#8da0d2', '#eea588', '#bdbdbd', '#fccf82'],
+                titleTextStyle: {
+                    color: '#333',  // Title text color
+                    fontSize: 32,   // Title font size
+                    bold: true      // Bold title
+                }
+            };
 
-<script>
-    var chart;
-    var chartData = [{
-        country: "HVAC",
-        value: 10
-    }, {
-        country: "Electrical",
-        value: 10
-    }, {
-        country: "Plumbing",
-        value: 10
-    }, {
-        country: "Office Fit Out",
-        value: 10
-    }, {
-        country: "Glass Enclosure",
-        value: 10
-    }, {
-        country: "Tiles Work",
-        value: 10
-    }, {
-        country: "Ducting & Cladding",
-        value: 10
-    }, {
-        country: "Door & Window",
-        value: 10
-    }, {
-        country: "Painting",
-        value: 10
-    }, {
-        country: "Maintenance",
-        value: 10
-    }];
+            var chart = new google.visualization.PieChart(document.getElementById('chartdiv'));
 
-    AmCharts.ready(function() {
-        // PIE CHART
-        chart = new AmCharts.AmPieChart();
-        chart.dataProvider = chartData;
-        chart.titleField = "country";
-        chart.valueField = "value";
-        chart.outlineColor = "";
-        chart.outlineAlpha = 0.8;
-        chart.outlineThickness = 2;
-        // This makes the chart 3D
-        chart.depth3D = 20;
-        chart.angle = 30;
-
-        // Remove the watermark
-        chart.write("chartdiv");
-    });
-</script>
+            chart.draw(data, options);
+        }
+    </script>
 
     
     
