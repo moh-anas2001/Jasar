@@ -2,7 +2,7 @@
 
 DESCRIPTION:
 
-GLINT is a modern and stylish digital agency HTML template. Designed for creative designers, agencies
+Just Fix is a modern and stylish digital agency HTML template. Designed for creative designers, agencies
 freelancers, photographer or any creative profession. It is fully responsive and retina/hi-dpi ready
 making it pixel sharp on any devices. It has animating stats section, working contact form, 
 stylish portfolio section and other features you will only find on premium html templates. 
