@@ -245,6 +245,9 @@ p.lead {
     }
 }
 
+p{
+    text-align: justify;
+}
 em,
 i,
 strong,
