@@ -1591,7 +1591,7 @@ input::-moz-focus-inner {
 /* -------------------------------------------------------------------
  * ## header logo
  * ------------------------------------------------------------------- */
-.header-logo {
+ .header-logo {
     display: inline-block;
     position: absolute;
     margin: 0;
@@ -1603,7 +1603,6 @@ input::-moz-focus-inner {
     transform: translateY(-50%);
     z-index: 501;
 }
-
 .header-logo a {
     display: grid;
     margin: 20px 0 0 0;
@@ -3586,8 +3585,8 @@ html.no-csstransitions .home-content__main {
  * # footer
  *
  * ------------------------------------------------------------------- */
-footer {
-    padding: 9rem 0 6rem;
+ footer {
+    /* padding: 9rem 0 6rem; */
     font-family: "montserrat-light", sans-serif;
     font-size: 15px;
     line-height: 2;
@@ -3621,7 +3620,7 @@ footer .row {
 /* --------------------------------------------------------------- 
  * ## footer main
  * --------------------------------------------------------------- */
-.footer-main {
+/* .footer-main {
     text-align: left;
 }
 
@@ -3631,7 +3630,7 @@ footer .row {
 
 .footer-main .right {
     padding-left: 40px;
-}
+} */
 
 .footer-logo {
     display: block;
