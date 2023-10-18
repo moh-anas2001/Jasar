@@ -230,12 +230,13 @@ p img {
 }
 
 p.lead {
-    font-family: "montserrat-regular", sans-serif;
+    font-family: "montserrat", sans-serif;
     font-size: 2rem;
-    font-weight: 300;
+    /* font-weight: 300; */
     line-height: 1.8;
     margin-bottom: 3.6rem;
     color: #000000;
+    text-align: justify;
 }
 
 @media only screen and (max-width: 800px) {
@@ -3971,10 +3972,10 @@ a:visited.accordion-toggle {
 }
 
 .de_tab.tab_steps .de_nav li .v-border {
-    height: 60px;
+    /* height: 60px;
     border-left: solid 1px rgba(255, 255, 255, .3);
-    display: inline-block;
-    margin-bottom: -5px;
+    display: inline-block; */
+    margin-bottom: 20px;
 }
 
 .de_tab.tab_steps.dark .de_nav li .v-border {
