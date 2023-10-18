@@ -230,12 +230,13 @@ p img {
 }
 
 p.lead {
-    font-family: "montserrat-regular", sans-serif;
+    font-family: "montserrat", sans-serif;
     font-size: 2rem;
-    font-weight: 300;
+    /* font-weight: 300; */
     line-height: 1.8;
     margin-bottom: 3.6rem;
     color: #000000;
+    text-align: justify;
 }
 
 @media only screen and (max-width: 800px) {
@@ -1589,20 +1590,21 @@ input::-moz-focus-inner {
 
 /* -------------------------------------------------------------------
  * ## header logo
+/* -------------------------------------------------------------------
+ * ## header logo
  * ------------------------------------------------------------------- */
-.header-logo {
+ .header-logo {
     display: inline-block;
-    position: absolute;
+    position: fixed;
     margin: 0;
     padding: 0;
     left: 75px;
-    top: 50%;
+    /* top: 50%; */
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     z-index: 501;
 }
-
 .header-logo a {
     display: grid;
     margin: 20px 0 0 0;
@@ -1613,6 +1615,12 @@ input::-moz-focus-inner {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
+ .header-logo > a >  img {
+     /* min-width:10px; */
+     max-width:150px;
+     height:auto;
+     
+ }
 
 
 
@@ -2568,7 +2576,7 @@ html.no-csstransitions .home-content__main {
 .s-services {
     padding-top: 16.2rem;
     padding-bottom: 13.2rem;
-    background: linear-gradient(to bottom, #d9d9d9, #c0c0c0);
+    background:linear-gradient(45deg, #b7b7b7, #ffffff);
     color: #757575;
     position: relative;
 }
@@ -3585,13 +3593,13 @@ html.no-csstransitions .home-content__main {
  * # footer
  *
  * ------------------------------------------------------------------- */
-footer {
-    padding: 9rem 0 6rem;
+ footer {
+    /* padding: 9rem 0 6rem; */
     font-family: "montserrat-light", sans-serif;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 2;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.3);
+    text-align: justify;
+    color: rgba(248, 246, 246, 0.762);
 }
 
 footer h4 {
@@ -3620,7 +3628,7 @@ footer .row {
 /* --------------------------------------------------------------- 
  * ## footer main
  * --------------------------------------------------------------- */
-.footer-main {
+/* .footer-main {
     text-align: left;
 }
 
@@ -3630,7 +3638,7 @@ footer .row {
 
 .footer-main .right {
     padding-left: 40px;
-}
+} */
 
 .footer-logo {
     display: block;
@@ -3638,10 +3646,10 @@ footer .row {
     padding: 0;
     outline: 0;
     border: none;
-    width: 150px;
+    /* width: 150px; */
     height: 150px;
-    background: url("../images/logo-footer.png") no-repeat center;
-    background-size: auto 150px;
+    background: url("../images/logo.jpg") no-repeat center;
+    background-size: auto 450px;
     font: 0/0 a;
     text-shadow: none;
     color: transparent;
@@ -3722,7 +3730,7 @@ footer .row {
  * ## footer bottom
  * --------------------------------------------------------------- */
 .footer-bottom {
-    margin-top: 5.4rem;
+    margin-top: 4rem;
     text-align: center;
     font-size: 14px;
 }
@@ -3971,10 +3979,10 @@ a:visited.accordion-toggle {
 }
 
 .de_tab.tab_steps .de_nav li .v-border {
-    height: 60px;
+    /* height: 60px;
     border-left: solid 1px rgba(255, 255, 255, .3);
-    display: inline-block;
-    margin-bottom: -5px;
+    display: inline-block; */
+    margin-bottom: 20px;
 }
 
 .de_tab.tab_steps.dark .de_nav li .v-border {
