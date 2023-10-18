@@ -42,7 +42,7 @@
 
 </head>
 
-<body id="top">
+<body id="top" style="background-color: white;">
     <!-- header
     ================================================== -->
     <header class="s-header">
@@ -59,19 +59,20 @@
 
             <div class="header-nav__content">
                 <h3>Navigation</h3>
-                
+
                 <ul class="header-nav__list">
-                    <li class="current"><a  href="index.html" title="home">Home</a></li>
-                    <li><a  href="index.html#about" title="about">About</a></li>
-                    <li><a  href="service.html" title="services">Services</a></li>
-                    <li><a  href="projects.html" title="Portfolio">Portfolio</a></li>
-                    <li><a  href="index.html#clients" title="clients">Clients</a></li>
-                    <li><a  href="policies.html" title="clients">Policies</a></li>
-                    <li><a  href="index.html#contact" title="contact">Contact</a></li>
+                    <li class="current"><a href="index.html" title="home">Home</a></li>
+                    <li><a href="index.html#about" title="about">About</a></li>
+                    <li><a href="service.html" title="services">Services</a></li>
+                    <li><a href="projects.html" title="Portfolio">Portfolio</a></li>
+                    <li><a href="index.html#clients" title="clients">Clients</a></li>
+                    <li><a href="policies.html" title="clients">Policies</a></li>
+                    <li><a href="index.html#contact" title="contact">Contact</a></li>
                 </ul>
-    
-                <p>Just Fix is a Mechanical, Electrical and Plumbing contracting company. We provide professional services with high quality of works on time & within budget to ensure our clients satisfaction.</p>
-    
+
+                <p>Just Fix is a Mechanical, Electrical and Plumbing contracting company. We provide professional
+                    services with high quality of works on time & within budget to ensure our clients satisfaction.</p>
+
                 <ul class="header-nav__social">
                     <li>
                         <a href="#0"><i class="fa fa-facebook"></i></a>
@@ -92,7 +93,7 @@
 
             </div> <!-- end header-nav__content -->
 
-        </nav>  <!-- end header-nav -->
+        </nav> <!-- end header-nav -->
 
         <a class="header-menu-toggle" href="#0">
             <span class="header-menu-text">Menu</span>
@@ -259,22 +260,24 @@
             </div> -->
 
         </div> <!-- end services-list -->
-       
-        
+
 
     </section> <!-- end s-services -->
 
-    <div style="background-color: antiquewhite;">
-
-        <div id="chartdiv" style=" text-align:center; width: 100%; height: 500px"></div>
+    <div  style="background-color: white; text-align: center;">
+        <!-- <div class="m-b-10" style="background: white;" ></div> -->
+        <h1 style="font-size: 32px;">MEP and Other Services</h1>
+      
+        <div id="chartdiv" style="width: 100%; height: 500px;"></div>
     </div>
 
-    
+
+
 
 
     <!-- footer
     ================================================== -->
-    <footer>
+    <footer style="background-color: #000000;">
 
         <div class="footer-main">
 
@@ -292,7 +295,7 @@
 
         </div> <!-- end footer-main -->
 
-        <div class="row footer-bottom">
+        <div class="row footer-bottom " >
 
             <div class="col-twelve">
                 <div class="copyright m-b-14">
@@ -396,17 +399,12 @@
             ]);
 
             var options = {
-                title: 'MEP and Other Services',
+                // title: 'MEP and Other Services',
                 is3D: true,
                 sliceVisibilityThreshold: 0,  // Hide both numbers and percentages
                 pieSliceText: 'none',
-                colors: ['#3a63ab', '#d06d29', '#909090', '#e0a800', '#4f87ba', '#61973d', '#8da0d2', '#eea588', '#bdbdbd', '#fccf82'],
-                titleTextStyle: {
-                    color: '#333',  // Title text color
-                    fontSize: 32,   // Title font size
-                    bold: true ,     // Bold title
-                    marginLeft:30
-                }
+                colors: ['#3a63ab', '#d06d29', '#909090', '#e0a800', '#4f87ba', '#61973d', '#8da0d2', '#eea588', '#bdbdbd', '#fccf82']
+
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('chartdiv'));
@@ -415,8 +413,8 @@
         }
     </script>
 
-    
-    
+
+
 
 
 </body>
