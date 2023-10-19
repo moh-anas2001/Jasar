@@ -59,7 +59,7 @@
  * # base style overrides
  *
  * ------------------------------------------------------------------- */
-html {
+ html {
     font-size: 10px;
 }
 
@@ -1934,7 +1934,7 @@ input::-moz-focus-inner {
     width: 100%;
     height: 100%;
     opacity: .6;
-    background-color: #000000;
+    background-color: #0000004f;
 }
 
 .no-js .s-home {
@@ -3610,7 +3610,7 @@ html.no-csstransitions .home-content__main {
     font-size: 17px;
     line-height: 2;
     text-align: justify;
-    color: rgba(248, 246, 246, 0.762);
+    color: black;
 }
 
 footer h4 {
@@ -3754,7 +3754,7 @@ footer .row {
     content: "|";
     display: inline-block;
     padding: 0 1rem 0 1.2rem;
-    color: rgba(255, 255, 255, 0.05);
+    color: #000000;
 }
 
 .footer-bottom .copyright span:last-child::after {
