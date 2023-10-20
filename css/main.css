@@ -1394,6 +1394,9 @@ input::-moz-focus-inner {
     color: #39b54a;
     margin-top: 0;
     margin-bottom: 0;
+    display:flex;
+    justify-content:center ;
+    align-items: center;
 }
 
 .subhead--dark {
