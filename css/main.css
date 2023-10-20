@@ -1460,7 +1460,7 @@ input::-moz-focus-inner {
     text-align: center;
     position: relative;
     margin-bottom: 3.6rem;
-    max-width: 960px;
+    max-width: 100%;
 }
 
 .section-header.has-bottom-sep {
