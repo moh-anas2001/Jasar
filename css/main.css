@@ -76,7 +76,7 @@ body {
 
 body {
     background: #111111;
-    font-family: "lora-regular", serif;
+    /* font-family: "montserrat", serif; */
     font-size: 1.7rem;
     font-style: normal;
     font-weight: normal;
@@ -2400,10 +2400,10 @@ html.no-csstransitions .home-content__main {
  * # about
  *
  * ------------------------------------------------------------------- */
-.s-about {
+ .s-about {
     padding-top: 16.2rem;
     padding-bottom: 9rem;
-    background: linear-gradient(350deg, #2f2f8f, #17894f,#09204f);
+    background: linear-gradient(350deg, #2f2f8f6e, #00000096,#09204f42);
     color: #ffffff;
     position: relative;
 }
@@ -3623,7 +3623,9 @@ footer h4 {
 }
 
 footer a {
-    color: #FFFFFF;
+    font-weight: 400;
+    font-family: "montserrat-regular", sans-serif;
+    color: #000000;
 }
 
 footer a:hover,
