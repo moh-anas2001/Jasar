@@ -28,6 +28,7 @@
     ================================================== -->
     <script src="js/modernizr.js"></script>
     <script src="js/pace.min.js"></script>
+    <script src= "js/main.js"></script>
 
     <!-- favicons
     ================================================== -->
@@ -117,12 +118,11 @@
                     We Are A Creative MEP Engineering Firm Dedicated To
                     Meet The Specific Needs Of Any Project
                 </h1>
-
                 <div class="home-content__buttons">
-                    <a href="#contact" class="smoothscroll btn btn--stroke">
-                        Start a Project
+                    <a href="javascript:void(0);" onclick="scrollToElement('contact');" class="btn btn--stroke">
+                        Start a Project with us
                     </a>
-                    <a href="#about" class="smoothscroll btn btn--stroke">
+                    <a href="javascript:void(0);" onclick="scrollToElement('about');" class="btn btn--stroke">
                         More About Us
                     </a>
                 </div>
@@ -823,28 +823,11 @@
 
         <div class="row section-header" data-aos="fade-up">
             <div class="col-full">
-                <h3 class="subhead">Our Clients</h3>
-                <h1 class="display-2">Glint has been honored to
-                partner up with these clients</h1>
+                <h3 class="subhead">Testimonials</h3>
+                <h1 class="display-2">Discover what our valued clients have to say about their experience partnering with us.</h1>
             </div>
         </div> <!-- end section-header -->
 
-        <div class="row clients-outer" data-aos="fade-up">
-            <div class="col-full">
-                <div class="clients">
-                    
-                    <a href="#0" title="" class="clients__slide"><img src="images/clients/apple.png" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/clients/atom.png" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/clients/blackberry.png" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/clients/dropbox.png" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/clients/envato.png" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/clients/firefox.png" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/clients/joomla.png" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/clients/magento.png" /></a>
-                     
-                </div> <!-- end clients -->
-            </div> <!-- end col-full -->
-        </div> <!-- end clients-outer -->
 
         <div class="row clients-testimonials" data-aos="fade-up">
             <div class="col-full">
@@ -1012,6 +995,15 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        function scrollToElement(elementId) {
+            var element = document.getElementById(elementId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+        </script>
+        
 
 </body>
 

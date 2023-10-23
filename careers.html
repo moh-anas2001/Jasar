@@ -106,6 +106,79 @@
     </a>
 
   </header> <!-- end s-header -->
+  <style>
+    /* Reset some default styles */
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+.job-listings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 2rem;
+}
+
+.job-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    text-align: center;
+    flex: 1;
+    min-width: 300px;
+}
+
+.job-card a {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.application-process, .perks {
+    background-color: #fff;
+    padding: 2rem;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .job-card {
+        flex: 2;
+    }
+}
+
+
+
+  </style>
 
 
 
@@ -123,9 +196,161 @@
   padding-right: 15px;
   padding-left: 15px;
   padding-bottom: 80px;">
-    <h2 class="tit6 t-center"
-      style="color: #39b54a; font-size: 76px; font-weight: bold;  font-family:'montserrat-bold', serif;">
-      Services
-
+    <h2 class="tit6 t-center" style="color: #39b54a; font-size: 76px; font-weight: bold;  font-family:'montserrat-bold', serif;">
+      Careers
     </h2>
   </section>
+
+
+  <section class="job-listings">
+    <div class="job-card">
+        <h2>Mechanical Engineer</h2>
+        <p>Join our team as a Mechanical Engineer and work on exciting projects in the field of HVAC and more.</p>
+        <a href="#">Apply Now</a>
+    </div>
+    
+    <div class="job-card">
+        <h2>Electrical Engineer</h2>
+        <p>We are hiring Electrical Engineers to create innovative solutions for our clients' electrical systems.</p>
+        <a href="#">Apply Now</a>
+    </div>
+    
+    <div class="job-card">
+        <h2>Plumbing Specialist</h2>
+        <p>If you have a passion for plumbing systems, join us and make a difference in the world of MEP.</p>
+        <a href="#">Apply Now</a>
+    </div>
+</section>
+
+<section class="application-process">
+    <h2>Application Process</h2>
+    <p>Our application process is straightforward and transparent. Here's what you can expect:</p>
+    <ol>
+        <li>Submit your application online.</li>
+        <li>Receive a confirmation email with further instructions.</li>
+        <li>Interview with our team.</li>
+        <li>Receive an offer letter.</li>
+    </ol>
+</section>
+
+<section class="perks">
+    <h2>Why Join XYZ MEP?</h2>
+    <p>We offer a range of benefits and perks to our employees, including:</p>
+    <ul>
+        <li>Competitive salary and benefits package</li>
+        <li>Opportunities for career growth</li>
+        <li>Exciting projects and challenges</li>
+        <li>Collaborative and innovative work environment</li>
+    </ul>
+</section>
+
+
+  
+
+
+
+    <!-- footer
+    ================================================== -->
+    <footer style="background-color: white;">
+
+      <div class="footer-main">
+
+          <div class="row-row left footer-desc">
+
+              <div class="footer-logo"></div>
+              Jasar Al Sukhar Technical Services LLC (Just Fix) established in year 2009 and registered in Dubai
+              accordance to the requirements of UAE law. More than 11 years of existence, we grew in to one of the
+              reputed company in United Arab Emirates. We are proud to have been trusted by many Companies/Clients in
+              our field of expertise.
+
+
+          </div>
+
+
+
+      </div> <!-- end footer-main -->
+
+      <div class="row footer-bottom">
+
+          <div class="col-twelve">
+              <div class="copyright m-b-14">
+                  <span>© Copyright <a href="https://www.DaCentrictechnologies.com">DaCentric Technologies</a></span>
+              </div>
+
+              <div class="go-top">
+                  <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up"
+                          aria-hidden="true"></i></a>
+              </div>
+          </div>
+
+      </div> <!-- end footer-bottom -->
+
+  </footer> <!-- end footer -->
+
+
+  <!-- photoswipe background
+  ================================================== -->
+  <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+      <div class="pswp__bg"></div>
+      <div class="pswp__scroll-wrap">
+
+          <div class="pswp__container">
+              <div class="pswp__item"></div>
+              <div class="pswp__item"></div>
+              <div class="pswp__item"></div>
+          </div>
+
+          <div class="pswp__ui pswp__ui--hidden">
+              <div class="pswp__top-bar">
+                  <div class="pswp__counter"></div><button class="pswp__button pswp__button--close"
+                      title="Close (Esc)"></button> <button class="pswp__button pswp__button--share"
+                      title="Share"></button> <button class="pswp__button pswp__button--fs"
+                      title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom"
+                      title="Zoom in/out"></button>
+                  <div class="pswp__preloader">
+                      <div class="pswp__preloader__icn">
+                          <div class="pswp__preloader__cut">
+                              <div class="pswp__preloader__donut"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                  <div class="pswp__share-tooltip"></div>
+              </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+              <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+              <div class="pswp__caption">
+                  <div class="pswp__caption__center"></div>
+              </div>
+          </div>
+
+      </div>
+
+  </div> <!-- end photoSwipe background -->
+
+
+  <!-- preloader
+  ================================================== -->
+  <div id="preloader">
+      <div id="loader">
+          <div class="line-scale-pulse-out">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+      </div>
+  </div>
+
+
+  <!-- Java Script
+  ================================================== -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
