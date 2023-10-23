@@ -66,21 +66,26 @@ body {
 
 .wrap-effect-1 {
   .item {
+    &:hover {
+      transform: translate3d(0, 0, 100px);
+      box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+      filter: saturate(2) contrast(120%);
+    }
     
     &:first-of-type {
-      background-image: url('https://cdn.dribbble.com/users/729829/screenshots/4185141/galshir-cactus-coffee.png');
+      background-image: url('../images/services/service-1.png');
     }
     &:nth-of-type(2) {
-      background-image: url('https://cdn.dribbble.com/users/729829/screenshots/6146136/galshir-tea-biscuit_2x.png');
+      background-image: url('../images/services/service-2.png');
     }
     &:nth-of-type(3) {
-      background-image: url('https://cdn.dribbble.com/users/729829/screenshots/4473482/galshir-dog-walker.gif');
+      background-image: url('../images/services/service-3.png');
     }
-    &:nth-of-type(4) {
-      background-image: url('https://cdn.dribbble.com/users/729829/screenshots/5743606/gal-shir-scooter_2x.png');
-    }
+    /* &:nth-of-type(4) {
+      background-image: url('../images/services/service-4.png');
+    } */
     &:last-of-type {
-      background-image: url('https://cdn.dribbble.com/users/729829/screenshots/4738104/galshir-storytime.png');
+      background-image: url('../images/services/service-4.png');
     }
   }
 }
@@ -93,19 +98,19 @@ body {
       filter: saturate(2) contrast(120%);
     }
     &:first-of-type {
-      background-image: url('https://cdn.dribbble.com/users/729829/screenshots/4854597/galshir-umbrella.jpg');
+      background-image: url('../images/services/service-5.png');
     }
     &:nth-of-type(2) {
-      background-image: url('https://cdn.dribbble.com/users/729829/screenshots/4776189/galshir-genesis.png');
+      background-image: url('../images/services/service-6.png');
     }
     &:nth-of-type(3) {
-      background-image: url('https://cdn.dribbble.com/users/729829/screenshots/5329211/galshir-walking.gif');
+      background-image: url('../images/services/service-7.png');
     }
     &:nth-of-type(4) {
-      background-image: url('https://cdn.dribbble.com/users/729829/screenshots/4611698/galshir-paper-boat.png');
+      background-image: url('../images/services/service-8.png');
     }
     &:last-of-type {
-      background-image: url('https://cdn.dribbble.com/users/729829/screenshots/4544774/galshir-window.png');
+      background-image: url('../images/services/service-8.png');
     }
   }
 }
@@ -114,27 +119,29 @@ body {
 .wrap-effect-3 {
   .item {
     &:hover {
-      animation: rotate 0.7s ease-in-out both;
-      border-radius: 10px;
-      border: 1px solid gray;
+      transform: translate3d(0, 0, 100px);
+      box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+      filter: saturate(2) contrast(120%);
     }
     &:first-of-type {
-      background-image: url('https://cdn.dribbble.com/users/729829/screenshots/5947483/galshir-wind_2x.png');
+      background-image: url('../images/services/service-9.png');
     }
     &:nth-of-type(2) {
-      background-image: url('https://cdn.dribbble.com/users/729829/screenshots/5754705/galshir-rain_2x.png');
+      background-image: url('../images/services/service-10.png');
     }
     &:nth-of-type(3) {
-      background-image: url('https://cdn.dribbble.com/users/729829/screenshots/5355160/galshir-attack.gif');
+      background-image: url('../images/services/service-11.png');
     }
-    &:nth-of-type(4) {
-      background-image: url('https://cdn.dribbble.com/users/729829/screenshots/4742049/galshir-samurai.png');
-    }
+    /* &:nth-of-type(4) {
+      background-image: url('../images/services/service-12.png');
+    } */
     &:last-of-type {
-      background-image: url('https://cdn.dribbble.com/users/729829/screenshots/5594777/galshir-winter-cycling_2x.jpg');
+      background-image: url('../images/services/service-12.png');
     }
   }
 }
+
+
 
 
 .wrap-effect-4 {
@@ -208,20 +215,6 @@ body {
     transform: rotate(0deg) translate3d(0, 0, 0)
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
