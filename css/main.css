@@ -3908,8 +3908,11 @@ footer .row {
     }
 
     .footer-logo {
-        margin: -.6rem auto 3.6rem;
+        margin: 0 0 -20px 0;
+        
+        background-size:auto 265px;
     }
+
 
     .footer-bottom {
         padding-bottom: .6rem;

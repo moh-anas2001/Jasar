@@ -1615,3 +1615,9 @@ textarea {
     height: 670px;
     object-fit: cover;
 }
+
+.cen_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
