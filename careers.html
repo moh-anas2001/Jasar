@@ -108,7 +108,6 @@
   </header> <!-- end s-header -->
   <style>
     /* Reset some default styles */
-    /* Reset some default styles */
     * {
       margin: 0;
       padding: 0;
@@ -121,9 +120,6 @@
       margin: 0;
       padding: 0;
     }
-
-
-
 
     .job-listings {
       display: flex;
@@ -139,57 +135,59 @@
       border-radius: 5px;
       padding: 1rem;
       text-align: center;
+      /* flex: 0 0 calc(33.33% - 20px); */
+      /* 33.33% width for three cards with a 20px gap */
       flex: 1;
-      min-width: 300px;
+      min-width: 400px;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .job-card a {
       display: inline-block;
-      background-color: #39b54a;
+      background-color: #00FF23;
       color: #fff;
       padding: 5px 10px;
       text-decoration: none;
       border-radius: 5px;
-      margin-top: 10px;
+    }
+
+    .job-card a:hover {
+      background-color: #000000;
+      color: #fff;
     }
 
     .application-process,
     .perks {
-
       background-color: #000000;
       padding: 2rem;
-      /* margin: 20px 0; */
-      border-radius: 5px;
     }
 
-
-    /* Media query for smaller screens */
-    @media (max-width: 768px) {
-      .job-card {
-        flex: 2;
-      }
-    }
-    h1{
-      /* font-weight: 600; */
+    h1 {
       font-size: 48px;
       color: #fff;
-
     }
+
     .application-process p,
     .perks p {
-      font-size:24px
+      font-size: 24px;
     }
 
-    .application-process  li,
-    .perks  li {
-      font-size:18px
-
+    .application-process li,
+    .perks li {
+      font-size: 18px;
     }
 
-
-    
-
-    
+    /* Media query for smaller screens (e.g., mobile) */
+    @media (max-width: 926px) {
+      .job-card {
+        flex: 1;
+        min-width: 300px;
+        /* Full width for mobile */
+      }
+    }
   </style>
 
 
@@ -209,14 +207,15 @@
   padding-left: 15px;
   padding-bottom: 80px;">
     <h2 class="tit6 t-center"
-      style="color: #39b54a; font-size: 76px; font-weight: bold;  font-family:'montserrat-bold', serif;">
+      style="color: #00FF23; font-size: 76px; font-weight: bold;  font-family:'montserrat-bold', serif;">
       Careers
     </h2>
   </section>
 
   <section class="perks">
-  <div class="cen_div" data-aos="fade-down" data-aos-delay="1300">
-    <h1 >Why Join Just Fix?</h1></div>
+    <div class="cen_div" data-aos="fade-down" data-aos-delay="1300">
+      <h1>Why Join Just Fix?</h1>
+    </div>
     <div class="cen_div">
       <p>We offer a range of benefits and perks to our employees, including:</p>
     </div>
@@ -231,23 +230,31 @@
   </section>
 
 
-  <section class="job-listings row-row" >
-  
-    <div class="job-card" data-aos="fade-down-right" data-aos-delay="1000" >
+  <section class="job-listings row-row">
+
+    <div class="job-card" data-aos="fade-down-right" data-aos-delay="1000">
       <h2>Mechanical Engineer</h2>
-      <p>Join our team as a Mechanical Engineer and work on exciting projects in the field of HVAC and more.</p>
+      <p>Join our team as a Mechanical Engineer and work on exciting projects in the field of HVAC and more.Duis aute
+        sunt non cupidatat enim elit ad incididunt anim incididunt.Pariatur exercitation excepteur amet eiusmod id
+        consectetur. Irure nulla dolor aliqua nisi mollit ad tempor voluptate. Proident sit velit irure nulla duis
+        proident.
+
+        Dolore non consectetur dolore est incididunt mollit. Non sunt voluptate ex labore sint reprehenderit eiusmod
+        incididunt do cupidatat do. Proident do minim proident aliqua veniam ut.</p>
       <a href="#">Apply Now</a>
     </div>
 
     <div class="job-card" data-aos="fade-down-right" data-aos-delay="1200">
       <h2>Electrical Engineer</h2>
-      <p>We are hiring Electrical Engineers to create innovative solutions for our clients' electrical systems.</p>
+      <p>We are hiring Electrical Engineers to create innovative solutions for our clients' electrical systems.Ad veniam
+        nulla nulla pariatur deserunt amet in ea elit cillum id consequat incididunt eu.</p>
       <a href="#">Apply Now</a>
     </div>
 
     <div class="job-card" data-aos="fade-down-right" data-aos-delay="1400">
       <h2>Plumbing Specialist</h2>
-      <p>If you have a passion for plumbing systems, join us and make a difference in the world of MEP.</p>
+      <p>If you have a passion for plumbing systems, join us and make a difference in the world of MEP.Enim pariatur ad
+        aliquip pariatur proident occaecat deserunt ex non culpa reprehenderit.</p>
       <a href="#">Apply Now</a>
     </div>
     <div class="job-card" data-aos="fade-down-right" data-aos-delay="1600">
@@ -275,7 +282,8 @@
 
     <div class="job-card" data-aos="fade-down-right" data-aos-delay="2400">
       <h2>Electrical Engineer</h2>
-      <p>We are hiring Electrical Engineers to create innovative solutions for our clients' electrical systems.</p>
+      <p>We are hiring Electrical Engineers to create innovative solutions for our clients' electrical systems.Nostrud
+        tempor elit nisi anim reprehenderit enim adipisicing exercitation veniam nostrud consequat do duis duis.</p>
       <a href="#">Apply Now</a>
     </div>
 
@@ -300,7 +308,7 @@
     </div>
   </section>
 
- 
+
 
 
 
