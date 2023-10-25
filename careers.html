@@ -131,12 +131,17 @@
 
     .job-card {
       background-color: #fff;
-      border: 1px solid #000000;
-      border-radius: 5px;
+      border: 1px solid transparent;
+      /* Set a transparent border initially */
+      border-image: linear-gradient(45deg, #ff0000, #00ff00,#bfc509);
+      /* Define the linear gradient for the border */
+      border-image-slice: 1;
+       border-radius: 5px;
       padding: 1rem;
       text-align: center;
       /* flex: 0 0 calc(33.33% - 20px); */
       /* 33.33% width for three cards with a 20px gap */
+      box-shadow: 0 0 20px rgba(0, 87, 209, 0.2); /* Add a subtle box shadow */
       flex: 1;
       min-width: 400px;
       max-width: 400px;
@@ -153,8 +158,8 @@
       padding: 5px 10px;
       text-decoration: none;
       border-radius: 5px;
-      
-      width:35%;
+
+      width: 35%;
     }
 
     .job-card a:hover {
@@ -210,7 +215,8 @@
   padding-left: 15px;
   padding-bottom: 80px;">
     <h2 class="tit6 t-center"
-      style="color: #00FF23; font-size: 76px; font-weight: bold;  font-family:'montserrat-bold', serif;" data-aos="fade-up" data-aos-delay="1000">
+      style="color: #00FF23; font-size: 76px; font-weight: bold;  font-family:'montserrat-bold', serif;"
+      data-aos="fade-up" data-aos-delay="1000">
       Careers
     </h2>
   </section>
@@ -220,14 +226,19 @@
       <h1>Why Join Just Fix?</h1>
     </div>
     <div class="cen_div">
-      <p  data-aos="zoom-out"data-aos-easing="ease-out-back">We offer a range of benefits and perks to our employees, including:</p>
+      <p data-aos="zoom-out" data-aos-easing="ease-out-back">We offer a range of benefits and perks to our employees,
+        including:</p>
     </div>
     <div class="cen_div">
       <ul>
-        <li data-aos="flip-down" data-aos-easing="ease-out-back" data-aos-delay="1000">Competitive salary and benefits package</li>
-        <li data-aos="flip-down" data-aos-easing="ease-out-back" data-aos-delay="1100">Opportunities for career growth</li>
-        <li data-aos="flip-down" data-aos-easing="ease-out-back" data-aos-delay="1200">Exciting projects and challenges</li>
-        <li data-aos="flip-down" data-aos-easing="ease-out-back" data-aos-delay="1300">Collaborative and innovative work environment</li>
+        <li data-aos="flip-down" data-aos-easing="ease-out-back" data-aos-delay="1000">Competitive salary and benefits
+          package</li>
+        <li data-aos="flip-down" data-aos-easing="ease-out-back" data-aos-delay="1100">Opportunities for career growth
+        </li>
+        <li data-aos="flip-down" data-aos-easing="ease-out-back" data-aos-delay="1200">Exciting projects and challenges
+        </li>
+        <li data-aos="flip-down" data-aos-easing="ease-out-back" data-aos-delay="1300">Collaborative and innovative work
+          environment</li>
       </ul>
     </div>
   </section>
@@ -297,14 +308,16 @@
     <div class="cen_div " data-aos="flip-down">
       <h1>Application Process</h1>
     </div>
-    <div class="cen_div" >
-      <p data-aos="zoom-in"data-aos-easing="ease-out-back">Our application process is straightforward and transparent. Here's what you can expect:</p>
+    <div class="cen_div">
+      <p data-aos="zoom-in" data-aos-easing="ease-out-back">Our application process is straightforward and transparent.
+        Here's what you can expect:</p>
     </div>
 
     <div class="cen_div">
       <ol>
         <li data-aos="flip-up" data-aos-easing="ease-in-back" data-aos-delay="1000">Submit your application online.</li>
-        <li data-aos="flip-up" data-aos-easing="ease-in-back" data-aos-delay="1100">Receive a confirmation email with further instructions.</li>
+        <li data-aos="flip-up" data-aos-easing="ease-in-back" data-aos-delay="1100">Receive a confirmation email with
+          further instructions.</li>
         <li data-aos="flip-up" data-aos-easing="ease-in-back" data-aos-delay="1200">Interview with our team.</li>
         <li data-aos="flip-up" data-aos-easing="ease-in-back" data-aos-delay="1300">Receive an offer letter.</li>
       </ol>
