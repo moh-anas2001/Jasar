@@ -123,8 +123,7 @@
   padding-right: 15px;
   padding-left: 15px;
   padding-bottom: 80px;">
-    <h2 class="tit6 t-center"
-      style="color: #00FF23; font-size: 76px; font-weight: bold;  font-family:'montserrat-bold', serif;" data-aos="fade-up" data-aos-delay="1000">
+    <h2 class="tit6 t-center" style="color: #00FF23; font-size: 76px; font-weight: bold;  font-family:'montserrat-bold', serif;" data-aos="fade-up" data-aos-delay="1000">
       Services
 
     </h2>
@@ -159,8 +158,7 @@
                         </div> -->
                         </div>
                       </div>
-                      <div class="oxilab-flip-box-back"
-                        style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
+                      <div class="oxilab-flip-box-back" style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
                         <div class="oxilab-flip-box-back-1">
                           <div class="oxilab-flip-box-back-1-data">
                             <div class="oxilab-flip-box-back-1-file">
@@ -209,8 +207,7 @@
                         </div> -->
                         </div>
                       </div>
-                      <div class="oxilab-flip-box-back"
-                        style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
+                      <div class="oxilab-flip-box-back" style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
                         <div class="oxilab-flip-box-back-1">
                           <div class="oxilab-flip-box-back-1-data">
                             <div class="oxilab-flip-box-back-1-file">
@@ -261,8 +258,7 @@
                         </div> -->
                         </div>
                       </div>
-                      <div class="oxilab-flip-box-back"
-                        style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
+                      <div class="oxilab-flip-box-back" style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
                         <div class="oxilab-flip-box-back-1">
                           <div class="oxilab-flip-box-back-1-data">
                             <div class="oxilab-flip-box-back-1-file">
@@ -313,9 +309,7 @@
                         </div> -->
                         </div>
                       </div>
-                      <div class="oxilab-flip-box-back"
-                        style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;"
-                        #f56451;">
+                      <div class="oxilab-flip-box-back" style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;" #f56451;">
                         <div class="oxilab-flip-box-back-1">
                           <div class="oxilab-flip-box-back-1-data">
                             <div class="oxilab-flip-box-back-1-file">
@@ -372,8 +366,7 @@
                         </div> -->
                         </div>
                       </div>
-                      <div class="oxilab-flip-box-back"
-                        style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
+                      <div class="oxilab-flip-box-back" style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
                         <div class="oxilab-flip-box-back-1">
                           <div class="oxilab-flip-box-back-1-data">
                             <div class="oxilab-flip-box-back-1-file">
@@ -423,8 +416,7 @@
                         </div> -->
                         </div>
                       </div>
-                      <div class="oxilab-flip-box-back"
-                        style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
+                      <div class="oxilab-flip-box-back" style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
                         <div class="oxilab-flip-box-back-1">
                           <div class="oxilab-flip-box-back-1-data">
                             <div class="oxilab-flip-box-back-1-file">
@@ -475,8 +467,7 @@
                         </div> -->
                         </div>
                       </div>
-                      <div class="oxilab-flip-box-back"
-                        style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
+                      <div class="oxilab-flip-box-back" style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
                         <div class="oxilab-flip-box-back-1">
                           <div class="oxilab-flip-box-back-1-data">
                             <div class="oxilab-flip-box-back-1-file">
@@ -525,8 +516,7 @@
                         </div> -->
                         </div>
                       </div>
-                      <div class="oxilab-flip-box-back"
-                        style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
+                      <div class="oxilab-flip-box-back" style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
                         <div class="oxilab-flip-box-back-1">
                           <div class="oxilab-flip-box-back-1-data">
                             <div class="oxilab-flip-box-back-1-file">
@@ -584,8 +574,7 @@
                         </div> -->
                         </div>
                       </div>
-                      <div class="oxilab-flip-box-back"
-                        style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
+                      <div class="oxilab-flip-box-back" style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
                         <div class="oxilab-flip-box-back-1">
                           <div class="oxilab-flip-box-back-1-data">
                             <div class="oxilab-flip-box-back-1-file">
@@ -634,18 +623,17 @@
                         </div> -->
                         </div>
                       </div>
-                      <div class="oxilab-flip-box-back"
-                        style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
+                      <div class="oxilab-flip-box-back" style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
                         <div class="oxilab-flip-box-back-1">
                           <div class="oxilab-flip-box-back-1-data">
                             <div class="oxilab-flip-box-back-1-file">
                               <div class="oxilab-flip-box-1-heading">
                                 <div class="oxilab-flip-box-1-heading-data">
-                                  <h1> Wallpaper Installation  </h1>
+                                  <h1> Wallpaper Installation </h1>
                                 </div>
                               </div>
                               <div class="oxilab-info">
-                                we are the most affordable company for Wallpaper Installation and Wallpaper Fixing in Dubai.  
+                                we are the most affordable company for Wallpaper Installation and Wallpaper Fixing in Dubai.
                               </div>
                               <!-- <div class="oxilab-button">
                               <a href="https://sstechnicalservice.com/2020/11/09/best-plumbing-services-available-in-dubai-uae/"
@@ -684,8 +672,7 @@
                         </div> -->
                         </div>
                       </div>
-                      <div class="oxilab-flip-box-back"
-                        style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
+                      <div class="oxilab-flip-box-back" style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
                         <div class="oxilab-flip-box-back-1">
                           <div class="oxilab-flip-box-back-1-data">
                             <div class="oxilab-flip-box-back-1-file">
@@ -695,7 +682,7 @@
                                 </div>
                               </div>
                               <div class="oxilab-info">
-                                Villa Maintenance Dubai We work for anybody beginning   
+                                Villa Maintenance Dubai We work for anybody beginning
                               </div>
                               <!-- <div class="oxilab-button">
                               <a href="https://sstechnicalservice.com/2020/11/09/best-plumbing-services-available-in-dubai-uae/"
@@ -734,8 +721,7 @@
                         </div> -->
                         </div>
                       </div>
-                      <div class="oxilab-flip-box-back"
-                        style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
+                      <div class="oxilab-flip-box-back" style="background-color: #ffffff7f;display: flex;justify-content: center;align-items: center;">
                         <div class="oxilab-flip-box-back-1">
                           <div class="oxilab-flip-box-back-1-data">
                             <div class="oxilab-flip-box-back-1-file">
@@ -775,7 +761,7 @@
           </div>
         <!-- </div> -->
       </div>
-    </section>
+  </section>
 
 
 
@@ -783,173 +769,164 @@
 
 
 
-      <!-- footer
+  <!-- footer
 ================================================== -->
-      <footer style="background-color: white;">
+  <footer style="background-color: white;">
 
-        <div class="footer-main">
+    <div class="footer-main">
 
-          <div class="row-row left footer-desc">
+      <div class="row-row left footer-desc">
 
-            <div class="footer-logo"></div>
-            Jasar Al Sukhar Technical Services LLC (Just Fix) established in year 2009 and registered in Dubai
-            accordance to the requirements of UAE law. More than 11 years of existence, we grew in to one of the
-            reputed company in United Arab Emirates. We are proud to have been trusted by many Companies/Clients in
-            our field of expertise.
-
-
-          </div>
+        <div class="footer-logo"></div>
+        Jasar Al Sukhar Technical Services LLC (Just Fix) established in year 2009 and registered in Dubai
+        accordance to the requirements of UAE law. More than 11 years of existence, we grew in to one of the
+        reputed company in United Arab Emirates. We are proud to have been trusted by many Companies/Clients in
+        our field of expertise.
 
 
-        </div> <!-- end footer-main -->
-
-        <div class="row footer-bottom ">
-
-          <div class="col-twelve">
-            <div class="copyright m-b-14">
-              <span>© Copyright <a href="https://www.DaCentrictechnologies.com">DaCentric Technologies</a></span>
-            </div>
-
-            <div class="go-top">
-              <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up"
-                  aria-hidden="true"></i></a>
-            </div>
-          </div>
-
-        </div> <!-- end footer-bottom -->
-
-      </footer> <!-- end footer -->
+      </div>
 
 
-      <!-- photoswipe background
-================================================== -->
-      <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+    </div> <!-- end footer-main -->
 
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
+    <div class="row footer-bottom ">
 
-          <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-          </div>
-
-          <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-              <div class="pswp__counter"></div><button class="pswp__button pswp__button--close"
-                title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button>
-              <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button
-                class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-              <div class="pswp__preloader">
-                <div class="pswp__preloader__icn">
-                  <div class="pswp__preloader__cut">
-                    <div class="pswp__preloader__donut"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-              <div class="pswp__share-tooltip"></div>
-            </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
-            <div class="pswp__caption">
-              <div class="pswp__caption__center"></div>
-            </div>
-          </div>
-
+      <div class="col-twelve">
+        <div class="copyright m-b-14">
+          <span>© Copyright <a href="https://www.DaCentrictechnologies.com">DaCentric Technologies</a></span>
         </div>
 
-      </div> <!-- end photoSwipe background -->
-
-
-      <!-- preloader
-================================================== -->
-      <div id="preloader">
-        <div id="loader">
-          <div class="line-scale-pulse-out">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+        <div class="go-top">
+          <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a>
         </div>
       </div>
-      <!-- Java Script
+
+    </div> <!-- end footer-bottom -->
+
+  </footer> <!-- end footer -->
+
+
+  <!-- photoswipe background
+================================================== -->
+  <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <div class="pswp__ui pswp__ui--hidden">
+        <div class="pswp__top-bar">
+          <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button>
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div> <!-- end photoSwipe background -->
+
+
+  <!-- preloader
+================================================== -->
+  <div id="preloader">
+    <div id="loader">
+      <div class="line-scale-pulse-out">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <!-- Java Script
   ================================================== -->
-      <script src="js/jquery-3.2.1.min.js"></script>
-      <script src="js/plugins.js"></script>
-      <script src="js/main.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
 
 
-      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-      <script type="text/javascript">
-        google.charts.load('current', { 'packages': ['corechart'] });
-        google.charts.setOnLoadCallback(drawChart);
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {
+      'packages': ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawChart);
 
-        function drawChart() {
-          var data = google.visualization.arrayToDataTable([
-            ['Category', ''],
-            ['HVAC', 1],
-            ['Electrical', 1],
-            ['Plumbing', 1],
-            ['Office Fit Out', 1],
-            ['Glass Enclosure', 1],
-            ['Tiles Work', 1],
-            ['Ducting & Cladding', 1],
-            ['Door & Window', 1],
-            ['Painting', 1],
-            ['Maintenance', 1]
-          ]);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Category', ''],
+        ['HVAC', 1],
+        ['Electrical', 1],
+        ['Plumbing', 1],
+        ['Office Fit Out', 1],
+        ['Glass Enclosure', 1],
+        ['Tiles Work', 1],
+        ['Ducting & Cladding', 1],
+        ['Door & Window', 1],
+        ['Painting', 1],
+        ['Maintenance', 1]
+      ]);
 
-          var options = {
-            // title: 'MEP and Other Services',
-            is3D: true,
-            sliceVisibilityThreshold: 0,  // Hide both numbers and percentages
-            pieSliceText: 'none',
-            legend: 'none',
-            colors: ['#3a63ab', '#d06d29', '#909090', '#e0a800', '#4f87ba', '#61973d', '#8da0d2', '#eea588', '#bdbdbd', '#fccf82']
+      var options = {
+        // title: 'MEP and Other Services',
+        is3D: true,
+        sliceVisibilityThreshold: 0, // Hide both numbers and percentages
+        pieSliceText: 'none',
+        legend: 'none',
+        colors: ['#3a63ab', '#d06d29', '#909090', '#e0a800', '#4f87ba', '#61973d', '#8da0d2', '#eea588', '#bdbdbd', '#fccf82']
 
-          };
+      };
 
-          var chart = new google.visualization.PieChart(document.getElementById('chartdiv'));
+      var chart = new google.visualization.PieChart(document.getElementById('chartdiv'));
 
-          chart.draw(data, options);
-        }
-      </script>
+      chart.draw(data, options);
+    }
+  </script>
 
-      <script>
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      direction: 'vertical',
+      mousewheel: {},
+      effect: 'cube',
+      keyboard: {
+        enabled: true,
+        onlyInViewport: false
+      }
+    });
+  </script>
 
-        const swiper = new Swiper('.swiper-container', {
-          direction: 'vertical',
-          mousewheel: {},
-          effect: 'cube',
-          keyboard: {
-            enabled: true,
-            onlyInViewport: false
-          }
-        });
-      </script>
 
-
-      <!-- Optional JavaScript -->
-      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
-      <script src="js/animate.js"></script>
-      <script src="js/custom.js"></script>
-      <script>
-        $(document).on('click', '[data-toggle="lightbox"]', function (event) {
-          event.preventDefault();
-          $(this).ekkoLightbox();
-        });
-
-      </script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+  <script src="js/animate.js"></script>
+  <script src="js/custom.js"></script>
+  <script>
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox();
+    });
+  </script>
