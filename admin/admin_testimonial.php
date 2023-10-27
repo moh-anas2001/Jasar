@@ -244,13 +244,13 @@ if ($result->num_rows > 0) {
                                 <span class="hide-menu">Add Logo</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
+                        <!-- <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_blogs.php"
                                 aria-expanded="false">
                                 <i class="fas fa-upload" aria-hidden="true"></i>
                                 <span class="hide-menu">Add Blogs</span>
                             </a>
-                        </li>
+                        </li> -->
 
                     </ul>
 

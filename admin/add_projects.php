@@ -229,12 +229,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </a>
                         </li> -->
 
-
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_logo.php"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="stats.php"
                                 aria-expanded="false">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                                <span class="hide-menu">Add Logo</span>
+                                <i class="fas fa-chart-line" aria-hidden="true"></i>
+                                <span class="hide-menu">Update Statistics</span>
                             </a>
                         </li>
 
