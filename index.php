@@ -45,7 +45,7 @@
     <header class="s-header">
 
         <div class="header-logo">
-            <a class="site-logo" href="index.html">
+            <a class="site-logo" href="index.php">
                 <img src="images/logo-footer.png" alt="Homepage" class="m-t-90">
             </a>
         </div>
@@ -60,10 +60,10 @@
                 <ul class="header-nav__list">
                     <li class="current"><a class="smoothscroll" href="#home" title="home">Home</a></li>
                     <li><a class="smoothscroll" href="#about" title="about">About</a></li>
-                    <li><a href="services.html" title="services">Services</a></li>
-                    <li><a href="projects.html" title="Portfolio">Portfolio</a></li>
+                    <li><a href="services.php" title="services">Services</a></li>
+                    <li><a href="projects.php" title="Portfolio">Portfolio</a></li>
                     <li><a class="smoothscroll" href="#clients" title="Testimonials">Testimonials</a></li>
-                    <li><a href="careers.html" title="Join us">Join us</a></li>
+                    <li><a href="careers.php" title="Join us">Join us</a></li>
                     <li><a class="smoothscroll" href="#contact" title="contact">Contact</a></li>
                 </ul>
 

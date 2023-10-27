@@ -46,7 +46,7 @@
     <header class="s-header">
 
         <div class="header-logo">
-            <a class="site-logo" href="index.html">
+            <a class="site-logo" href="index.php">
                 <img src="images/logo-footer.png" alt="Homepage" class="m-t-90" >
             </a>
         </div>
@@ -59,13 +59,13 @@
                 <h3>Navigation</h3>
                 
                 <ul class="header-nav__list">
-                    <li class="current"><a  href="index.html" title="home">Home</a></li>
-                    <li><a  href="about.html" title="about">About</a></li>
-                    <li><a  href="services.html" title="services">Services</a></li>
-                    <li><a  href="projects.html" title="Portfolio">Portfolio</a></li>
-                    <!-- <li><a  href="index.html#clients" title="clients">Clients</a></li> -->
+                    <li class="current"><a  href="index.php" title="home">Home</a></li>
+                    <li><a  href="about.php" title="about">About</a></li>
+                    <li><a  href="services.php" title="services">Services</a></li>
+                    <li><a  href="projects.php" title="Portfolio">Portfolio</a></li>
+                    <!-- <li><a  href="index.php#clients" title="clients">Clients</a></li> -->
                     <!-- <li><a  href="policies.html" title="clients">Policies</a></li> -->
-                    <li><a  href="index.html#contact" title="contact">Contact</a></li>
+                    <li><a  href="index.php#contact" title="contact">Contact</a></li>
                 </ul>
     
                 <p>Just Fix is a Mechanical, Electrical and Plumbing contracting company. We provide professional services with high quality of Portfolio on time & within budget to ensure our clients satisfaction.</p>
