@@ -5,7 +5,7 @@ require_once('includes/database.php');
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Handle the image upload
-    $uploadDirectory = "../assets/img/testimonials/"; // Specify the directory where you want to store images
+    $uploadDirectory = "../images/clients/"; // Specify the directory where you want to store images
     $uploadedImagePath = $uploadDirectory . basename($_FILES["image"]["name"]);
 
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $uploadedImagePath)) {
@@ -25,11 +25,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $stmt->close();
         $connect->close();
+        $success = true;
     } else {
-        echo "Image upload failed.";
+        echo '<script> alert("Image upload failed.")</script>';
+    }
+    // Check if the operation was successful and display a success message
+    if ($success) {
+        echo '<script>alert("Testimonial added successfully.");</script>';
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -45,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
-   <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -67,8 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
-    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
-        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
@@ -97,8 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <!-- ============================================================== -->
                     <!-- toggle and nav items -->
                     <!-- ============================================================== -->
-                    <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
-                        href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                    <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -106,8 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
                     <ul class="navbar-nav d-none d-md-block d-lg-none">
                         <li class="nav-item">
-                            <a class="nav-toggler nav-link waves-effect waves-light text-white"
-                                href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                            <a class="nav-toggler nav-link waves-effect waves-light text-white" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
                         </li>
                     </ul>
                     <!-- ============================================================== -->
@@ -160,15 +163,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <!-- User Profile-->
-                       
+
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_testimonial.php"
-                                aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_testimonial.php" aria-expanded="false">
                                 <i class="fa fa-columns" aria-hidden="true"></i>
                                 <span class="hide-menu">Testimonial</span>
                             </a>
                         </li>
-                        
+
                     </ul>
 
                 </nav>
@@ -218,29 +220,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Name</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name= "name" placeholder="Enter your Name" required
-                                            class="form-control p-0 border-0">
+                                        <input type="text" name="name" placeholder="Enter your Name" required class="form-control p-0 border-0">
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Company Name</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name="com_name" placeholder="Enter the Company name" required
-                                            class="form-control p-0 border-0">
+                                        <input type="text" name="com_name" placeholder="Enter the Company name" required class="form-control p-0 border-0">
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Role or Department</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="text"name="role" placeholder="Enter the role or Department" required
-                                            class="form-control p-0 border-0">
+                                        <input type="text" name="role" placeholder="Enter the role or Department" required class="form-control p-0 border-0">
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Testimonial</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <textarea rows="5" class="form-control p-0 border-0" name= "testimonial"
-                                            placeholder="Enter the Tesstimonial" required></textarea>
+                                        <textarea rows="5" class="form-control p-0 border-0" name="testimonial" placeholder="Enter the Tesstimonial" required></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
@@ -252,7 +250,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                                 <div class="form-group mb-4">
                                     <div class="col-sm-12">
-                                        <button type = "submit" class="btn btn-success">Upload and Save</button>
+                                        <button type="submit" class="btn btn-success">Upload and Save</button>
                                     </div>
                                 </div>
                             </form>
@@ -276,8 +274,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-             <footer class="footer text-center"> 2020 © DaCentric Technologies -  <a
-                    href="https://dacentrictechnologies.com">www.dacentrictechnologies.com</a>
+            <footer class="footer text-center"> 2020 © DaCentric Technologies - <a href="https://dacentrictechnologies.com">www.dacentrictechnologies.com</a>
             </footer>
             </footer>
             <!-- ============================================================== -->

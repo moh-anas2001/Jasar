@@ -70,14 +70,14 @@
             // Handle the form submission for editing the project
             $projectName = $_POST["project_name"];
             $projectDescription =$_POST["description"];
-            $client = $_POST["client"];
-            $contractor = $_POST["contractor"];
-            $consultant = $_POST["consultant"];
+            // $client = $_POST["client"];
+            // $contractor = $_POST["contractor"];
+            // $consultant = $_POST["consultant"];
             $projectId = $_POST["project_id"];
 
-            $sql = "UPDATE projects SET project_name = ?, description = ?, client = ?, contractor = ?, consultant = ?  WHERE id = ? ";
+            $sql = "UPDATE projects SET project_name = ?, description = ?  WHERE id = ? ";
             $stmt = $connect->prepare($sql);
-            $stmt->bind_param("sssssi", $projectName, $projectDescription, $client, $contractor, $consultant, $projectId);
+            $stmt->bind_param("ssi", $projectName, $projectDescription, $projectId);
             $stmt->execute();
             $stmt->close();
 
@@ -105,28 +105,11 @@
                 echo "<input type='text' name='project_name' placeholder='Enter Project Name' value='" . $row["project_name"] . "' required class='form-control p-0 border-0'>";
                 echo "</div>";
                 echo "</div>";
-                echo "<div class='form-group mb-4'>";
-                echo "<label class='col-md-12 p-0'>Client Name</label>";
-                echo "<div class='col-md-12 border-bottom p-0'>";
-                echo "<input type='text' name='client' placeholder='Enter Client Name' value='" . $row["client"] . "' required class='form-control p-0 border-0'>";
-                echo "</div>";
-                echo "</div>";
-                echo "<div class='form-group mb-4'>";
-                echo "<label class='col-md-12 p-0'>Main Contractor Name</label>";
-                echo "<div class='col-md-12 border-bottom p-0'>";
-                echo "<input type='text' name='contractor' placeholder='Enter Main Contractor Name' value='" . $row["contractor"] . "'  class='form-control p-0 border-0'>";
-                echo "</div>";
-                echo "</div>";
-                echo "<div class='form-group mb-4'>";
-                echo "<label class='col-md-12 p-0'>Consultant Name</label>";
-                echo "<div class='col-md-12 border-bottom p-0'>";
-                echo "<input type='text' name='consultant' placeholder='Enter Consultant Name' value='" . $row["consultant"] . "' class='form-control p-0 border-0'>";
-                echo "</div>";
-                echo "</div>";
+
                 echo "<div class='form-group mb-4'>";
                 echo "<label class='col-md-12 p-0'>Project Description</label>";
                 echo "<div class='col-md-12 border-bottom p-0'>";
-                echo "<textarea rows='5' name='description' placeholder='Enter Description' required class='form-control p-0 border-0'>" . $row["description"] . "</textarea>";
+                echo "<textarea id='summernote' rows='5' name='description' placeholder='Enter Description' required class='form-control p-0 border-0'>" . $row["description"] . "</textarea>";
                 echo "</div>";
                 echo "</div>";
                 echo "<input type='hidden' name='project_id' value='" . $row["id"] . "'>";
@@ -161,6 +144,23 @@
         <script src="../js/sidebarmenu.js"></script>
         <!--Custom JavaScript -->
         <script src="../js/custom.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> 
+
+    
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+    <script>
+        $('#summernote').summernote({
+            placeholder: 'please enter the project description',
+
+            tabsize: 2,
+            height: 300
+        });
+    </script>     
 
 </body>
 
