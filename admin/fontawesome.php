@@ -145,10 +145,10 @@
                                 <span class="hide-menu">Profile</span>
                             </a>
                         </li>
-                       <li class="sidebar-item">
+                        <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_projects.php"
                                 aria-expanded="false">
-                                <i class="far fa-lightbulb" aria-hidden="true"></i>
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
                                 <span class="hide-menu">New Projects</span>
                             </a>
                         </li>
@@ -2769,7 +2769,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
              <footer class="footer text-center"> 2020 © Qplus Technical Service LLC -  <a
-                    href="https://www.qplus-ts.com">www.qplus-ts.com</a>
+                    href="www.qplus-ts.com">www.qplus-ts.com</a>
             </footer>
             </footer>
             <!-- ============================================================== -->

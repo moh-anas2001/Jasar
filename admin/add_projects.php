@@ -5,13 +5,7 @@ session_start();
 // Check if the user is not authenticated (not logged in)
 if (!isset($_SESSION['id'])) {
     header('Location: index.php');
-    exit();
-}
-
-
-if (isset($_SESSION['role']) && $_SESSION['role'] !== 'Admin') {
-    // Redirect to a restricted access page or display an error message
-    header('Location: 404.php'); // You can create this page
+    set_message("Please login first to view this page.");
     exit();
 }
 
@@ -20,53 +14,25 @@ require_once('includes/database.php');
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Check if the submitted token matches the stored token
-    if ($_POST['token'] === $_SESSION['token']) {
-        // Token is valid, now check for duplicates
+    // Handle the image upload
+    $uploadDirectory = "../assets/img/projects"; // Specify the directory where you want to store images
+    $uploadedImagePath = $uploadDirectory . basename($_FILES["image"]["name"]);
+
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], $uploadedImagePath)) {
+        // Image uploaded successfully, now insert into the database
         $projectName = $_POST["project_name"];
-        $projectDescription = $_POST["description"];
-        $client = $_POST["client"];
-        $contractor = $_POST["contractor"];
-        $consultant = $_POST["consultant"];
+        $imagePath = $uploadedImagePath;
 
-        // SQL query to check for duplicates based on project name
-        $sqlCheckDuplicate = "SELECT COUNT(*) FROM projects WHERE project_name = ?";
-        $stmtCheckDuplicate = $connect->prepare($sqlCheckDuplicate);
-        $stmtCheckDuplicate->bind_param("s", $projectName);
-        $stmtCheckDuplicate->execute();
-        $stmtCheckDuplicate->bind_result($duplicateCount);
-        $stmtCheckDuplicate->fetch();
-        $stmtCheckDuplicate->close();
+        // Prepare and execute the SQL query to insert data
+        $sql = "INSERT INTO projects (image_path, project_name) VALUES (?, ?)";
+        $stmt = $connect->prepare($sql);
+        $stmt->bind_param("ss", $imagePath, $projectName);
+        $stmt->execute();
 
-        if ($duplicateCount > 0) {
-            echo "";
-        } else {
-            // Handle the image upload
-            $uploadDirectory = "../assets/img/projects/"; // Specify the directory where you want to store images
-            $uploadedImagePath = $uploadDirectory . basename($_FILES["image"]["name"]);
-
-            if (move_uploaded_file($_FILES["image"]["tmp_name"], $uploadedImagePath)) {
-                // Image uploaded successfully, now insert into the database
-                $imagePath = $uploadedImagePath;
-
-                // Prepare and execute the SQL query to insert data
-                $sql = "INSERT INTO projects (image_path, project_name, description, client, contractor, consultant) VALUES (?, ?, ?, ?, ?, ?)";
-                $stmt = $connect->prepare($sql);
-                $stmt->bind_param("ssssss", $imagePath, $projectName, $projectDescription, $client, $contractor, $consultant);
-                $stmt->execute();
-                $stmt->close();
-            } else {
-                echo "";
-            }
-        }
+        $stmt->close();
     } else {
-        // Token mismatch, do not process the form again.
-        // You can display an error message or take appropriate action.
-        echo "";
+        echo "Image upload failed.";
     }
-} else {
-    // Generate a new token when the form is initially loaded.
-    $_SESSION['token'] = md5(uniqid(rand(), true));
 }
 ?>
 
@@ -78,14 +44,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords">
-    <title>Manage Projects Section</title>
+    <meta name="keywords"
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description"
+        content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Ample Admin Lite Template by WrapPixel</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
-    <link href="css/style.min.css" rel="stylesheet">
-
+   <link href="css/style.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 </head>
 
 <body>
@@ -163,28 +138,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
-                         <li class="dropdown">
+                        <li class="dropdown">
                             <a class="profile-pic" href="#">
-                                <?php
-                                // Include the database configuration
-                                require_once('includes/database.php');
-
-                                // Assuming you have a session variable for the logged-in user ID
-                                $userID = $_SESSION['id'];
-
-                                // Fetch user data from the users table based on the user ID
-                                $sqlFetchUserData = "SELECT username, profile_image FROM users WHERE id = ?";
-                                $stmtFetchUserData = $connect->prepare($sqlFetchUserData);
-                                $stmtFetchUserData->bind_param("i", $userID);
-                                $stmtFetchUserData->execute();
-                                $stmtFetchUserData->bind_result($username, $profile_image);
-                                $stmtFetchUserData->fetch();
-                                $stmtFetchUserData->close();
-
-                                // Display the user's profile image and username
-                                echo '<img src="' . $profile_image . '" alt="user-img" width="36" class="img-circle">';
-                                echo '<span class="text-white font-medium">' . $username . '</span>';
-                                ?>
+                                <img src="plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle">
+                                <span class="text-white font-medium">Admin</span>
                             </a>
                             <div class="dropdown-content">
                                 <a href="dashboard.php">Dashboard</a>
@@ -229,11 +186,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_projects.php"
                                 aria-expanded="false">
-                                <i class="far fa-lightbulb" aria-hidden="true"></i>
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
                                 <span class="hide-menu">New Projects</span>
                             </a>
                         </li>
-
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_jobs.php"
                                 aria-expanded="false">
@@ -241,36 +197,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">New Jobs</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="stats.php"
+                        <!-- <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.php"
                                 aria-expanded="false">
-                                <i class="fas fa-chart-line" aria-hidden="true"></i>
-                                <span class="hide-menu">Update Statistics</span>
+                                <i class="fa fa-table" aria-hidden="true"></i>
+                                <span class="hide-menu">Basic Table</span>
+                            </a>
+                        </li> -->
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.php"
+                                aria-expanded="false">
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                                <span class="hide-menu">Icon</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_testimonial.php"
+                      
+                        <!-- <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blank.php"
                                 aria-expanded="false">
-                                <i class="fa fa-comment" aria-hidden="true"></i>
-                                <span class="hide-menu">New Testimonials</span>
+                                <i class="fa fa-columns" aria-hidden="true"></i>
+                                <span class="hide-menu">Blank Page</span>
                             </a>
-                        </li>
-                         
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_logo.php"
-                                aria-expanded="false">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                                <span class="hide-menu">Add Logo</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_blogs.php"
-                                aria-expanded="false">
-                                <i class="fas fa-upload" aria-hidden="true"></i>
-                                <span class="hide-menu">Add Blogs</span>
-                            </a>
-                        </li>
-
+                        </li> -->
+                      
+                       
                     </ul>
 
                 </nav>
@@ -316,55 +266,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="">
                     <div class="card">
                         <div class="card-body">
-
-                            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"
-                                enctype="multipart/form-data" class="form-horizontal form-material">
+                            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data" class="form-horizontal form-material">
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Project Name</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name="project_name" placeholder="Enter Project Name" required
-                                            class="form-control p-0 border-0">
-                                    </div>
-                                </div>
-                                <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Client Name</label>
-                                    <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name="client" placeholder="Enter client Name" required
-                                            class="form-control p-0 border-0">
-                                    </div>
-                                </div>
-                                <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Main Contractor Name</label>
-                                    <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name="contractor" placeholder="Enter Main Contractor Name"
-                                            class="form-control p-0 border-0">
-                                    </div>
-                                </div>
-                                <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Consultant Name</label>
-                                    <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name="consultant" placeholder="Enter Consultant Name" 
-                                            class="form-control p-0 border-0">
-                                    </div>
-                                </div>
-                                <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Project Description</label>
-                                    <div class="col-md-12 border-bottom p-0">
-                                        <textarea id ="description" rows="5" class="form-control p-0 border-0" name="description"
-                                            placeholder="Enter Project Description" ></textarea>
+                                        <input type="text" name="project_name" placeholder="Enter Project Name" required class="form-control p-0 border-0">
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Upload Image</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="file" name="image" accept="image/*" required
-                                            class="form-control p-0 border-0">
+                                        <input type="file" name="image" accept="image/*" required class="form-control p-0 border-0">
                                     </div>
-                                    <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
                                 </div>
                                 <div class="form-group mb-4">
                                     <div class="col-sm-12">
-                                        <button type="submit" class="btn btn-success">Upload and Save</button>
+                                        <button type ="submit" class="btn btn-success">Upload and Save </button>
                                     </div>
                                 </div>
                             </form>
@@ -372,129 +289,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
 
-                <!-- MANAGE PROJECTS TABLE -->
-
-                <div class="row">
-                    <div class="col-md-12 col-lg-12 col-sm-12">
-                        <div class="white-box">
-                            <div class="d-md-flex mb-3">
-                                <h3 class="box-title mb-0">Manage Projects</h3>
-                                <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
-                                </div>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table no-wrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="border-top-0">id</th>
-                                            <th class="border-top-0">Project Name</th>
-                                            <th class="border-top-0 txt-oflo">Project Description</th>
-                                            <th class="border-top-0 txt-oflo">Client Name</th>
-                                            <th class="border-top-0 txt-oflo">Contractor Name</th>
-                                            <th class="border-top-0 txt-oflo">Consultant</th>
-                                            <th class="border-top-0">Image Path</th>
-                                            <th class="border-top-0">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <?php
-                                    // Include the database configuration
-                                    require_once('includes/database.php');
-
-                                    // Fetch projects from the database
-                                    $sql = "SELECT * FROM projects";
-                                    $result = $connect->query($sql);
-
-                                    while ($row = $result->fetch_assoc()) {
-                                        echo "<tr>";
-                                        echo "<td>" . $row["id"] . "</td>";
-                                        echo "<td class='txt-oflo'>" . $row["project_name"] . "</td>";
-                                        // Display only the first 50 characters of the description
-                                        $shortDescription = substr($row["description"], 0, 50);
-                                        echo "<td class='txt-oflo'>" . $shortDescription;
-
-                                        // Check if the description length is greater than 50 characters
-                                        if (strlen($row["description"]) > 50) {
-                                            echo " <a href='javascript:void(0);' class='read-more-link' data-description='" . htmlspecialchars($row["description"]) . "'>Read More</a>";
-                                        }
-                                        echo "</td>";
-                                        echo "<td class='txt-oflo'>" . $row["client"] . "</td>";
-                                        echo "<td class='txt-oflo'>" . $row["contractor"] . "</td>";
-                                        echo "<td class='txt-oflo'>" . $row["consultant"] . "</td>";
-                                        echo "<td class ='txt-oflo'>" . $row["image_path"] . "</td>";
-                                        echo "<td><a href='operations/edit_project.php?id=" . $row["id"] . "'>Edit</a>";
-                                        echo "&nbsp;/";
-                                        echo " <a href='operations/delete_project.php?id=" . $row["id"] . "'>Delete</a>";
-                                        echo "</td>";
-                                        echo "</tr>";
-                                    }
-
-                                    $connect->close();
-                                    ?>
-
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- Column -->
             </div>
 
-
-
-
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
+            </div>
             <!-- ============================================================== -->
-            <!-- End PAge Content -->
+            <!-- End Container fluid  -->
             <!-- ============================================================== -->
             <!-- ============================================================== -->
-            <!-- Right sidebar -->
+            <!-- footer -->
             <!-- ============================================================== -->
-            <!-- .right-sidebar -->
+             <footer class="footer text-center"> 2020 © Qplus Technical Service LLC -  <a
+                    href="www.qplus-ts.com">www.qplus-ts.com</a>
+            </footer>
+            </footer>
             <!-- ============================================================== -->
-            <!-- End Right sidebar -->
+            <!-- End footer -->
             <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
-        <!-- End Container fluid  -->
+        <!-- End Page wrapper  -->
         <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- footer -->
-        <!-- ============================================================== -->
-        <footer class="footer text-center"> 2020 © Qplus Technical Service LLC - <a
-                href="https://www.qplus-ts.com">www.qplus-ts.com</a>
-        </footer>
-
-        <!-- ============================================================== -->
-        <!-- End footer -->
-        <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Page wrapper  -->
-    <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
-
     <!-- ============================================================== -->
     <!-- All Jquery -->
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const readMoreLinks = document.querySelectorAll(".read-more-link");
-
-            readMoreLinks.forEach(function (link) {
-                link.addEventListener("click", function () {
-                    const description = this.getAttribute("data-description");
-                    alert(description); // You can replace this with code to display the full description in a modal or expand the table row.
-                });
-            });
-        });
-    </script>
-
-
-
+    <!-- ============================================================== -->
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -505,14 +337,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.js"></script>
-    <script src="js/tinymce/js/tinymce/tinymce.min.js"></script>
-    <script>
-        tinymce.init({
-            selector:'#description'
-        })
-    </script>
-
-
 </body>
 
 </html>

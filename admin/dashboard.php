@@ -1,17 +1,10 @@
 <?php
 session_start();
+
 // Check if the user is not authenticated (not logged in)
 if (!isset($_SESSION['id'])) {
-    echo'<script>alert("Welcome Back");</script>';
     header('Location: index.php');
-    exit();
-    
-}
-
-// Check the user's role
-if (isset($_SESSION['role']) && $_SESSION['role'] !== 'Admin') {
-    // Redirect to a restricted access page or display an error message
-    header('Location: 404.php'); // You can create this page
+    set_message("Please login first to view this page.");
     exit();
 }
 
@@ -44,7 +37,6 @@ if (isset($_SESSION['role']) && $_SESSION['role'] !== 'Admin') {
 </head>
 
 <body>
-    
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
@@ -114,28 +106,10 @@ if (isset($_SESSION['role']) && $_SESSION['role'] !== 'Admin') {
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
-                         <li class="dropdown">
+                        <li class="dropdown">
                             <a class="profile-pic" href="#">
-                                <?php
-                                // Include the database configuration
-                                require_once('includes/database.php');
-
-                                // Assuming you have a session variable for the logged-in user ID
-                                $userID = $_SESSION['id'];
-
-                                // Fetch user data from the users table based on the user ID
-                                $sqlFetchUserData = "SELECT username, profile_image FROM users WHERE id = ?";
-                                $stmtFetchUserData = $connect->prepare($sqlFetchUserData);
-                                $stmtFetchUserData->bind_param("i", $userID);
-                                $stmtFetchUserData->execute();
-                                $stmtFetchUserData->bind_result($username, $profile_image);
-                                $stmtFetchUserData->fetch();
-                                $stmtFetchUserData->close();
-
-                                // Display the user's profile image and username
-                                echo '<img src="' . $profile_image . '" alt="user-img" width="36" class="img-circle">';
-                                echo '<span class="text-white font-medium">' . $username . '</span>';
-                                ?>
+                                <img src="plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle">
+                                <span class="text-white font-medium">Admin</span>
                             </a>
                             <div class="dropdown-content">
                                 <a href="dashboard.php">Dashboard</a>
@@ -177,10 +151,10 @@ if (isset($_SESSION['role']) && $_SESSION['role'] !== 'Admin') {
                                 <span class="hide-menu">Profile</span>
                             </a>
                         </li>
-                       <li class="sidebar-item">
+                        <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_projects.php"
                                 aria-expanded="false">
-                                <i class="far fa-lightbulb" aria-hidden="true"></i>
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
                                 <span class="hide-menu">New Projects</span>
                             </a>
                         </li>
@@ -192,35 +166,27 @@ if (isset($_SESSION['role']) && $_SESSION['role'] !== 'Admin') {
                                 <span class="hide-menu">New Jobs</span>
                             </a>
                         </li>
+                        <!-- <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.php"
+                                aria-expanded="false">
+                                <i class="fa fa-table" aria-hidden="true"></i>
+                                <span class="hide-menu">Basic Table</span>
+                            </a>
+                        </li> -->
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="stats.php"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.php"
                                 aria-expanded="false">
-                                <i class="fas fa-chart-line" aria-hidden="true"></i>
-                                <span class="hide-menu">Update Statistics</span>
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                                <span class="hide-menu">Icon</span>
                             </a>
                         </li>
-                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_testimonial.php"
+                        <!-- <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blank.php"
                                 aria-expanded="false">
-                                <i class="fa fa-comment" aria-hidden="true"></i>
-                                <span class="hide-menu">New Testimonials</span>
+                                <i class="fa fa-columns" aria-hidden="true"></i>
+                                <span class="hide-menu">Blank Page</span>
                             </a>
-                        </li>
-                         
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_logo.php"
-                                aria-expanded="false">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                                <span class="hide-menu">Add Logo</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_blogs.php"
-                                aria-expanded="false">
-                                <i class="fas fa-upload" aria-hidden="true"></i>
-                                <span class="hide-menu">Add Blogs</span>
-                            </a>
-                        </li>
+                        </li> -->
                         
                     </ul>
 
@@ -588,14 +554,14 @@ if (isset($_SESSION['role']) && $_SESSION['role'] !== 'Admin') {
                     <!-- /.col -->
                 </div>
             </div>
-            <!-- ============================================================== -->
+            ==============================================================
             <!-- End Container fluid  -->
             <!-- ============================================================== -->
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
              <footer class="footer text-center"> 2020 © Qplus Technical Service LLC -  <a
-                    href="https://www.qplus-ts.com">www.qplus-ts.com</a>
+                    href="www.qplus-ts.com">www.qplus-ts.com</a>
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->

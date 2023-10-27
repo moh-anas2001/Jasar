@@ -1,100 +1,14 @@
 <?php
 session_start();
 
-// Database connection
-$servername = "localhost";
-$username = "cms";
-$password = "secret";
-$dbname = "cms";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Check if the user is authenticated (logged in)
+// Check if the user is not authenticated (not logged in)
 if (!isset($_SESSION['id'])) {
     header('Location: index.php');
-    exit();
-
-}
-
-if (isset($_SESSION['role']) && $_SESSION['role'] !== 'Admin') {
-    // Redirect to a restricted access page or display an error message
-    header('Location: 404.php'); // You can create this page
+    set_message("Please login first to view this page.");
     exit();
 }
 
-// Retrieve the lastJobCode value from the database and store it in the session
-$sql = "SELECT last_code FROM last_job_code WHERE id = 1";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    $_SESSION['lastJobCode'] = $row['last_code'];
-} else {
-    // If no record is found, initialize it to your desired starting value
-    $_SESSION['lastJobCode'] = 19; // Starting from 20
-}
-
-// Include the database configuration
-require_once('includes/database.php');
-
-// Initialize the last job code variable from the session or set it to 0 if not set
-$lastJobCode = isset($_SESSION['lastJobCode']) ? $_SESSION['lastJobCode'] : 19;
-$jobCode = ""; // Initialize the job code variable
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $job_title = $_POST["job_title"];
-    $job_description = $_POST["job_description"];
-    $experience = $_POST["experience"];
-    $posted = $_POST["posted"];
-    $stat = $_POST["stat"];
-    $deletion_date = $_POST["delete_date"]; // Retrieve the deletion date
-
-    // Increment the last job code
-    $lastJobCode++;
-
-    // Create the job code by concatenating the fixed part and the incremented number
-    $jobCode = "QPTS/JOB-" . str_pad($lastJobCode, 2, '0', STR_PAD_LEFT);
-
-    // Store the updated $lastJobCode in the session
-    $_SESSION['lastJobCode'] = $lastJobCode;
-
-    // Update the value in the database
-    $sql = "UPDATE last_job_code SET last_code = $lastJobCode WHERE id = 1";
-    $conn->query($sql);
-
-    // Prepare and execute the SQL query to insert data, including the deletion date
-    $sql = "INSERT INTO jobs (job_title, job_code, job_description, experience, posted, stat, delete_date)
-            VALUES (?, ?, ?, ?, ?, ?, ?)";
-    $stmt = $connect->prepare($sql);
-    $stmt->bind_param("sssssss", $job_title, $jobCode, $job_description, $experience, $posted, $stat, $deletion_date);
-    $stmt->execute();
-    $stmt->close();
-
-    // Redirect back to the add_jobs.php page after adding the job
-    header("Location: add_jobs.php");
-    exit();
-}
-
-
-// After successfully processing the form, set the flag to true
-$_SESSION['form_submitted'] = true;
-
-// Fetch existing testimonials from the database
-$sql = "SELECT * FROM jobs";
-$result = $connect->query($sql);
-$jobs = [];
-
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $jobs[] = $row;
-    }
-}
 ?>
-
 
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -104,15 +18,23 @@ if ($result->num_rows > 0) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="">
-    <meta name="description">
-    <title>Manage Jobs Section</title>
+    <meta name="keywords"
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description"
+        content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Ample Admin Lite Template by WrapPixel</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
-    <link href="css/style.min.css" rel="stylesheet">
-
+   <link href="css/style.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 </head>
 
 <body>
@@ -190,28 +112,10 @@ if ($result->num_rows > 0) {
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
-                         <li class="dropdown">
+                       <li class="dropdown">
                             <a class="profile-pic" href="#">
-                                <?php
-                                // Include the database configuration
-                                require_once('includes/database.php');
-
-                                // Assuming you have a session variable for the logged-in user ID
-                                $userID = $_SESSION['id'];
-
-                                // Fetch user data from the users table based on the user ID
-                                $sqlFetchUserData = "SELECT username, profile_image FROM users WHERE id = ?";
-                                $stmtFetchUserData = $connect->prepare($sqlFetchUserData);
-                                $stmtFetchUserData->bind_param("i", $userID);
-                                $stmtFetchUserData->execute();
-                                $stmtFetchUserData->bind_result($username, $profile_image);
-                                $stmtFetchUserData->fetch();
-                                $stmtFetchUserData->close();
-
-                                // Display the user's profile image and username
-                                echo '<img src="' . $profile_image . '" alt="user-img" width="36" class="img-circle">';
-                                echo '<span class="text-white font-medium">' . $username . '</span>';
-                                ?>
+                                <img src="plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle">
+                                <span class="text-white font-medium">Admin</span>
                             </a>
                             <div class="dropdown-content">
                                 <a href="dashboard.php">Dashboard</a>
@@ -253,14 +157,14 @@ if ($result->num_rows > 0) {
                                 <span class="hide-menu">Profile</span>
                             </a>
                         </li>
+
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_projects.php"
                                 aria-expanded="false">
-                                <i class="far fa-lightbulb" aria-hidden="true"></i>
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
                                 <span class="hide-menu">New Projects</span>
                             </a>
                         </li>
-
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_jobs.php"
                                 aria-expanded="false">
@@ -268,36 +172,31 @@ if ($result->num_rows > 0) {
                                 <span class="hide-menu">New Jobs</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="stats.php"
-                                aria-expanded="false">
-                                <i class="fas fa-chart-line" aria-hidden="true"></i>
-                                <span class="hide-menu">Update Statistics</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_testimonial.php"
-                                aria-expanded="false">
-                                <i class="fa fa-comment" aria-hidden="true"></i>
-                                <span class="hide-menu">New Testimonials</span>
-                            </a>
-                        </li>
 
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_logo.php"
+                        <!-- <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.php"
                                 aria-expanded="false">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                                <span class="hide-menu">Add Logo</span>
+                                <i class="fa fa-table" aria-hidden="true"></i>
+                                <span class="hide-menu">Basic Table</span>
+                            </a>
+                        </li> -->
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.php"
+                                aria-expanded="false">
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                                <span class="hide-menu">Icon</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_blogs.php"
+                       
+                        <!-- <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blank.php"
                                 aria-expanded="false">
-                                <i class="fas fa-upload" aria-hidden="true"></i>
-                                <span class="hide-menu">Add Blogs</span>
+                                <i class="fa fa-columns" aria-hidden="true"></i>
+                                <span class="hide-menu">Blank Page</span>
                             </a>
-                        </li>
-
+                        </li> -->
+                    
+                       
                     </ul>
 
                 </nav>
@@ -318,7 +217,7 @@ if ($result->num_rows > 0) {
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Add Jobs</h4>
+                        <h4 class="page-title">Basic Table</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
@@ -339,158 +238,51 @@ if ($result->num_rows > 0) {
             <div class="container-fluid">
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
-                <!-- ==============================================================-->
-
-
-
+                <!-- ============================================================== -->
                 <div class="">
                     <div class="card">
                         <div class="card-body">
-                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post"
-                                class="form-horizontal form-material">
-
+                            <form class="form-horizontal form-material">
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Job Title</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name="job_title" placeholder="Enter the Job Title" required
+                                        <input type="text" placeholder="Enter the Job Title" required
                                             class="form-control p-0 border-0">
                                     </div>
                                 </div>
-
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Experience</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name="experience"
-                                            placeholder="Enter the Experience (for ex: 0-2 years or 2+ years...)"
-                                            required class="form-control p-0 border-0">
-                                    </div>
-                                </div>
-
-                                <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Date</label>
-                                    <div class="col-md-12 border-bottom p-0">
-                                        <input type="date" name="posted" required class="form-control p-0 border-0">
-                                    </div>
-                                </div>
-
-                                <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Deletion Date</label>
-                                    <div class="col-md-12 border-bottom p-0">
-                                        <input type="date" name="delete_date" required
+                                        <input type="text" placeholder="Enter the Experience" required
                                             class="form-control p-0 border-0">
                                     </div>
                                 </div>
-
-
+                                <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">Location</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="text" placeholder="Enter the Job Location" required
+                                            class="form-control p-0 border-0">
+                                    </div>
+                                </div>
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Job Description</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <textarea id = "job_description" class="form-control p-0 border-0" name="job_description"
-                                            placeholder="Enter the Job Description" ></textarea>
+                                        <textarea rows="5" class="form-control p-0 border-0"
+                                            placeholder="Enter the Job Description"></textarea>
                                     </div>
                                 </div>
-
-
-                                <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Status</label>
-                                    <div class="col-md-12 p-0">
-                                        <label class="radio-inline">
-                                            <input type="radio" name="stat" value="Open" required>
-                                            &nbsp;Open</label>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <label class="radio-inline">
-                                            <input type="radio" name="stat" value="Close"> &nbsp;Close </label>
+                                <!-- <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">Application Deadline</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="date" required class="form-control p-0 border-0">
                                     </div>
-                                </div>
-
-
+                                </div> -->
                                 <div class="form-group mb-4">
                                     <div class="col-sm-12">
-                                        <button type="submit" class="btn btn-success">Submit</button>
+                                        <button class="btn btn-success">Submit</button>
                                     </div>
                                 </div>
                             </form>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-md-12 col-lg-12 col-sm-12">
-                        <div class="white-box">
-                            <div class="d-md-flex mb-3">
-                                <h3 class="box-title mb-0">Manage Projects</h3>
-                                <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
-                                </div>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table no-wrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="border-top-0">Id</th>
-                                            <th class="border-top-0">Job Title</th>
-                                            <th class="border-top-0">Experience</th>
-                                            <th class="border-top-0">Job code</th>
-                                            <th class="border-top-0">Job Description</th>
-                                            <th class="border-top-0">Posted On</th>
-                                            <th class="border-top-0">Status</th>
-                                            <th class="border-top-0">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php foreach ($jobs as $job) { ?>
-                                            <tr>
-                                                <td>
-                                                    <?php echo $job['id']; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $job['job_title']; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $job['experience']; ?>
-                                                </td>
-
-                                                <td>
-                                                    <?php echo $job['job_code']; ?>
-                                                </td>
-                                                <td>
-                                                    <?php // echo $job['job_description']; ?>
-                                                    <span class="job-description-short">
-                                                        <?php echo substr($job['job_description'], 0, 10); ?>...<!-- Display the first 50 characters -->
-                                                    </span>
-                                                    <span class="job-description-full" style="display: none;">
-                                                        <?php echo $job['job_description']; ?> <!-- Hidden by default -->
-                                                    </span>
-                                                    <span class="expand-description-button"
-                                                        style="cursor: pointer; font-size: small;color: blue; text-decoration: underline;">Expand</span>
-                                                </td>
-                                                <td>
-                                                    <?php
-                                                    $postedDate = date('d M Y', strtotime($job['posted']));
-                                                    $deleteDate = date('d M Y', strtotime($job['delete_date']));
-                                                    echo $postedDate . ' to ' . $deleteDate;
-                                                    ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $job['stat'] ?>
-                                                </td>
-                                                <td>
-                                                    <a
-                                                        href="operations/update_jobs.php?id=<?php echo $job['id']; ?>">Edit</a>
-                                                    /
-                                                    <a
-                                                        href="operations/delete_jobs.php?id=<?php echo $job['id']; ?>">Delete</a>
-
-
-                                                </td>
-
-                                            </tr>
-                                        <?php } ?>
-                                    </tbody>
-
-
-                                </table>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -512,8 +304,8 @@ if ($result->num_rows > 0) {
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer text-center"> 2020 © Qplus Technical Service LLC - <a
-                    href="https://www.qplus-ts.com">www.qplus-ts.com</a>
+             <footer class="footer text-center"> 2020 © Qplus Technical Service LLC -  <a
+                    href="www.qplus-ts.com">www.qplus-ts.com</a>
             </footer>
             </footer>
             <!-- ============================================================== -->
@@ -530,30 +322,6 @@ if ($result->num_rows > 0) {
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-
-    <script>
-        // Add an event listener for the expand button
-        document.querySelectorAll(".expand-description-button").forEach(function (button) {
-            button.addEventListener("click", function () {
-                // Find the related short and full description spans
-                const shortDescription = this.parentNode.querySelector(".job-description-short");
-                const fullDescription = this.parentNode.querySelector(".job-description-full");
-
-                // Toggle their visibility
-                if (shortDescription.style.display === "inline-block") {
-                    shortDescription.style.display = "none";
-                    fullDescription.style.display = "inline-block";
-                    this.innerText = "Collapse";
-                } else {
-                    shortDescription.style.display = "inline-block";
-                    fullDescription.style.display = "none";
-                    this.innerText = "Expand";
-                }
-            });
-        });
-    </script>
-
-
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -564,12 +332,6 @@ if ($result->num_rows > 0) {
     <script src="js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.js"></script>
-    <script src="js/tinymce/js/tinymce/tinymce.min.js"></script>
-    <script>
-        tinymce.init({
-            selector:'#job_description'
-        })
-    </script>
 </body>
 
 </html>
