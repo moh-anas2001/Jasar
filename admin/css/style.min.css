@@ -12,9 +12,10 @@
      /* Dropdown */
 
      .dropdown {
-        position: relative;
-        display: inline-block;
-      }
+      position: relative;
+      display: inline-block;
+      margin-right:30px
+  }
       
       .dropdown-content {
         display: none;

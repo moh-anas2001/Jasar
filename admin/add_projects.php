@@ -180,7 +180,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 ?>
                             </a>
                             <div class="dropdown-content">
-                                <a href="add_logo.php">Add Logo</a>
+                                <a href="add_jobs.php">Add Jobs</a>
+                                <a href="stats.php">Statistics</a>
+                                <a href="admin_testimonial.php">Add Testimonial</a>
+                                <!-- <a href="add_projects.php">Add Projects</a> -->
                                 <a href="Logout.php">Logout</a>
                             </div>
                         </li>
@@ -204,8 +207,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <!-- User Profile-->
-
-
+                        <li class="sidebar-item pt-2">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php"
+                                aria-expanded="false">
+                                <i class="far fa-clock" aria-hidden="true"></i>
+                                <span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+                        <!-- <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.php"
+                                aria-expanded="false">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span class="hide-menu">Profile</span>
+                            </a>
+                        </li> -->
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_projects.php"
                                 aria-expanded="false">
@@ -213,6 +228,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">New Projects</span>
                             </a>
                         </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_jobs.php"
+                                aria-expanded="false">
+                                <i class="fa fa-globe" aria-hidden="true"></i>
+                                <span class="hide-menu">New Jobs</span>
+                            </a>
+                        </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="stats.php"
                                 aria-expanded="false">
@@ -220,23 +243,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">Update Statistics</span>
                             </a>
                         </li>
-
-                        <!-- <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.php"
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_testimonial.php"
                                 aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Basic Table</span>
+                                <i class="fa fa-comment" aria-hidden="true"></i>
+                                <span class="hide-menu">New Testimonials</span>
+                            </a>
+                        </li>
+                         <!-- <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_logo.php"
+                                aria-expanded="false">
+                                <i class="fas fa-image" aria-hidden="true"></i>
+                                <span class="hide-menu">Add Logo</span>
                             </a>
                         </li> -->
-
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="stats.php"
+                        <!-- <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_blogs.php"
                                 aria-expanded="false">
-                                <i class="fas fa-chart-line" aria-hidden="true"></i>
-                                <span class="hide-menu">Update Statistics</span>
+                                <i class="fas fa-upload" aria-hidden="true"></i>
+                                <span class="hide-menu">Add Blogs</span>
                             </a>
-                        </li>
-
+                        </li> -->
 
                     </ul>
 
@@ -410,8 +437,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- ============================================================== -->
         <!-- footer -->
         <!-- ============================================================== -->
-        <footer class="footer text-center"> 2020 © Qplus Technical Service LLC - <a
-                href="https://www.qplus-ts.com">www.qplus-ts.com</a>
+        <footer class="footer text-center"> 2020 © DaCentric Technologies - <a
+                href="https://dacentrictechnologies.com">www.dacentrictechnologies.com</a>
         </footer>
 
         <!-- ============================================================== -->

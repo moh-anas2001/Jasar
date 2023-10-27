@@ -276,8 +276,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-             <footer class="footer text-center"> 2020 © Qplus Technical Service LLC -  <a
-                    href="https://www.qplus-ts.com">www.qplus-ts.com</a>
+             <footer class="footer text-center"> 2020 © DaCentric Technologies -  <a
+                    href="https://dacentrictechnologies.com">www.dacentrictechnologies.com</a>
             </footer>
             </footer>
             <!-- ============================================================== -->

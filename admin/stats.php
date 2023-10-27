@@ -125,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 <?php
                                 // Include the database configuration
                                 require_once('includes/database.php');
-
+                                
                                 // Assuming you have a session variable for the logged-in user ID
                                 $userID = $_SESSION['id'];
 
@@ -144,7 +144,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 ?>
                             </a>
                             <div class="dropdown-content">
-
+                                <a href="add_jobs.php">Add Jobs</a>
+                                <!-- <a href="stats.php">Statistics</a> -->
+                                <a href="admin_testimonial.php">Add Testimonial</a>
                                 <a href="add_projects.php">Add Projects</a>
                                 <a href="Logout.php">Logout</a>
                             </div>
@@ -176,13 +178,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
+                        <!-- <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.php"
                                 aria-expanded="false">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <span class="hide-menu">Profile</span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_projects.php"
                                 aria-expanded="false">
@@ -212,13 +214,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 <span class="hide-menu">New Testimonials</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
+                         <!-- <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_logo.php"
                                 aria-expanded="false">
                                 <i class="fas fa-image" aria-hidden="true"></i>
                                 <span class="hide-menu">Add Logo</span>
                             </a>
-                        </li>
+                        </li> -->
                         <!-- <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_blogs.php"
                                 aria-expanded="false">
@@ -346,8 +348,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <!-- ============================================================== -->
     <!-- footer -->
     <!-- ============================================================== -->
-    <footer class="footer text-center"> 2020 © Qplus Technical Service LLC - <a
-            href="https://www.qplus-ts.com">www.qplus-ts.com</a>
+    <footer class="footer text-center"> 2020 © DaCentric Technologies - <a
+            href="https://dacentrictechnologies.com">www.dacentrictechnologies.com</a>
     </footer>
 
     <!-- ============================================================== -->

@@ -89,25 +89,45 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class=" in">
+                        <!-- <li class=" in">
                             <form role="search" class="app-search d-none d-md-block me-3">
                                 <input type="text" placeholder="Search..." class="form-control mt-0">
                                 <a href="" class="active">
                                     <i class="fa fa-search"></i>
                                 </a>
                             </form>
-                        </li>
+                        </li> -->
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li class="dropdown">
                             <a class="profile-pic" href="#">
-                                <img src="plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle">
-                                <span class="text-white font-medium">Admin</span>
+                                <?php
+                                // Include the database configuration
+                                // require_once('includes/database.php');
+                                
+                                // Assuming you have a session variable for the logged-in user ID
+                                $userID = $_SESSION['id'];
+
+                                // // Fetch user data from the users table based on the user ID
+                                $sqlFetchUserData = "SELECT username, profile_image FROM users WHERE id = ?";
+                                $stmtFetchUserData = $connect->prepare($sqlFetchUserData);
+                                $stmtFetchUserData->bind_param("i", $userID);
+                                $stmtFetchUserData->execute();
+                                $stmtFetchUserData->bind_result($username, $profile_image);
+                                $stmtFetchUserData->fetch();
+                                $stmtFetchUserData->close();
+
+                                // // Display the user's profile image and username
+                                echo '<img src="' . $profile_image . '" alt="user-img" width="36" class="img-circle">';
+                                echo '<span class="text-white font-medium">' . $username . '</span>';
+                                ?>
                             </a>
                             <div class="dropdown-content">
-                                <a href="dashboard.php">Dashboard</a>
                                 <a href="add_jobs.php">Add Jobs</a>
+                                <a href="stats.php">Statistics</a>
+                                <a href="admin_testimonial.php">Add Testimonial</a>
+                                <a href="add_projects.php">Add Projects</a>
                                 <a href="Logout.php">Logout</a>
                             </div>
                         </li>
@@ -138,13 +158,13 @@
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
+                        <!-- <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.php"
                                 aria-expanded="false">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <span class="hide-menu">Profile</span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_projects.php"
                                 aria-expanded="false">
@@ -174,13 +194,13 @@
                                 <span class="hide-menu">New Testimonials</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
+                         <!-- <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_logo.php"
                                 aria-expanded="false">
                                 <i class="fas fa-image" aria-hidden="true"></i>
                                 <span class="hide-menu">Add Logo</span>
                             </a>
-                        </li>
+                        </li> -->
                         <!-- <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_blogs.php"
                                 aria-expanded="false">
@@ -343,8 +363,8 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer text-center"> 2020 © Qplus Technical Service LLC -  <a
-                    href="www.qplus-ts.com">www.qplus-ts.com</a>
+            <footer class="footer text-center"> 2020 © DaCentric Technologies -  <a
+                    href="https://dacentrictechnologies.com">www.dacentrictechnologies.com</a>
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->

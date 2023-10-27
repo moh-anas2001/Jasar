@@ -138,13 +138,13 @@
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
+                        <!-- <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.php"
                                 aria-expanded="false">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <span class="hide-menu">Profile</span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.php"
                                 aria-expanded="false">
@@ -247,8 +247,8 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-             <footer class="footer text-center"> 2020 © Qplus Technical Service LLC -  <a
-                    href="www.qplus-ts.com">www.qplus-ts.com</a>
+             <footer class="footer text-center"> 2020 © DaCentric Technologies -  <a
+                    href="https://dacentrictechnologies.com">www.dacentrictechnologies.com</a>
             </footer>
             </footer>
             <!-- ============================================================== -->
