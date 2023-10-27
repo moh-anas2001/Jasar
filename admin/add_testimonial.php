@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="dashboard.php">
+                    <a class="navbar-brand" href="#">
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
@@ -135,7 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="text-white font-medium">Login</span>
                             </a>
                             <!-- <div class="dropdown-content">
-                                <a href="dashboard.php">Dashboard</a>
+                                <a href="#">Dashboard</a>
                                 <a href="add_jobs.php">Add Jobs</a>
                                 <a href="index.php">Login</a>
                             </div> -->
@@ -194,7 +194,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
                             <ol class="breadcrumb ms-auto">
-                                <li><a href="dashboard.php" class="fw-normal">Dashboard</a></li>
+                                <li><a href="#" class="fw-normal">Dashboard</a></li>
                             </ol>
                         </div>
                     </div>
