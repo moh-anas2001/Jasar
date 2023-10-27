@@ -1,16 +1,46 @@
-<?PHP
-//  session_start();
+<?php
+// Include necessary files and start the session
 include('includes/config.php');
 include('includes/database.php');
 include('includes/functions.php');
 
-
+// Check if the user is already logged in and has a role
 if (isset($_SESSION['id'])) {
-    header('Location: dashboard.php');
-    set_message("Hello User");
-    die();
+    header('Location: add_projects.php'); // Redirect if the user is already logged in
+    exit();
 }
 
+if (isset($_POST['email']) && isset($_POST['password'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Prepare and execute a SQL query to fetch the user with the provided email and password
+    $sql = "SELECT * FROM users WHERE email = ? AND password = ?";
+    if ($stmt = $connect->prepare($sql)) {
+        $stmt->bind_param('ss', $email, $password);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+        $user = $result->fetch_assoc();
+
+        $stmt->close();
+
+        if ($user) {
+            // Successful login, set user information in the session
+            $_SESSION['id'] = $user['id'];
+            $_SESSION['email'] = $user['email'];
+            $_SESSION['username'] = $user['username'];
+
+            // Redirect to the desired page after successful login
+            header('Location: add_projects.php');
+            exit();
+        } else {
+            echo '<script>alert("Invalid email or password");</script>';
+        }
+    } else {
+        echo 'Could not prepare statement!';
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,34 +58,7 @@ if (isset($_SESSION['id'])) {
     <link rel="stylesheet" href="css/style.css">
 
 </head>
-<?php
-if (isset($_POST['email'])) {
-    if ($stm = $connect->prepare('SELECT * FROM users WHERE email = ? AND password = ? AND active = 1')) {
-        $hashed = SHA1($_POST['password']);
-        $stm->bind_param('ss', $_POST['email'], $hashed);
-        $stm->execute();
 
-        $result = $stm->get_result();
-        $user = $result->fetch_assoc();
-
-        if ($user) {
-            $_SESSION['id'] = $user['id'];
-            $_SESSION['email'] = $user['email'];
-            $_SESSION['username'] = $user['username'];
-
-            set_message("You have succesfully logged in " . $_SESSION['username']);
-            header('Location: dashboard.php');
-            die();
-        }
-        $stm->close();
-
-    } else {
-        echo 'Could not prepare statement!';
-    }
-
-
-}
-?>
 
 <body class="colored">
 
@@ -84,11 +87,13 @@ if (isset($_POST['email'])) {
                             <input type="password" id="password" name="password" class="form-control" required
                                 placeholder="Enter Password" />
                         </div>
-                        <div class="text-center"><button type="submit"
-                                class="btn btn-color px-5 mt-5 mb-5 w-30">Login</button></div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-color px-5 mt-3 mb-3">Login</button>
+                            
+                        </div>
+                        
                     </form>
                 </div>
-
             </div>
         </div>
     </section>

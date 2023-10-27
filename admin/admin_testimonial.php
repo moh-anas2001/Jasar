@@ -7,11 +7,7 @@ if (!isset($_SESSION['id'])) {
     exit();
 }
 
-if (isset($_SESSION['role']) && $_SESSION['role'] !== 'Admin') {
-    // Redirect to a restricted access page or display an error message
-    header('Location: 404.php'); // You can create this page
-    exit();
-}
+
 //Include the database Configuration
 require_once('includes/database.php');
 
