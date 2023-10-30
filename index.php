@@ -28,7 +28,7 @@
     ================================================== -->
     <script src="js/modernizr.js"></script>
     <script src="js/pace.min.js"></script>
-    <script src= "js/main.js"></script>
+    <script src="js/main.js"></script>
 
     <!-- favicons
     ================================================== -->
@@ -102,8 +102,7 @@
 
     <!-- home
     ================================================== -->
-    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="images/bg-3.png"
-        data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="images/bg-3.png" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
 
         <div class="overlay"></div>
         <div class="shadow-overlay"></div>
@@ -165,10 +164,9 @@
     <!-- about
     ================================================== -->
     <section id="abt" style="display: flex;">
-       
-        <div class="col-1-4"
-            style="background: url(images/abt.png) ;width: 100%; background-repeat: no-repeat;background-size: cover; padding:  0 0 0 0 ;">
-          
+
+        <div class="col-1-4" style="background: url(images/abt.png) ;width: 100%; background-repeat: no-repeat;background-size: cover; padding:  0 0 0 0 ;">
+
             <section id='about' class="s-about" style="width: 100%; ">
 
 
@@ -215,36 +213,45 @@
                     </div>
                 </div> <!-- end about-desc -->
 
+                <?php
+                // Read the JSON file
+                $jsonData = file_get_contents('admin/stats.json');
+                $stats = json_decode($jsonData, true);
+
+                // Access individual statistics
+                $clients = $stats['clients'];
+                $projects = $stats['projects'];
+                $experience = $stats['experience'];
+                $workers = $stats['workers'];
+                ?>
+
                 <div class="row about-stats stats block-1-4 block-m-1-2 block-mob-full" data-aos="fade-up">
 
                     <div class="col-block stats__col">
-                        <div class="stats__count">109</div>
+                        <div class="stats__count"><?php echo $projects ?></div>
                         <h5>Projects Completed</h5>
                     </div>
 
                     <div class="col-block stats__col">
-                        <div class="stats__count">102</div>
+                        <div class="stats__count"><?php echo $clients ?></div>
                         <h5>Happy Clients</h5>
                     </div>
 
                     <div class="col-block stats__col ">
-                        <div class="stats__count">14</div>
+                        <div class="stats__count"><?php echo $experience ?></div>
                         <h5>Years Of Experience</h5>
                     </div>
                     <div class="col-block stats__col">
-                        <div class="stats__count">25</div>
+                        <div class="stats__count"><?php echo $workers ?></div>
                         <h5>Workers</h5>
                     </div>
-
-
                 </div> <!-- end about-stats -->
             </section> <!-- end s-about -->
         </div>
     </section>
 
 
-    <section id="section-steps"
-        style=" color: #fff; padding-top: 160px; padding-bottom: 80px; padding-left: 15px; padding-right: 15px;     background: linear-gradient(rgba(2, 2, 2, 59%), #00000054,#0000007d), url(images/samp-3.png) fixed center ;background-repeat: no-repeat; background-size: cover;">
+    <section id="section-steps" style=" color: #fff; padding-top: 160px; padding-bottom: 80px; padding-left: 15px; padding-right: 15px;     background: linear-gradient(rgba(2, 2, 2, 59%), #00000054,#0000007d), url(images/samp-3.png) fixed center ;background-repeat: no-repeat; background-size: cover;">
 
         <div class="container">
 
@@ -254,33 +261,27 @@
                 <div class="col-md-12">
                     <div class="de_tab tab_steps">
                         <ul class="de_nav">
-                            <li class="wow fadeIn animated"
-                                style="opacity: 1; animation-name: fadeIn; animation-delay: 0s; visibility: visible;">
+                            <li class="wow fadeIn animated" style="opacity: 1; animation-name: fadeIn; animation-delay: 0s; visibility: visible;">
                                 <span>DESIGN</span>
                                 <div class="v-border" style="opacity: 1;"></div>
                             </li>
-                            <li class="wow fadeIn animated"
-                                style="opacity: 1; animation-name: fadeIn; animation-delay: 0.4s; visibility: visible;">
+                            <li class="wow fadeIn animated" style="opacity: 1; animation-name: fadeIn; animation-delay: 0.4s; visibility: visible;">
                                 <span>ENGINEERING</span>
                                 <div class="v-border" style="opacity: 0;"></div>
                             </li>
-                            <li class="wow fadeIn animated"
-                                style="opacity: 1; animation-name: fadeIn; animation-delay: 0.8s; visibility: visible;">
+                            <li class="wow fadeIn animated" style="opacity: 1; animation-name: fadeIn; animation-delay: 0.8s; visibility: visible;">
                                 <span>PROCUREMENT</span>
                                 <div class="v-border" style="opacity: 0;"></div>
                             </li>
-                            <li class="wow fadeIn animated"
-                                style="opacity: 1; animation-name: fadeIn; animation-delay: 1.2s; visibility: visible;">
+                            <li class="wow fadeIn animated" style="opacity: 1; animation-name: fadeIn; animation-delay: 1.2s; visibility: visible;">
                                 <span>CONSTRUCTION</span>
                                 <div class="v-border" style="opacity: 0;"></div>
                             </li>
-                            <li class="wow fadeIn animated"
-                                style="opacity: 1; animation-name: fadeIn; animation-delay: 1.2s; visibility: visible;">
+                            <li class="wow fadeIn animated" style="opacity: 1; animation-name: fadeIn; animation-delay: 1.2s; visibility: visible;">
                                 <span>COMMSIONING</span>
                                 <div class="v-border" style="opacity: 0;"></div>
                             </li>
-                            <li class="wow fadeIn animated"
-                                style="opacity: 1; animation-name: fadeIn; animation-delay: 1.2s; visibility: visible; font-size: 10px;">
+                            <li class="wow fadeIn animated" style="opacity: 1; animation-name: fadeIn; animation-delay: 1.2s; visibility: visible; font-size: 10px;">
                                 <span>OPERATIONS &<br> MAINTENANCE</span>
                                 <div class="v-border" style="opacity: 0;"></div>
                             </li>
@@ -381,24 +382,42 @@
             <div class="col-full masonry-wrap">
                 <div class="masonry">
 
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
+
+
+
+
+                    <?php
+                    // Establish a database connection (you may need to adjust the database credentials)
+                    include('admin/includes/database.php');
+
+                    // Define an array of project IDs that you want to retrieve
+                    $projectIdsToRetrieve = [1,2,3,4,5,6,7,8]; // Replace with the desired project IDs
+
+                    // Create a comma-separated string of project IDs
+                    $projectIdsString = implode(",", $projectIdsToRetrieve);
+
+                    // Query to fetch specific projects based on project IDs
+                    $sql = "SELECT id, image_path, project_name, description FROM projects WHERE id IN ($projectIdsString) ORDER BY FIELD(id, $projectIdsString)";
+                    $result = $connect->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<div class="masonry__brick" data-aos="fade-up">
+                       <div class="item-folio">
 
                             <div class="item-folio__thumb">
-                                <a href="images/portfolio/1.png" class="thumb-link"
+                                <a href="' . $row["image_path"] . '" class="thumb-link"
                                     title="Shutterbug" data-size="1050x700">
-                                    <img src="images/portfolio/1.png"
-                                       
-                                        alt="">
+                                    <img src="' . $row["image_path"] . '" alt="Uploaded Image"> 
                                 </a>
                             </div>
 
                             <div class="item-folio__text">
                                 <h3 class="item-folio__title">
-                                    Shutterbug
+                               ' . $row["project_name"] . '
                                 </h3>
                                 <p class="item-folio__cat">
-                                    Branding
+                               ' . $row["project_name"] . '
                                 </p>
                             </div>
 
@@ -407,14 +426,20 @@
                             </a>
 
                             <div class="item-folio__caption">
-                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde
-                                    dolorem corrupti neque nisi.</p>
+                                <p>' . $row["description"] . '</p>
                             </div>
 
                         </div>
-                    </div> <!-- end masonry__brick -->
+                    </div> ';
+                        }
+                    } else {
+                        echo "";
+                    }
 
-                    <div class="masonry__brick" data-aos="fade-up">
+                    $connect->close();
+                    ?> <!-- end masonry__brick -->
+
+                    <!-- <div class="masonry__brick" data-aos="fade-up">
                         <div class="item-folio">
 
                             <div class="item-folio__thumb">
@@ -445,9 +470,10 @@
                             </div>
 
                         </div>
-                    </div> <!-- end masonry__brick -->
+                    </div>  -->
+                    <!-- end masonry__brick -->
 
-                    <div class="masonry__brick" data-aos="fade-up">
+                    <!-- <div class="masonry__brick" data-aos="fade-up">
                         <div class="item-folio">
 
                             <div class="item-folio__thumb">
@@ -478,9 +504,10 @@
                             </div>
 
                         </div>
-                    </div> <!-- end masonry__brick -->
+                    </div> -->
+                    <!-- end masonry__brick -->
 
-                    <div class="masonry__brick" data-aos="fade-up">
+                    <!--   <div class="masonry__brick" data-aos="fade-up">
                         <div class="item-folio">
 
                             <div class="item-folio__thumb">
@@ -511,9 +538,10 @@
                             </div>
 
                         </div>
-                    </div> <!-- end masonry__brick -->
+                    </div>  -->
+                    <!-- end masonry__brick -->
 
-                    <div class="masonry__brick" data-aos="fade-up">
+                    <!-- <div class="masonry__brick" data-aos="fade-up">
                         <div class="item-folio">
 
                             <div class="item-folio__thumb">
@@ -544,9 +572,10 @@
                             </div>
 
                         </div>
-                    </div> <!-- end masonry__brick -->
+                    </div>  -->
+                    <!-- end masonry__brick -->
 
-                    <div class="masonry__brick" data-aos="fade-up">
+                    <!-- <div class="masonry__brick" data-aos="fade-up">
                         <div class="item-folio">
 
                             <div class="item-folio__thumb">
@@ -577,9 +606,10 @@
                             </div>
 
                         </div>
-                    </div> <!-- end masonry__brick -->
+                    </div> -->
+                    <!-- end masonry__brick -->
 
-                    <div class="masonry__brick" data-aos="fade-up">
+                    <!-- <div class="masonry__brick" data-aos="fade-up">
                         <div class="item-folio">
 
                             <div class="item-folio__thumb">
@@ -610,9 +640,10 @@
                             </div>
 
                         </div>
-                    </div> <!-- end masonry__brick -->
+                    </div>  -->
+                    <!-- end masonry__brick -->
 
-                    <div class="masonry__brick" data-aos="fade-up">
+                    <!-- <div class="masonry__brick" data-aos="fade-up">
                         <div class="item-folio">
 
                             <div class="item-folio__thumb">
@@ -643,9 +674,11 @@
                             </div>
 
                         </div>
-                    </div> <!-- end masonry__brick -->
+                    </div>  -->
 
-                    <div class="masonry__brick" data-aos="fade-up">
+                    <!-- end masonry__brick -->
+
+                    <!-- <div class="masonry__brick" data-aos="fade-up">
                         <div class="item-folio">
 
                             <div class="item-folio__thumb">
@@ -676,7 +709,8 @@
                             </div>
 
                         </div>
-                    </div> <!-- end masonry__brick -->
+                    </div>  -->
+                    <!-- end masonry__brick -->
 
                 </div> <!-- end masonry -->
             </div> <!-- end col-full -->
@@ -684,6 +718,93 @@
 
     </section> <!-- end s-works -->
 
+
+
+    <!-- clients
+    ================================================== -->
+    <section id="clients" class="s-clients">
+
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Testimonials</h3>
+                <h1 class="display-2">Discover what our valued clients have to say about their experience partnering with us.</h1>
+            </div>
+        </div> <!-- end section-header -->
+
+
+
+        <div class="row clients-testimonials" data-aos="fade-up">
+            <div class="col-full">
+                <div class="testimonials">
+
+                    <?php
+
+
+                    $connect = mysqli_connect('localhost', 'jasar', 'secret', 'jasar');
+
+                    if (mysqli_connect_errno()) {
+                        die('Failed to connect to MySQL :' . mysqli_connect_errno());
+                    }
+
+                    // Retrieve testimonials from the database
+                    $sql = "SELECT name,com_name, role, testimonial, image_path FROM testimonials ORDER BY created_at DESC";
+                    $result = $connect->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+
+                            echo '   <div class="testimonials__slide">
+
+                        <p>' . $row["testimonial"] . '</p>
+
+                        <img src="' . $row["image_path"] . ' " alt="Author image" class="testimonials__avatar">
+                        <div class="testimonials__info">
+                            <span class="testimonials__name">' . $row["name"] . '</span>
+                            <span class="testimonials__pos">' . $row["com_name"] .  ',</span>
+                            <span class="testimonials__pos">'  . $row["role"] . '</span>
+                        </div>
+
+                    </div>';
+                        }
+                    } else {
+                        echo "";
+                    }
+
+                    $connect->close();
+                    ?>
+                </div><!-- end testimonials -->
+
+            </div> <!-- end col-full -->
+        </div> <!-- end client-testimonials -->
+
+    </section> <!-- end s-clients -->
+    <!-- 
+                    <div class="testimonials__slide">
+
+                        <p>Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
+                            Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.</p>
+
+                        <img src="images/avatars/user-05.jpg" alt="Author image" class="testimonials__avatar">
+                        <div class="testimonials__info">
+                            <span class="testimonials__name">Sundar Pichai</span>
+                            <span class="testimonials__pos">CEO, Google</span>
+                        </div>
+
+                    </div>
+
+                    <div class="testimonials__slide">
+
+                        <p>Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.
+                            Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.</p>
+
+                        <img src="images/avatars/user-02.jpg" alt="Author image" class="testimonials__avatar">
+                        <div class="testimonials__info">
+                            <span class="testimonials__name">Satya Nadella</span>
+                            <span class="testimonials__pos">CEO, Microsoft</span>
+
+                        </div>
+
+                    </div> -->
 
 
 
@@ -718,20 +839,16 @@
                     <fieldset>
 
                         <div class="form-field">
-                            <input name="contactName" type="text" id="contactName" placeholder="Your Name" value=""
-                                minlength="2" required="" aria-required="true" class="full-width">
+                            <input name="contactName" type="text" id="contactName" placeholder="Your Name" value="" minlength="2" required="" aria-required="true" class="full-width">
                         </div>
                         <div class="form-field">
-                            <input name="contactEmail" type="email" id="contactEmail" placeholder="Your Email" value=""
-                                required="" aria-required="true" class="full-width">
+                            <input name="contactEmail" type="email" id="contactEmail" placeholder="Your Email" value="" required="" aria-required="true" class="full-width">
                         </div>
                         <div class="form-field">
-                            <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value=""
-                                class="full-width">
+                            <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width">
                         </div>
                         <div class="form-field">
-                            <textarea name="contactMessage" id="contactMessage" placeholder="Your Message" rows="10"
-                                cols="50" required="" aria-required="true" class="full-width"></textarea>
+                            <textarea name="contactMessage" id="contactMessage" placeholder="Your Message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
                         </div>
                         <div class="form-field">
                             <button class="full-width btn--primary">Submit</button>
@@ -769,7 +886,7 @@
                         <h5>Where to Find Us</h5>
                         <p>
                             PO Box:186302,<br> Al Nahda-1,<br>Dubai, UAE <br>
-                            
+
                         </p>
                     </div>
 
@@ -817,68 +934,6 @@
     </section> <!-- end s-contact -->
 
 
-   <!-- clients
-    ================================================== -->
-    <section id="clients" class="s-clients">
-
-        <div class="row section-header" data-aos="fade-up">
-            <div class="col-full">
-                <h3 class="subhead">Testimonials</h3>
-                <h1 class="display-2">Discover what our valued clients have to say about their experience partnering with us.</h1>
-            </div>
-        </div> <!-- end section-header -->
-
-
-        <div class="row clients-testimonials" data-aos="fade-up">
-            <div class="col-full">
-                <div class="testimonials">
-
-                    <div class="testimonials__slide">
-
-                        <p>Qui ipsam temporibus quisquam vel. Maiores eos cumque distinctio nam accusantium ipsum. 
-                        Laudantium quia consequatur molestias delectus culpa facere hic dolores aperiam. Accusantium quos qui praesentium corpori.
-                        Excepturi nam cupiditate culpa doloremque deleniti repellat.</p>
-
-                        <img src="images/avatars/user-01.jpg" alt="Author image" class="testimonials__avatar">
-                        <div class="testimonials__info">
-                            <span class="testimonials__name">Tim Cook</span> 
-                            <span class="testimonials__pos">CEO, Apple</span>
-                        </div>
-
-                    </div>
-
-                    <div class="testimonials__slide">
-                        
-                        <p>Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-                        Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.</p>
-
-                        <img src="images/avatars/user-05.jpg" alt="Author image" class="testimonials__avatar">
-                        <div class="testimonials__info">
-                            <span class="testimonials__name">Sundar Pichai</span> 
-                            <span class="testimonials__pos">CEO, Google</span>
-                        </div>
-
-                    </div>
-
-                    <div class="testimonials__slide">
-                        
-                        <p>Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.  
-                        Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.</p>
-
-                        <img src="images/avatars/user-02.jpg" alt="Author image" class="testimonials__avatar">
-                        <div class="testimonials__info">
-                            <span class="testimonials__name">Satya Nadella</span> 
-                            <span class="testimonials__pos">CEO, Microsoft</span>
-                        </div>
-
-                    </div>
-
-                </div><!-- end testimonials -->
-                
-            </div> <!-- end col-full -->
-        </div> <!-- end client-testimonials -->
-
-    </section> <!-- end s-clients -->
 
 
 
@@ -917,8 +972,7 @@
                 </div>
 
                 <div class="go-top">
-                    <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up"
-                            aria-hidden="true"></i></a>
+                    <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a>
                 </div>
             </div>
 
@@ -948,11 +1002,7 @@
 
             <div class="pswp__ui pswp__ui--hidden">
                 <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close"
-                        title="Close (Esc)"></button> <button class="pswp__button pswp__button--share"
-                        title="Share"></button> <button class="pswp__button pswp__button--fs"
-                        title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom"
-                        title="Zoom in/out"></button>
+                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
                     <div class="pswp__preloader">
                         <div class="pswp__preloader__icn">
                             <div class="pswp__preloader__cut">
@@ -995,15 +1045,21 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+
+
+
+
     <script>
         function scrollToElement(elementId) {
             var element = document.getElementById(elementId);
             if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
+                element.scrollIntoView({
+                    behavior: 'smooth'
+                });
             }
         }
-        </script>
-        
+    </script>
+
 
 </body>
 

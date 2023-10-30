@@ -125,22 +125,33 @@
             <div class="col-full masonry-wrap">
                 <div class="masonry">
 
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
+                <?php
+                    // Establish a database connection (you may need to adjust the database credentials)
+                    include('admin/includes/database.php');
+
+
+                    // Query to fetch specific projects based on project IDs
+                    $sql = "SELECT id, image_path, project_name ,description FROM projects";
+                    $result = $connect->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<div class="masonry__brick" data-aos="fade-up">
+                       <div class="item-folio">
 
                             <div class="item-folio__thumb">
-                                <a href="images/portfolio/1.png" class="thumb-link" title="Shutterbug"
-                                    data-size="1050x700">
-                                    <img src="images/portfolio/1.png" alt="">
+                                <a href="' . $row["image_path"] . '" class="thumb-link"
+                                    title="Shutterbug" data-size="1050x700">
+                                    <img src="' . $row["image_path"] . '" alt="Uploaded Image"> 
                                 </a>
                             </div>
 
                             <div class="item-folio__text">
                                 <h3 class="item-folio__title">
-                                    Shutterbug
+                               ' . $row["project_name"] . '
                                 </h3>
                                 <p class="item-folio__cat">
-                                    Branding
+                               ' . $row["project_name"] . '
                                 </p>
                             </div>
 
@@ -149,259 +160,19 @@
                             </a>
 
                             <div class="item-folio__caption">
-                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde
-                                    dolorem corrupti neque nisi.</p>
+                                <p>'. $row["description"] . '</p>
                             </div>
 
                         </div>
-                    </div> <!-- end masonry__brick -->
+                    </div> ';
+                        }
+                    } else {
+                        echo "";
+                    }
 
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
+                    $connect->close();
+                    ?> <!-- end masonry__brick -->
 
-                            <div class="item-folio__thumb">
-                                <a href="images/portfolio/2.png" class="thumb-link" title="Woodcraft"
-                                    data-size="1050x700">
-                                    <img src="images/portfolio/2.png" alt="">
-                                </a>
-                            </div>
-
-                            <div class="item-folio__text">
-                                <h3 class="item-folio__title">
-                                    Woodcraft
-                                </h3>
-                                <p class="item-folio__cat">
-                                    Web Design
-                                </p>
-                            </div>
-
-                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
-                                <i class="icon-link"></i>
-                            </a>
-
-                            <div class="item-folio__caption">
-                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde
-                                    dolorem corrupti neque nisi.</p>
-                            </div>
-
-                        </div>
-                    </div> <!-- end masonry__brick -->
-
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
-
-                            <div class="item-folio__thumb">
-                                <a href="images/portfolio/3.png" class="thumb-link" title="The Beetle Car"
-                                    data-size="1050x700">
-                                    <img src="images/portfolio/3.png" alt="">
-                                </a>
-                            </div>
-
-                            <div class="item-folio__text">
-                                <h3 class="item-folio__title">
-                                    The Beetle
-                                </h3>
-                                <p class="item-folio__cat">
-                                    Web Development
-                                </p>
-                            </div>
-
-                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
-                                <i class="icon-link"></i>
-                            </a>
-
-                            <div class="item-folio__caption">
-                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde
-                                    dolorem corrupti neque nisi.</p>
-                            </div>
-
-                        </div>
-                    </div> <!-- end masonry__brick -->
-
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
-
-                            <div class="item-folio__thumb">
-                                <a href="images/carousel.jpg" class="thumb-link" title="Grow Green"
-                                    data-size="1050x700">
-                                    <img src="images/carousel.jpg" alt="">
-                                </a>
-                            </div>
-
-                            <div class="item-folio__text">
-                                <h3 class="item-folio__title">
-                                    Grow Green
-                                </h3>
-                                <p class="item-folio__cat">
-                                    Branding
-                                </p>
-                            </div>
-
-                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
-                                <i class="icon-link"></i>
-                            </a>
-
-                            <div class="item-folio__caption">
-                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde
-                                    dolorem corrupti neque nisi.</p>
-                            </div>
-
-                        </div>
-                    </div> <!-- end masonry__brick -->
-
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
-
-                            <div class="item-folio__thumb">
-                                <a href="images/bg-3.png" class="thumb-link" data-size="1050x700">
-                                    <img src="images/bg-3.png" alt="">
-                                </a>
-                            </div>
-
-                            <div class="item-folio__text">
-                                <h3 class="item-folio__title">
-                                    Guitarist
-                                </h3>
-                                <p class="item-folio__cat">
-                                    Web Design
-                                </p>
-                            </div>
-
-                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
-                                <i class="icon-link"></i>
-                            </a>
-
-                            <div class="item-folio__caption">
-                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde
-                                    dolorem corrupti neque nisi.</p>
-                            </div>
-
-                        </div>
-                    </div> <!-- end masonry__brick -->
-
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
-
-                            <div class="item-folio__thumb">
-                                <a href="images/sample-image.jpg" class="thumb-link" title="Palmeira"
-                                    data-size="1050x700">
-                                    <img src="images/samp-1.png" alt="">
-                                </a>
-                            </div>
-
-                            <div class="item-folio__text">
-                                <h3 class="item-folio__title">
-                                    Palmeira
-                                </h3>
-                                <p class="item-folio__cat">
-                                    Web Design
-                                </p>
-                            </div>
-
-                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
-                                <i class="icon-link"></i>
-                            </a>
-
-                            <div class="item-folio__caption">
-                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde
-                                    dolorem corrupti neque nisi.</p>
-                            </div>
-
-                        </div>
-                    </div> <!-- end masonry__brick -->
-
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
-
-                            <div class="item-folio__thumb">
-                                <a href="images/portfolio/1.png" class="thumb-link" title="Shutterbug"
-                                    data-size="1050x700">
-                                    <img src="images/portfolio/1.png" alt="">
-                                </a>
-                            </div>
-
-                            <div class="item-folio__text">
-                                <h3 class="item-folio__title">
-                                    Shutterbug
-                                </h3>
-                                <p class="item-folio__cat">
-                                    Branding
-                                </p>
-                            </div>
-
-                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
-                                <i class="icon-link"></i>
-                            </a>
-
-                            <div class="item-folio__caption">
-                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde
-                                    dolorem corrupti neque nisi.</p>
-                            </div>
-
-                        </div>
-                    </div> <!-- end masonry__brick -->
-
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
-
-                            <div class="item-folio__thumb">
-                                <a href="images/portfolio/1.png" class="thumb-link" title="Shutterbug"
-                                    data-size="1050x700">
-                                    <img src="images/portfolio/1.png" alt="">
-                                </a>
-                            </div>
-
-                            <div class="item-folio__text">
-                                <h3 class="item-folio__title">
-                                    Shutterbug
-                                </h3>
-                                <p class="item-folio__cat">
-                                    Branding
-                                </p>
-                            </div>
-
-                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
-                                <i class="icon-link"></i>
-                            </a>
-
-                            <div class="item-folio__caption">
-                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde
-                                    dolorem corrupti neque nisi.</p>
-                            </div>
-
-                        </div>
-                    </div> <!-- end masonry__brick -->
-
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
-
-                            <div class="item-folio__thumb">
-                                <a href="images/portfolio/1.png" class="thumb-link" title="Shutterbug"
-                                    data-size="1050x700">
-                                    <img src="images/portfolio/1.png" alt="">
-                                </a>
-                            </div>
-
-                            <div class="item-folio__text">
-                                <h3 class="item-folio__title">
-                                    Shutterbug
-                                </h3>
-                                <p class="item-folio__cat">
-                                    Branding
-                                </p>
-                            </div>
-
-                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
-                                <i class="icon-link"></i>
-                            </a>
-
-                            <div class="item-folio__caption">
-                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde
-                                    dolorem corrupti neque nisi.</p>
-                            </div>
-
-                        </div>
-                    </div> <!-- end masonry__brick -->
 
                 </div> <!-- end masonry -->
             </div> <!-- end col-full -->
