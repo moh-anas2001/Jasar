@@ -184,6 +184,67 @@
       font-size: 18px;
     }
 
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      border: 1px solid #000;
+      max-width: 90%;
+      /* Set a maximum width for the modal */
+    }
+
+    /* Close Button Styles */
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      cursor: pointer;
+    }
+
+    /* Centered Apply Button */
+    .apply-button {
+      display: inline-flex;
+      margin: 20px auto;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      max-width: 35%;
+      transition: background-color 0.3s;
+      /* Add a transition for smooth color change */
+
+    }
+
+    .apply-button:hover {
+      background-color: #0056b3;
+      color: #fff;
+      /* Change the background color on hover */
+    }
+
+    .apply-button:active {
+      background-color: #003d80;
+      color: #fff;
+      /* Change the background color when the button is clicked (active) */
+    }
+
+
+
     /* Media query for smaller screens (e.g., mobile) */
     @media (max-width: 926px) {
       .job-card {
@@ -191,6 +252,22 @@
         min-width: 300px;
         /* Full width for mobile */
       }
+    }
+
+    @media (max-width: 600px) {
+      .modal-content {
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        border: 1px solid #000;
+        max-width: 90%;
+        min-width: 100%
+          /* Set a maximum width for the modal */
+      }
+
     }
   </style>
 
@@ -212,18 +289,12 @@
   padding-right: 15px;
   padding-left: 15px;
   padding-bottom: 80px;">
-    <h2 class="tit6 t-center" style="background: linear-gradient(90deg, 
-    #f99f1c 0%,
-    #008b43 20%,
-    #2e3192 40%,
-    #a32b23 60%,
-    #2b73b7 80%,
-    #d74db5 100%);
+    <h2 class="tit6 t-center" style="background:linear-gradient( to right, #005079, #4a94f7, #06ba5dc9, #4c8267, #fba01c );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-size: 76px;
-      font-weight: bold;
-      font-family:'montserrat-bold', serif;" data-aos="fade-up" data-aos-delay="1000">
+      font-size: 60px;
+      font-weight: 600;
+      font-family: Poppins, sans-serif;" data-aos="fade-up" data-aos-delay="1000">
       Careers
     </h2>
   </section>
@@ -252,78 +323,58 @@
 
 
   <section class="job-listings row-row">
+    <?php
+    require_once('admin/includes/database.php');
 
-    <div class="job-card" data-aos="fade-down-right" data-aos-delay="1000">
-      <h2>Mechanical Engineer</h2>
-      <p id="jobDescription">Join our team as a Mechanical Engineer and work on exciting projects in the field of HVAC
-        and more. Duis aute sunt non cupidatat enim elit ad incididunt anim incididunt. Pariatur exercitation excepteur
-        amet eiusmod id consectetur. Irure nulla dolor aliqua nisi mollit ad tempor voluptate. Proident sit velit irure
-        nulla duis proident. Dolore non consectetur dolore est incididunt mollit. Non sunt voluptate ex labore sint
-        reprehenderit eiusmod incididunt do cupidatat do. Proident do minim proident aliqua veniam ut.</p>
+    // Retrieve job listings from the database
+    $sql = "SELECT id, job_title, job_code, job_description, experience, posted, stat FROM jobs ORDER BY created_at DESC";
+    $result = $connect->query($sql);
+
+    if ($result->num_rows > 0) {
+      $counter = 0; // Initialize a counter variable
+      while ($row = $result->fetch_assoc()) {
+
+        // Calculate the data-aos-delay dynamically
+        $dataAosDelay = 1000 + ($counter % 4) * 100;
+
+        echo '<div class="job-card" data-aos="fade-down-right" data-aos-delay="' . $dataAosDelay . '">
+        <h2>' . $row["job_title"] . '</h2>
+        <p id="jobDescription">' . $row["job_description"] . '</p>
+        <p><strong>Experience:</strong>  ' . $row["experience"] . ' years </p>';
+
+        $formattedDate = date('d-m-Y', strtotime($row["posted"]));
+
+        echo '<p><strong>Posted on:</strong> ' . $formattedDate . '</p>
+        <a  class="" id="openModalButton">Apply</a>
+    </div>';
+
+        // Modal
+        echo '<div class="modal" id="jobModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>' . $row["job_title"] . '</h2>
+            <p><strong>Roles and Responsibilities:</strong></p>
+            <p>' . $row["job_description"] . '</p>
+            <!-- Add other job details here -->
+            <a href="mailto:sample@ex.com" class="apply-button">Apply</a>
+        </div>
+    </div>';
 
 
-      <!-- <a id="readMoreLink" class="read-link">Read More</a>
-      <a id="readLessLink" class="read-link" style="display: none;">Read Less</a> -->
-      <a id="applyNowButton" href="mailto:#" class="apply-button">Apply Now</a>
-    </div>
 
 
-    <div class="job-card" data-aos="fade-down-right" data-aos-delay="1200">
-      <h2>Electrical Engineer</h2>
-      <p>We are hiring Electrical Engineers to create innovative solutions for our clients' electrical systems.Ad veniam
-        nulla nulla pariatur deserunt amet in ea elit cillum id consequat incididunt eu.</p>
-      <!-- <a id="readMoreLink" class="read-link">Read More</a>
-      <a id="readLessLink" class="read-link" style="display: none;">Read Less</a> -->
-      <a id="applyNowButton" href="mailto:#" class="apply-button">Apply Now</a>
-    </div>
+        $counter++; // Increment the counter
+      }
+    } else {
+      echo "";
+    }
 
-    <div class="job-card" data-aos="fade-down-right" data-aos-delay="1400">
-      <h2>Plumbing Specialist</h2>
-      <p>If you have a passion for plumbing systems, join us and make a difference in the world of MEP.Enim pariatur ad
-        aliquip pariatur proident occaecat deserunt ex non culpa reprehenderit.</p>
-      <!-- <a id="readMoreLink" class="read-link">Read More</a>
-      <a id="readLessLink" class="read-link" style="display: none;">Read Less</a> -->
-      <a id="applyNowButton" href="mailto:#" class="apply-button">Apply Now</a>
-    </div>
-    <div class="job-card" data-aos="fade-down-right" data-aos-delay="1000">
-      <h2>Mechanical Engineer</h2>
-      <p>Join our team as a Mechanical Engineer and work on exciting projects in the field of HVAC and more.</p>
-      <!-- <a id="readMoreLink" class="read-link">Read More</a>
-      <a id="readLessLink" class="read-link" style="display: none;">Read Less</a> -->
-      <a id="applyNowButton" href="mailto:#" class="apply-button">Apply Now</a>
-    </div>
+    $connect->close();
+    ?>
 
-    <div class="job-card" data-aos="fade-down-right" data-aos-delay="1200">
-      <h2>Electrical Engineer</h2>
-      <p>We are hiring Electrical Engineers to create innovative solutions for our clients' electrical systems.</p>
-      <!-- <a id="readMoreLink" class="read-link">Read More</a>
-      <a id="readLessLink" class="read-link" style="display: none;">Read Less</a> -->
-      <a id="applyNowButton" href="mailto:#" class="apply-button">Apply Now</a>
-    </div>
 
-    <div class="job-card" data-aos="fade-down-right" data-aos-delay="1400">
-      <h2>Plumbing Specialist</h2>
-      <p>If you have a passion for plumbing systems, join us and make a difference in the world of MEP.</p>
-      <!-- <a id="readMoreLink" class="read-link">Read More</a>
-      <a id="readLessLink" class="read-link" style="display: none;">Read Less</a> -->
-      <a id="applyNowButton" href="mailto:#" class="apply-button">Apply Now</a>
-    </div>
-    <div class="job-card" data-aos="fade-down-right" data-aos-delay="1000">
-      <h2>Mechanical Engineer </h2>
-      <p>Join our team as a Mechanical Engineer and work on exciting projects in the field of HVAC and more.</p>
-      <!-- <a id="readMoreLink" class="read-link">Read More</a>
-      <a id="readLessLink" class="read-link" style="display: none;">Read Less</a> -->
-      <a id="applyNowButton" href="mailto:#" class="apply-button">Apply Now</a>
-    </div>
 
-    <div class="job-card" data-aos="fade-down-right" data-aos-delay="1200">
-      <h2>Electrical Engineer</h2>
-      <p>We are hiring Electrical Engineers to create innovative solutions for our clients' electrical systems.Nostrud
-        tempor elit nisi anim reprehenderit enim adipisicing exercitation veniam nostrud consequat do duis duis.</p>
-      <!-- <a id="readMoreLink" class="read-link">Read More</a>
-      <a id="readLessLink" class="read-link" style="display: none;">Read Less</a> -->
-      <a id="applyNowButton" href="mailto:#" class="apply-button">Apply Now</a>
-    </div>
+
 
 
   </section>
@@ -408,10 +459,8 @@
 
       <div class="pswp__ui pswp__ui--hidden">
         <div class="pswp__top-bar">
-          <div class="pswp__counter"></div><button class="pswp__button pswp__button--close"
-            title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button>
-          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button
-            class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button>
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
           <div class="pswp__preloader">
             <div class="pswp__preloader__icn">
               <div class="pswp__preloader__cut">
@@ -455,11 +504,18 @@
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
   <script>
     function scrollToElement(elementId) {
       var element = document.getElementById(elementId);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({
+          behavior: 'smooth'
+        });
       }
     }
   </script>
@@ -470,7 +526,7 @@
     const readMoreLink = document.getElementById('readMoreLink');
     const readLessLink = document.getElementById('readLessLink');
     const applyNowButton = document.getElementById('applyNowButton');
-    const maxCharacters = 250;
+    const maxCharacters = 150;
 
     const jobContent = jobDescription.textContent;
 
@@ -480,19 +536,43 @@
 
       readMoreLink.style.display = 'block';
 
-      readMoreLink.addEventListener('click', function () {
+      readMoreLink.addEventListener('click', function() {
         jobDescription.textContent = jobContent;
         readMoreLink.style.display = 'none';
         readLessLink.style.display = 'block';
       });
 
-      readLessLink.addEventListener('click', function () {
+      readLessLink.addEventListener('click', function() {
         jobDescription.textContent = truncatedContent;
         readLessLink.style.display = 'none';
         readMoreLink.style.display = 'block';
       });
     } else {
       applyNowButton.style.display = 'block';
+    }
+  </script>
+
+  <script>
+    // Get the modal and button elements
+    var modal = document.getElementById("jobModal");
+    var openModalButton = document.getElementById("openModalButton");
+    var closeModal = document.getElementById("closeModal");
+
+    // Open the modal when the button is clicked
+    openModalButton.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // Close the modal when the close button is clicked
+    closeModal.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // Close the modal when clicking outside of it
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
     }
   </script>
 

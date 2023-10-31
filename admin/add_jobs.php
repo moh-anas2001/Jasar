@@ -337,7 +337,7 @@ if ($result->num_rows > 0) {
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Experience</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name="experience"
+                                        <input type="number" name="experience"
                                             placeholder="Enter the Experience (for ex: 0-2 years or 2+ years...)"
                                             required class="form-control p-0 border-0">
                                     </div>
@@ -551,7 +551,7 @@ if ($result->num_rows > 0) {
    
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-    <script>
+    <!-- <script>
 
         $('#summernote').summernote({
             placeholder: 'please enter the project description',
@@ -560,7 +560,7 @@ if ($result->num_rows > 0) {
             height: 300,
             
         });
-    </script>     
+    </script>      -->
 </body>
 
 </html>

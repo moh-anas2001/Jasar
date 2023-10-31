@@ -216,7 +216,7 @@ if (isset($_GET['id'])) {
    
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-    <script>
+    <!-- <script>
         $('#summernote').summernote({
             placeholder: 'please enter the project description',
 
@@ -224,7 +224,7 @@ if (isset($_GET['id'])) {
             height: 300,
             
         });
-    </script>     
+    </script>      -->
 
 </body>
 

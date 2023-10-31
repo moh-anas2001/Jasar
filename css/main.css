@@ -1393,11 +1393,13 @@ input::-moz-focus-inner {
 
 .subhead {
     font-family: "montserrat-bold", sans-serif;
-    font-size: 1.7rem;
+    font-size: 2.7rem;
     line-height: 1.333;
     text-transform: uppercase;
     letter-spacing: .25rem;
-    color: #00FF23;
+    background:linear-gradient( to right, #005079, #4a94f7, #06ba5dc9, #4c8267, #fba01c );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-top: 0;
     margin-bottom: 0;
     /* display: flex;

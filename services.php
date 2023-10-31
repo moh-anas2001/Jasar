@@ -123,7 +123,12 @@
   padding-right: 15px;
   padding-left: 15px;
   padding-bottom: 80px;">
-    <h2 class="tit6 t-center" style="color: #00FF23; font-size: 76px; font-weight: bold;  font-family:'montserrat-bold', serif;" data-aos="fade-up" data-aos-delay="1000">
+    <h2 class="tit6 t-center" style="background: linear-gradient( to right, #005079, #4a94f7, #06ba5dc9, #4c8267, #fba01c );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 60px;
+      font-weight: 600;
+      font-family: Poppins, sans-serif;" data-aos="fade-up" data-aos-delay="1000">
       Services
 
     </h2>
