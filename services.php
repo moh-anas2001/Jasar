@@ -124,7 +124,8 @@
   padding-left: 15px;
   padding-bottom: 80px;">
     <h2 class="tit6 t-center" style="background: linear-gradient( to right, #005079, #4a94f7, #06ba5dc9, #4c8267, #fba01c );
-      -webkit-background-clip: text;
+      -webkit-background-clip: text; 
+      background-clip:text;
       -webkit-text-fill-color: transparent;
       font-size: 60px;
       font-weight: 600;

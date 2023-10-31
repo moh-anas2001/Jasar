@@ -206,6 +206,9 @@
       border: 1px solid #000;
       max-width: 90%;
       /* Set a maximum width for the modal */
+       /* Set a fixed height for the modal content */
+    max-height: 90%;
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
     }
 
     /* Close Button Styles */
@@ -213,6 +216,7 @@
       position: absolute;
       top: 10px;
       right: 20px;
+      font-size: 24px;
       cursor: pointer;
     }
 
@@ -228,6 +232,7 @@
       max-width: 35%;
       transition: background-color 0.3s;
       /* Add a transition for smooth color change */
+      /* width: 50%; */
 
     }
 
@@ -264,7 +269,8 @@
         padding: 20px;
         border: 1px solid #000;
         max-width: 90%;
-        min-width: 100%
+        min-width: 100%;
+        max-height: 65%;
           /* Set a maximum width for the modal */
       }
 
@@ -291,6 +297,7 @@
   padding-bottom: 80px;">
     <h2 class="tit6 t-center" style="background:linear-gradient( to right, #005079, #4a94f7, #06ba5dc9, #4c8267, #fba01c );
       -webkit-background-clip: text;
+      background-clip:text;
       -webkit-text-fill-color: transparent;
       font-size: 60px;
       font-weight: 600;
@@ -327,50 +334,53 @@
     require_once('admin/includes/database.php');
 
     // Retrieve job listings from the database
-    $sql = "SELECT id, job_title, job_code, job_description, experience, posted, stat FROM jobs ORDER BY created_at DESC";
+    $sql = "SELECT id, job_title, job_code, job_description, experience, posted, stat, roles FROM jobs ORDER BY created_at DESC";
     $result = $connect->query($sql);
 
     if ($result->num_rows > 0) {
-      $counter = 0; // Initialize a counter variable
-      while ($row = $result->fetch_assoc()) {
+        $counter = 0; // Initialize a counter variable
 
-        // Calculate the data-aos-delay dynamically
-        $dataAosDelay = 1000 + ($counter % 4) * 100;
+        while ($row = $result->fetch_assoc()) {
 
-        echo '<div class="job-card" data-aos="fade-down-right" data-aos-delay="' . $dataAosDelay . '">
-        <h2>' . $row["job_title"] . '</h2>
-        <p id="jobDescription">' . $row["job_description"] . '</p>
-        <p><strong>Experience:</strong>  ' . $row["experience"] . ' years </p>';
+            // Calculate the data-aos-delay dynamically
+            $dataAosDelay = 1000 + ($counter % 4) * 100;
 
-        $formattedDate = date('d-m-Y', strtotime($row["posted"]));
+            echo '<div class="job-card" data-aos="fade-down-right" data-aos-delay="' . $dataAosDelay . '">
+                <h2>' . $row["job_title"] . '</h2>
+                <p id="jobDescription">' . $row["job_description"] . '</p>
+                <p><strong>Experience:</strong>  ' . $row["experience"] . ' years </p>';
 
-        echo '<p><strong>Posted on:</strong> ' . $formattedDate . '</p>
-        <a  class="" id="openModalButton">Apply</a>
-    </div>';
+            $formattedDate = date('d-m-Y', strtotime($row["posted"]));
 
-        // Modal
-        echo '<div class="modal" id="jobModal">
-        <div class="modal-content">
-            <span class="close" id="closeModal">&times;</span>
-            <h2>' . $row["job_title"] . '</h2>
-            <p><strong>Roles and Responsibilities:</strong></p>
-            <p>' . $row["job_description"] . '</p>
-            <!-- Add other job details here -->
-            <a href="mailto:sample@ex.com" class="apply-button">Apply</a>
-        </div>
-    </div>';
+            echo '<p><strong>Posted on:</strong> ' . $formattedDate . '</p>
+                <a class="openModalButton" data-target="jobModal' . $row["id"] . '">Apply</a>
+            </div>';
 
+            // Modal
+            echo '<div class="modal" id="jobModal' . $row["id"] . '">
+                <div class="modal-content">
+                    <span class="close" id="closeModal' . $row["id"] . '">&times;</span>
+                    <h2>' . $row["job_title"] . '</h2>
+                    <p>' . $row["job_description"] . '</p>
+                    <p><strong>Roles and Responsibilities:</strong></p>
+                    <p>' . $row["roles"] . '</p>
+                    <!-- Add other job details here -->
+                    <p><strong>Experience:</strong>  ' . $row["experience"] . ' years </p>
+                    <p><strong>Posted on:</strong> ' . $formattedDate . '</p>
+                    <p><strong>Status :</strong> ' . $row["stat"] . '</p>
+                    <a href="mailto:sample@ex.com" class="apply-button">Apply</a>
+                </div>
+            </div>';
 
-
-
-        $counter++; // Increment the counter
-      }
+            $counter++; // Increment the counter
+        }
     } else {
-      echo "";
+        echo "";
     }
 
     $connect->close();
     ?>
+</section>
 
 
 
@@ -552,29 +562,37 @@
     }
   </script>
 
-  <script>
-    // Get the modal and button elements
-    var modal = document.getElementById("jobModal");
-    var openModalButton = document.getElementById("openModalButton");
-    var closeModal = document.getElementById("closeModal");
+<script>
+    // Get all elements with the class "openModalButton"
+    var openModalButtons = document.querySelectorAll(".openModalButton");
 
-    // Open the modal when the button is clicked
-    openModalButton.onclick = function() {
-      modal.style.display = "block";
-    }
+    openModalButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            // Get the data-target attribute to determine which modal to open
+            var targetModalId = this.getAttribute("data-target");
 
-    // Close the modal when the close button is clicked
-    closeModal.onclick = function() {
-      modal.style.display = "none";
-    }
+            // Get the modal and close button elements based on the target modal ID
+            var modal = document.getElementById(targetModalId);
+            var closeModal = modal.querySelector(".close");
 
-    // Close the modal when clicking outside of it
-    window.onclick = function(event) {
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    }
-  </script>
+            // Open the modal when the button is clicked
+            modal.style.display = "block";
+
+            // Close the modal when the close button is clicked
+            closeModal.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // Close the modal when clicking outside of it
+            window.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+    });
+</script>
+
 
 
 </body>
