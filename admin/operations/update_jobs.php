@@ -16,15 +16,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $job_title = $_POST["job_title"];
     $job_code = $_POST["job_code"];
     $job_description = $_POST["job_description"];
+    $roles = $_POST["roles"];
     $experience = $_POST["experience"];
     $posted = $_POST["posted"];
     $expire = $_POST["delete_date"];
     $stat = $_POST["stat"];
 
     // Prepare and execute the SQL query to update data
-    $sql = "UPDATE jobs SET job_title=?, job_code=?, job_description=?, experience=?, posted=?, delete_date=?, stat = ? WHERE id=?";
+    $sql = "UPDATE jobs SET job_title=?, job_code=?, job_description=?, roles=?, experience=?, posted=?, delete_date=?, stat = ? WHERE id=?";
     $stmt = $connect->prepare($sql);
-    $stmt->bind_param("sssssssi", $job_title, $job_code, $job_description, $experience, $posted, $expire, $stat, $job_id);
+    $stmt->bind_param("ssssssssi", $job_title, $job_code, $job_description, $roles, $experience, $posted, $expire, $stat, $job_id);
     $stmt->execute();
     $stmt->close();
 
@@ -169,9 +170,17 @@ if (isset($_GET['id'])) {
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Job Description</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <textarea  id="summernote" rows="5" class="form-control p-0 border-0" name="job_description"
+                                    <textarea rows="5" class="form-control p-0 border-0" name="job_description"
                                         placeholder="Enter the Job Description"
                                         required><?php echo $job['job_description']; ?></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label class="col-md-12 p-0">Roles and Responsibilitie</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <textarea  id="summernote" rows="5" class="form-control p-0 border-0" name="roles"
+                                        placeholder="Enter the Roles and Responsibilities"
+                                        ><?php echo $job['roles']; ?></textarea>
                                 </div>
                             </div>
                             <div class="form-group mb-4">
@@ -180,7 +189,7 @@ if (isset($_GET['id'])) {
                                     <label class="radio-inline">
                                         <input type="radio" name="stat" value="Open" required <?php if ($job['stat'] === 'open')echo 'checked'; ?>>Open</label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="stat" value="Close" <?php if ($job['stat'] === 'clos')echo 'checked'; ?>>Close</label>
+                                        <input type="radio" name="stat" value="Close" <?php if ($job['stat'] === 'close')echo 'checked'; ?>>Close</label>
                                 </div>
                             </div>
 
@@ -212,11 +221,14 @@ if (isset($_GET['id'])) {
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> 
 
     
+
+    <script src="https://cdn.tiny.cloud/1/es0uhzq4hm1mrbc70ro35uk21jz2vakvqfb6jv9ytyls61h1/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
    
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
     <script>
+
         $('#summernote').summernote({
             placeholder: 'please enter the project description',
 
@@ -224,7 +236,13 @@ if (isset($_GET['id'])) {
             height: 300,
             
         });
-    </script>     
+    </script>      -->
+
+    <script>
+      tinymce.init({
+        selector: '#summernote'
+      });
+    </script>
 
 </body>
 

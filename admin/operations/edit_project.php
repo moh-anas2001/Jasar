@@ -109,7 +109,7 @@
                 echo "<div class='form-group mb-4'>";
                 echo "<label class='col-md-12 p-0'>Project Description</label>";
                 echo "<div class='col-md-12 border-bottom p-0'>";
-                echo "<textarea id='summernote' rows='5' name='description' placeholder='Enter Description' required class='form-control p-0 border-0'>" . $row["description"] . "</textarea>";
+                echo "<textarea  rows='5' name='description' placeholder='Enter Description' required class='form-control p-0 border-0'>" . $row["description"] . "</textarea>";
                 echo "</div>";
                 echo "</div>";
                 echo "<input type='hidden' name='project_id' value='" . $row["id"] . "'>";

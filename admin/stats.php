@@ -299,10 +299,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Hours of Support :</label>
+                                    <label class="col-md-12 p-0">Years of Experiece:</label>
                                     <div class="col-md-12 border-bottom p-0">
                                         <input type="number" name="experience" id="experience"
-                                            placeholder="Enter the Hours of Support" required
+                                            placeholder="Enter Years of experience" required
                                             class="form-control p-0 border-0">
                                     </div>
                                 </div>

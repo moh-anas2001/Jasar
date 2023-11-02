@@ -320,7 +320,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Project Description</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <textarea id="summernote" rows="5" class="form-control p-0 border-0" name="description" placeholder="Enter Project Description"></textarea>
+                                        <textarea  rows="5" class="form-control p-0 border-0" name="description" placeholder="Enter Project Description"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
