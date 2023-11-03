@@ -285,13 +285,13 @@
           <div>
             <label for="firstname" class="formbold-form-label"> First Name </label>
             <input type="text" name="firstname" id="firstname" placeholder="Your first name"
-              class="formbold-form-input" />
+              class="formbold-form-input"required />
           </div>
 
           <div>
             <label for="lastname" class="formbold-form-label"> Last Name </label>
             <input type="text" name="lastname" id="lastname" placeholder="Your last name" class="formbold-form-input"
-              aria-required="false" />
+            required />
           </div>
         </div>
 
@@ -304,7 +304,7 @@
           <div>
             <label class="formbold-form-label">Gender</label>
 
-            <select class="formbold-form-input" name="occupation" id="occupation">
+            <select class="formbold-form-input" name="occupation" id="occupation" required >
               <option value="male">Male</option>
               <option value="female">Female</option>
               <option value="others">Others</option>
@@ -317,7 +317,7 @@
 
           <div>
             <input type="text" name="areacode" id="areacode" placeholder="Area code"
-              class="formbold-form-input formbold-w-45" />
+              class="formbold-form-input formbold-w-45" required  />
 
             <input type="text" name="phone" id="phone" placeholder="Phone number" class="formbold-form-input" />
           </div>
@@ -325,18 +325,18 @@
 
         <div class="formbold-mb-3">
           <label for="age" class="formbold-form-label"> Applying for Position: </label>
-          <input type="text" name="age" id="age" class="formbold-form-input" />
+          <input type="text" name="age" id="age" class="formbold-form-input" required />
         </div>
 
         <div class="formbold-mb-3">
           <label for="job-code" class="formbold-form-label">Job Code </label>
-          <input type="text" name="job-code" id="job-code" class="formbold-form-input" />
+          <input type="text" name="job-code" id="job-code" class="formbold-form-input" required />
         </div>
-
+<!-- 
         <div class="formbold-mb-3">
           <label for="dob" class="formbold-form-label"> When can you start? </label>
           <input type="date" name="dob" id="dob" class="formbold-form-input" />
-        </div>
+        </div> -->
 
         <!-- <div class="formbold-mb-3">
           <label for="address" class="formbold-form-label"> Address </label>
@@ -373,7 +373,7 @@
           <label for="upload" class="formbold-form-label">
             Upload Resume
           </label>
-          <input type="file" name="upload" id="upload" class="formbold-form-file" />
+          <input type="file" name="upload" id="upload" required  class="formbold-form-file" />
         </div>
 
         <button class="formbold-btn">Apply Now</button>
@@ -418,7 +418,7 @@
       </div>
 
     </div> <!-- end footer-bottom -->
-
+ 
   </footer> <!-- end footer -->
 
 

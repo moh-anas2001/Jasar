@@ -888,15 +888,15 @@
                             PO Box:186302,<br> Al Nahda-1,<br>Dubai, UAE <br>
 
                         </p>
-                    </div>
+
+                   </div>
 
                     <div class="cinfo">
                         <h5>Email Us At</h5>
                         <p>
 
                             info@jasaruae.com
-                            <br>
-                            info@Just Fixsite.com
+                           
                         </p>
                     </div>
 
@@ -907,6 +907,8 @@
                             Mobile: 055-6601516
                         </p>
                     </div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.6796840657253!2d55.21394157891324!3d25.04494228065552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x497749eea0cb057b%3A0xc6a0bcd6eb614725!2sJust%20fix%20technical%20Sevices!5e0!3m2!1sen!2sin!4v1698987193211!5m2!1sen!2sin" width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
 
                     <ul class="contact-social">
                         <li>
