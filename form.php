@@ -278,9 +278,29 @@
 
   <div class="formbold-main-wrapper">
 
-    <div class="formbold-form-wrapper">
+    <?php
+    require_once('admin/includes/database.php');
+
+    // Retrieve the job details based on the job ID from the URL parameter
+    $job_id = $_GET['job_id'];
+    $sql = "SELECT * FROM jobs WHERE id = ?";
+    $stmt = $connect->prepare($sql);
+    $stmt->bind_param("i", $job_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+      $row = $result->fetch_assoc();
+      $job_title = $row["job_title"];
+      $job_code = $row["job_code"];
+      $job_description = $row["job_description"];
+      $experience = $row["experience"];
+      $posted = date('F d, Y', strtotime($row["posted"]));
+      $stat = $row["stat"];
+
+      echo '<div class="formbold-form-wrapper">
       <!-- <img src="images/bg-2.png"> -->
-      <form method="POST" action="/" enctype="multipart/form-data">
+      <form method="POST" action="" enctype="multipart/form-data">
         <div class="formbold-input-flex">
           <div>
             <label for="firstname" class="formbold-form-label"> First Name </label>
@@ -304,7 +324,7 @@
           <div>
             <label class="formbold-form-label">Gender</label>
 
-            <select class="formbold-form-input" name="occupation" id="occupation" required >
+            <select class="formbold-form-input" name="occupation" id="occupation" >
               <option value="male">Male</option>
               <option value="female">Female</option>
               <option value="others">Others</option>
@@ -313,61 +333,20 @@
         </div>
 
         <div class="formbold-mb-3 formbold-input-wrapp">
-          <label for="phone" class="formbold-form-label"> Phone </label>
-
-          <div>
-            <input type="text" name="areacode" id="areacode" placeholder="Area code"
-              class="formbold-form-input formbold-w-45" required  />
-
-            <input type="text" name="phone" id="phone" placeholder="Phone number" class="formbold-form-input" />
+          <label for="phone" class="formbold-form-label" > Phone </label>
+          <input type="text" name="phone" id="phone"   class="formbold-form-input" required  />
           </div>
-        </div>
+          
 
         <div class="formbold-mb-3">
           <label for="age" class="formbold-form-label"> Applying for Position: </label>
-          <input type="text" name="age" id="age" class="formbold-form-input" required />
+          <input type="text" name="age" id="age"value="' . $job_title . '"  class="formbold-form-input" required readonly />
         </div>
 
         <div class="formbold-mb-3">
           <label for="job-code" class="formbold-form-label">Job Code </label>
-          <input type="text" name="job-code" id="job-code" class="formbold-form-input" required />
+          <input type="text" name="job-code" id="job-code"  value="' . $job_code . '" class="formbold-form-input" required readonly />
         </div>
-<!-- 
-        <div class="formbold-mb-3">
-          <label for="dob" class="formbold-form-label"> When can you start? </label>
-          <input type="date" name="dob" id="dob" class="formbold-form-input" />
-        </div> -->
-
-        <!-- <div class="formbold-mb-3">
-          <label for="address" class="formbold-form-label"> Address </label>
-  
-          <input
-            type="text"
-            name="address"
-            id="address"
-            placeholder="Street address"
-            class="formbold-form-input formbold-mb-3"
-          />
-          <input
-            type="text"
-            name="address2"
-            id="address2"
-            placeholder="Street address line 2"
-            class="formbold-form-input"
-          />
-        </div> -->
-
-        <!-- <div class="formbold-mb-3">
-          <label for="message" class="formbold-form-label">
-            Cover Letter
-          </label>
-          <textarea
-            rows="6"
-            name="message"
-            id="message"
-            class="formbold-form-input"
-          ></textarea>
-        </div> -->
 
         <div class="formbold-form-file-flex">
           <label for="upload" class="formbold-form-label">
@@ -376,9 +355,16 @@
           <input type="file" name="upload" id="upload" required  class="formbold-form-file" />
         </div>
 
-        <button class="formbold-btn">Apply Now</button>
+        <button type="submit" class="formbold-btn">Apply Now</button>
       </form>
-    </div>
+    </div>';
+    } else {
+      echo "Job not found";
+    }
+
+    $stmt->close(); // Close the prepared statement
+    $connect->close(); // Close the database connection
+    ?>
   </div>
 
 
@@ -418,7 +404,7 @@
       </div>
 
     </div> <!-- end footer-bottom -->
- 
+
   </footer> <!-- end footer -->
 
 
@@ -437,10 +423,8 @@
 
       <div class="pswp__ui pswp__ui--hidden">
         <div class="pswp__top-bar">
-          <div class="pswp__counter"></div><button class="pswp__button pswp__button--close"
-            title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button>
-          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button
-            class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button>
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
           <div class="pswp__preloader">
             <div class="pswp__preloader__icn">
               <div class="pswp__preloader__cut">
@@ -516,13 +500,13 @@
 
       readMoreLink.style.display = 'block';
 
-      readMoreLink.addEventListener('click', function () {
+      readMoreLink.addEventListener('click', function() {
         jobDescription.textContent = jobContent;
         readMoreLink.style.display = 'none';
         readLessLink.style.display = 'block';
       });
 
-      readLessLink.addEventListener('click', function () {
+      readLessLink.addEventListener('click', function() {
         jobDescription.textContent = truncatedContent;
         readLessLink.style.display = 'none';
         readMoreLink.style.display = 'block';
@@ -536,8 +520,8 @@
     // Get all elements with the class "openModalButton"
     var openModalButtons = document.querySelectorAll(".openModalButton");
 
-    openModalButtons.forEach(function (button) {
-      button.addEventListener("click", function () {
+    openModalButtons.forEach(function(button) {
+      button.addEventListener("click", function() {
         // Get the data-target attribute to determine which modal to open
         var targetModalId = this.getAttribute("data-target");
 
@@ -549,12 +533,12 @@
         modal.style.display = "block";
 
         // Close the modal when the close button is clicked
-        closeModal.onclick = function () {
+        closeModal.onclick = function() {
           modal.style.display = "none";
         }
 
         // Close the modal when clicking outside of it
-        window.onclick = function (event) {
+        window.onclick = function(event) {
           if (event.target === modal) {
             modal.style.display = "none";
           }

@@ -368,7 +368,7 @@
                     <p><strong>Experience:</strong>  ' . $row["experience"] . ' years </p>
                     <p><strong>Posted on:</strong> ' . $formattedDate . '</p>
                     <p><strong>Status :</strong> ' . $row["stat"] . '</p>
-                    <a href="mailto:sample@ex.com" class="apply-button">Apply</a>
+                    <a href="form.php?job_id=' . $row["id"] . '" class="apply-button">Apply</a>
                 </div>
             </div>';
 
