@@ -391,7 +391,7 @@
                     include('admin/includes/database.php');
 
                     // Define an array of project IDs that you want to retrieve
-                    $projectIdsToRetrieve = [1,2,3,4,5,6,7,8]; // Replace with the desired project IDs
+                    $projectIdsToRetrieve = [1, 2, 3, 4, 5, 6, 7, 8]; // Replace with the desired project IDs
 
                     // Create a comma-separated string of project IDs
                     $projectIdsString = implode(",", $projectIdsToRetrieve);
@@ -819,98 +819,103 @@
     ================================================== -->
     <section id="contact" class="s-contact">
 
+
         <div class="overlay"></div>
 
+        <div>
 
-        <div class="row section-header" data-aos="fade-up">
-            <div class="col-full">
-                <h3 class="subhead">Contact Us</h3>
-                <h1 class="display-2 display-2--light">Reach out for a new project or just say hello</h1>
+            <div class="row section-header" data-aos="fade-up">
+                <div class="col-full">
+                    <h3 class="subhead">Contact Us</h3>
+                    <h1 class="display-2 display-2--light">Reach out for a new project or just say hello</h1>
+                </div>
             </div>
-        </div>
 
-        <div class="row contact-content" data-aos="fade-up">
 
-            <div class="contact-primary">
+            <div class="row contact-content" data-aos="fade-up">
 
-                <h3 class="h6">Send Us A Message</h3>
+                <div class="contact-primary">
 
-                <form name="contactForm" id="contactForm" method="post" action="https://gmail.us21.list-manage.com/subscribe/post?u=0868ef99e90760b6b9886836e&amp;id=e2ae6c3a5c&amp;f_id=0002ebe6f0" nova>
-                    <fieldset>
+                    <h3 class="h6">Send Us A Message</h3>
 
-                        <div class="form-field">
-                            <input name="contactName" type="text" id="contactName" placeholder="Your Name" value="" minlength="2" required="" aria-required="true" class="full-width">
-                        </div>
-                        <div class="form-field">
-                            <input name="contactEmail" type="email" id="contactEmail" placeholder="Your Email" value="" required="" aria-required="true" class="full-width">
-                        </div>
-                        <div class="form-field">
-                            <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width">
-                        </div>
-                        <div class="form-field">
-                            <textarea name="contactMessage" id="contactMessage" placeholder="Your Message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
-                        </div>
-                        <div class="form-field">
-                            <button class="full-width btn--primary">Submit</button>
-                            <div class="submit-loader">
-                                <div class="text-loader">Sending...</div>
-                                <div class="s-loader">
-                                    <div class="bounce1"></div>
-                                    <div class="bounce2"></div>
-                                    <div class="bounce3"></div>
+                    <form name="contactForm" id="contactForm" method="post" action="">
+                        <fieldset>
+
+                            <div class="form-field">
+                                <input name="contactName" type="text" id="Name" placeholder="Your Name" value="" minlength="2" required="" aria-required="true" class="full-width">
+                            </div>
+                            <div class="form-field">
+                                <input name="contactEmail" type="email" id="Email" placeholder="Your Email" value="" required="" aria-required="true" class="full-width">
+                            </div>
+                            <div class="form-field">
+                                <input name="contactSubject" type="text" id="subject" placeholder="Subject" value="" class="full-width">
+                            </div>
+                            <div class="form-field">
+                                <textarea name="contactMessage" id="message" placeholder="Your Message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
+                            </div>
+                            <div class="form-field">
+                                <button class="full-width btn--primary" type="button" onclick="Send()">Submit</button>
+                                <div class="submit-loader">
+                                    <div class="text-loader">Sending...</div>
+                                    <div class="s-loader">
+                                        <div class="bounce1"></div>
+                                        <div class="bounce2"></div>
+                                        <div class="bounce3"></div>
+                                    </div>
                                 </div>
                             </div>
+
+                        </fieldset>
+                    </form>
+
+                    <!-- contact-warning -->
+                    <div class="message-warning">
+                        Something went wrong. Please try again.
+                    </div>
+
+                    <!-- contact-success -->
+                    <div class="message-success">
+                        Your message was sent, thank you!<br>
+                    </div>
+
+                </div> <!-- end contact-primary -->
+
+
+                <div class="contact-secondary">
+                    <div class="contact-info">
+
+                        <h3 class="h6 hide-on-fullwidth">Contact Info</h3>
+
+                        <div class="cinfo">
+
+
+                            <h5>Where to Find Us</h5>
+                            <p>
+                                PO Box:186302,<br> Al Nahda-1,<br>Dubai, UAE <br>
+
+                            </p>
+
                         </div>
 
-                    </fieldset>
-                </form>
+                        <div class="cinfo">
+                            <h5>Email Us At</h5>
+                            <p>
 
-                <!-- contact-warning -->
-                <div class="message-warning">
-                    Something went wrong. Please try again.
-                </div>
+                                info@jasaruae.com
 
-                <!-- contact-success -->
-                <div class="message-success">
-                    Your message was sent, thank you!<br>
-                </div>
+                            </p>
+                        </div>
 
-            </div> <!-- end contact-primary -->
+                        <div class="cinfo">
+                            <h5>Call Us At</h5>
+                            <p>
+                                <!-- Phone: (+63) 555 1212<br> -->
+                                Mobile: 055-6601516
+                            </p>
+                        </div>
 
-            <div class="contact-secondary">
-                <div class="contact-info">
 
-                    <h3 class="h6 hide-on-fullwidth">Contact Info</h3>
-
-                    <div class="cinfo">
-                        <h5>Where to Find Us</h5>
-                        <p>
-                            PO Box:186302,<br> Al Nahda-1,<br>Dubai, UAE <br>
-
-                        </p>
-
-                   </div>
-
-                    <div class="cinfo">
-                        <h5>Email Us At</h5>
-                        <p>
-
-                            info@jasaruae.com
-                           
-                        </p>
-                    </div>
-
-                    <div class="cinfo">
-                        <h5>Call Us At</h5>
-                        <p>
-                            <!-- Phone: (+63) 555 1212<br> -->
-                            Mobile: 055-6601516
-                        </p>
-                    </div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.6796840657253!2d55.21394157891324!3d25.04494228065552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x497749eea0cb057b%3A0xc6a0bcd6eb614725!2sJust%20fix%20technical%20Sevices!5e0!3m2!1sen!2sin!4v1698987193211!5m2!1sen!2sin" width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    
-
-                    <ul class="contact-social">
+                        <!-- <ul class="contact-social">
                         <li>
                             <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         </li>
@@ -925,14 +930,26 @@
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        </li>
-                    </ul> <!-- end contact-social -->
+                        </li> 
+                    </ul> -->
+                        <!-- end contact-social -->
 
-                </div> <!-- end contact-info -->
-            </div> <!-- end contact-secondary -->
+                    </div> <!-- end contact-info -->
+                </div> <!-- end contact-secondary -->
 
-        </div> <!-- end contact-content -->
 
+            </div> <!-- end contact-content -->
+            <div class="row contact-content" data-aos="fade-up">
+
+                <!-- Background Content -->
+                <div class="background-content" style="background-color: rgba(0, 0, 0, 0.2); color: rgba(255, 255, 255, 0.4); padding-top: 6rem; padding-bottom: 6rem;">
+                    <!-- Add your background content here -->
+                </div>
+
+                <!-- Map Overlay -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.6796840657253!2d55.21394157891324!3d25.04494228065552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x497749eea0cb057b%3A0xc6a0bcd6eb614725!2sJust%20fix%20technical%20Sevices!5e0!3m2!1sen!2sin!4v1698987193211!5m2!1sen!2sin&output=embed&style=feature:all|element:labels|visibility:off|style:element:geometry|lightness:20|saturation:-80" style="border: 1px; position: absolute; width: 100%; height: 100%; top: 0; left: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
     </section> <!-- end s-contact -->
 
 
@@ -1049,7 +1066,50 @@
     <script src="js/main.js"></script>
 
 
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+
+    <script>
+        function Send() {
+
+            var senderEmail = "anas@dacentrictechnologies.com";
+            var name = document.getElementById("Name").value;
+            var email = document.getElementById("Email").value;
+            var sub = document.getElementById("subject").value;
+            var mess = document.getElementById("message").value;
+
+
+            var body = "Name: " + name + "<br/> Email:" + email + "<br/> Subject:" + sub + "<br/> Message:" + mess;
+
+            console.log(body);
+            Email.send({
+
+                SecureToken: "bfd1dc7e-3f3e-48d4-bc04-b73986851d65",
+                To: senderEmail,
+                From: senderEmail,
+                Subject: sub,
+                Body: body
+            }).then(
+                message => {
+                    if (message == 'OK') {
+
+                        Swal.fire(
+                            'Recieved',
+                            'Our team will contact you soon',
+                            'success'
+                        )
+                    } else {
+
+                        Swal.fire("Something went Wrong", "Your Data is not Received", "error");
+                    }
+                }
+            );
+
+
+
+        }
+    </script>
 
     <script>
         function scrollToElement(elementId) {

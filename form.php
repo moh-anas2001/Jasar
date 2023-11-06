@@ -183,6 +183,32 @@
     .formbold-w-45 {
       width: 45%;
     }
+
+    .email-template {
+      font-family: Arial, sans-serif;
+      border: 2px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #f8f8f8;
+      text-align: left;
+      margin: 20px auto;
+      width: 80%;
+    }
+
+    .email-template h1 {
+      font-size: 20px;
+      text-align: center;
+      margin: 0;
+    }
+
+    .email-template p {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .email-template span {
+      font-weight: bold;
+    }
   </style>
 
 
@@ -274,6 +300,16 @@
       Careers
     </h2>
   </section>
+  <div class="email-template" style="display: none;">
+    <h1>Contact Information</h1>
+    <p>First Name: <span id="first-name"></span></p>
+    <p>Last Name: <span id="last-name"></span></p>
+    <p>Email: <span id="email"></span></p>
+    <p>Phone: <span id="phone"></span></p>
+    <p>Title: <span id="title"></span></p>
+    <p>Job Code: <span id="job-code"></span></p>
+    <p>Gender: <span id="gender"></span></p>
+  </div>
 
 
   <div class="formbold-main-wrapper">
@@ -304,27 +340,25 @@
         <div class="formbold-input-flex">
           <div>
             <label for="firstname" class="formbold-form-label"> First Name </label>
-            <input type="text" name="firstname" id="firstname" placeholder="Your first name"
-              class="formbold-form-input"required />
+            <input type="text" name="firstname" id="firstname" placeholder="Your first name" class="formbold-form-input" required />
           </div>
 
           <div>
             <label for="lastname" class="formbold-form-label"> Last Name </label>
-            <input type="text" name="lastname" id="lastname" placeholder="Your last name" class="formbold-form-input"
-            required />
+            <input type="text" name="lastname" id="lastname" placeholder="Your last name" class="formbold-form-input" required />
           </div>
         </div>
 
         <div class="formbold-input-flex">
           <div>
             <label for="email" class="formbold-form-label"> Email </label>
-            <input type="email" name="email" id="email" placeholder="example@email.com" class="formbold-form-input" />
+            <input type="email" name="email" id="Email" placeholder="example@email.com" class="formbold-form-input" required />
           </div>
 
           <div>
             <label class="formbold-form-label">Gender</label>
 
-            <select class="formbold-form-input" name="occupation" id="occupation" >
+            <select class="formbold-form-input" name="gender" id="Gender" >
               <option value="male">Male</option>
               <option value="female">Female</option>
               <option value="others">Others</option>
@@ -334,28 +368,28 @@
 
         <div class="formbold-mb-3 formbold-input-wrapp">
           <label for="phone" class="formbold-form-label" > Phone </label>
-          <input type="text" name="phone" id="phone"   class="formbold-form-input" required  />
+          <input type="text" name="phone" id="Phone"  placeholder="+123 45676543" class="formbold-form-input" required  />
           </div>
           
 
         <div class="formbold-mb-3">
           <label for="age" class="formbold-form-label"> Applying for Position: </label>
-          <input type="text" name="age" id="age"value="' . $job_title . '"  class="formbold-form-input" required readonly />
+          <input type="text" name="title" id="Title" value="' . $job_title . '"  class="formbold-form-input" required readonly />
         </div>
 
         <div class="formbold-mb-3">
           <label for="job-code" class="formbold-form-label">Job Code </label>
-          <input type="text" name="job-code" id="job-code"  value="' . $job_code . '" class="formbold-form-input" required readonly />
+          <input type="text" name="job-code" id="Job-code"  value="' . $job_code . '" class="formbold-form-input" required readonly />
         </div>
 
         <div class="formbold-form-file-flex">
           <label for="upload" class="formbold-form-label">
             Upload Resume
           </label>
-          <input type="file" name="upload" id="upload" required  class="formbold-form-file" />
+          <input type="file" name="upload" id="attachment" required  class="formbold-form-file" accept=".pdf,.docx" />
         </div>
 
-        <button type="submit" class="formbold-btn">Apply Now</button>
+        <button class="full-width btn--primary" type="button" onclick="Send()">Apply Now</button>
       </form>
     </div>';
     } else {
@@ -472,6 +506,187 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- <script>
+    function Send() {
+      var senderEmail = "anas@dacentrictechnologies.com";
+      var firstname = document.getElementById("firstname").value;
+      var lastname = document.getElementById("lastname").value;
+      var email = document.getElementById("Email").value;
+      var gender = document.getElementById("Gender").value;
+      var phone = document.getElementById("Phone").value;
+      var title = document.getElementById("Title").value;
+      var jobCode = document.getElementById("Job-code").value;
+
+      var attachmentInput = document.getElementById("attachment");
+
+      var body = `
+        <html>
+        <head>
+          <link rel="stylesheet" type="text/css" href="style.css">
+        </head>
+        <body>
+          <div class="email-template">
+            <h1>Applicant details</h1>
+            <p>First Name: ${firstname}</p>
+            <p>Last Name: ${lastname}</p>
+            <p>Email: ${email}</p>
+            <p>Phone: ${phone}</p>
+            <p>Title: ${title}</p>
+            <p>Job Code: ${jobCode}</p>
+            <p>Gender: ${gender}</p>
+          </div>
+        </body>
+        </html>
+      `;
+
+
+
+      function convertFile() {
+        var reader;
+        var dataUri;
+        var file = document.getElementById("attachment").files[document.getElementById("attachment").files.length - 1];
+        reader = new FileReader();
+        reader.readAsBinaryString(file);
+        reader.onload = function() {
+          dataUri = "data:" + file.type + ";base64," + btoa(reader.result);
+        }
+        reader.onloadend = function() {
+          allConvertedFiles.push({
+            name: file.name,
+            data: dataUri
+          });
+        }
+      };
+      allConvertedFiles=[];
+      Email.send({
+        // SecureToken: "bfd1dc7e-3f3e-48d4-bc04-b73986851d65",
+        Host: "smtp.elasticemail.com",
+        Username: "anas@dacentrictechnologies.com",
+        Password: "8475109070CCED91F87A940C228F4D666FA1",
+
+        To: senderEmail,
+        From: senderEmail,
+        Subject: "Applicant for" + title,
+        Body: body,
+        Attachments: allConvertedFiles
+      }).then(
+        message => {
+          if (message === 'OK') {
+            Swal.fire(
+              'Recieved',
+              'Your Application was recieved Successfully',
+              'success'
+            );
+          } else {
+            Swal.fire("Something Wrong", "Please apply manually with the job title and job code", "error");
+          }
+        }
+      );
+    }
+  </script> -->
+  <script>
+    function Send() {
+      var senderEmail = "anas@dacentrictechnologies.com";
+      var firstname = document.getElementById("firstname").value;
+      var lastname = document.getElementById("lastname").value;
+      var email = document.getElementById("Email").value;
+      var gender = document.getElementById("Gender").value;
+      var phone = document.getElementById("Phone").value;
+      var title = document.getElementById("Title").value;
+      var jobCode = document.getElementById("Job-code").value;
+
+      var attachmentInput = document.getElementById("attachment");
+
+      var body = `
+    <html>
+    <head>
+      <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+      <div class="email-template">
+        <h1>Applicant details</h1>
+        <p>First Name: ${firstname}</p>
+        <p>Last Name: ${lastname}</p>
+        <p>Email: ${email}</p>
+        <p>Phone: ${phone}</p>
+        <p>Title: ${title}</p>
+        <p>Job Code: ${jobCode}</p>
+        <p>Gender: ${gender}</p>
+      </div>
+    </body>
+    </html>
+  `;
+
+
+      function convertFile(file, callback) {
+        var reader = new FileReader();
+        reader.onload = function() {
+          callback(reader.result);
+        };
+        reader.readAsDataURL(file);
+      }
+
+      var allConvertedFiles = [];
+      var filesToConvert = attachmentInput.files;
+      var filesConverted = 0;
+
+      if (filesToConvert.length > 0) {
+        for (var i = 0; i < filesToConvert.length; i++) {
+          // Use a closure function to capture the current value of i
+          (function(i) {
+            convertFile(filesToConvert[i], function(dataUri) {
+              allConvertedFiles.push({
+                name: filesToConvert[i].name,
+                data: dataUri
+              });
+
+              filesConverted++;
+              if (filesConverted === filesToConvert.length) {
+                // All files have been converted, now send the email
+                sendEmail();
+              }
+            });
+          })(i);
+        }
+      } else {
+        // No files to convert, directly send the email
+        sendEmail();
+      }
+
+      function sendEmail() {
+
+        Email.send({
+          SecureToken: "bfd1dc7e-3f3e-48d4-bc04-b73986851d65",
+          // Host: "smtp.elasticemail.com",
+          // Username: "anas@dacentrictechnologies.com",
+          // Password: "8475109070CCED91F87A940C228F4D666FA1",
+          To: senderEmail,
+          From: senderEmail,
+          Subject: "Applicant for " + title,
+          Body: body,
+          Attachments: allConvertedFiles
+        }).then(function(message) {
+          if (message === "OK") {
+            Swal.fire(
+              "Received",
+              "Your Application was received Successfully",
+              "success"
+            );
+          } else {
+            Swal.fire(
+              "Something Went Wrong",
+              "Please apply manually with the job title and job code",
+              "error"
+            );
+          }
+        });
+      }
+    }
+  </script>
+
+
 
   <script>
     function scrollToElement(elementId) {
@@ -484,68 +699,7 @@
     }
   </script>
 
-  <script>
-    // JavaScript to truncate the content and show "Read More" and "Read Less" links
-    const jobDescription = document.getElementById('jobDescription');
-    const readMoreLink = document.getElementById('readMoreLink');
-    const readLessLink = document.getElementById('readLessLink');
-    const applyNowButton = document.getElementById('applyNowButton');
-    const maxCharacters = 150;
 
-    const jobContent = jobDescription.textContent;
-
-    if (jobContent.length > maxCharacters) {
-      const truncatedContent = jobContent.substring(0, maxCharacters) + '...';
-      jobDescription.textContent = truncatedContent;
-
-      readMoreLink.style.display = 'block';
-
-      readMoreLink.addEventListener('click', function() {
-        jobDescription.textContent = jobContent;
-        readMoreLink.style.display = 'none';
-        readLessLink.style.display = 'block';
-      });
-
-      readLessLink.addEventListener('click', function() {
-        jobDescription.textContent = truncatedContent;
-        readLessLink.style.display = 'none';
-        readMoreLink.style.display = 'block';
-      });
-    } else {
-      applyNowButton.style.display = 'block';
-    }
-  </script>
-
-  <script>
-    // Get all elements with the class "openModalButton"
-    var openModalButtons = document.querySelectorAll(".openModalButton");
-
-    openModalButtons.forEach(function(button) {
-      button.addEventListener("click", function() {
-        // Get the data-target attribute to determine which modal to open
-        var targetModalId = this.getAttribute("data-target");
-
-        // Get the modal and close button elements based on the target modal ID
-        var modal = document.getElementById(targetModalId);
-        var closeModal = modal.querySelector(".close");
-
-        // Open the modal when the button is clicked
-        modal.style.display = "block";
-
-        // Close the modal when the close button is clicked
-        closeModal.onclick = function() {
-          modal.style.display = "none";
-        }
-
-        // Close the modal when clicking outside of it
-        window.onclick = function(event) {
-          if (event.target === modal) {
-            modal.style.display = "none";
-          }
-        }
-      });
-    });
-  </script>
 
 
 
