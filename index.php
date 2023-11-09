@@ -36,7 +36,41 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
 </head>
+<style>
+           /* Style for the dropdown menu */
+           .dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
+        /* Style for the dropdown content */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Style for the dropdown items */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change the color of the dropdown items when hovered */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show the dropdown content when hovering over the dropdown */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+</style>
 
 <body id="top">
 
@@ -61,6 +95,19 @@
                     <li class="current"><a class="smoothscroll" href="#home" title="home">Home</a></li>
                     <li><a class="smoothscroll" href="#about" title="about">About</a></li>
                     <li><a href="services.php" title="services">Services</a></li>
+
+                    <!-- <ul>
+        <li class="dropdown">
+            <a href="services.php" title="services">Services</a>
+            <div class="dropdown-content">
+                <a href="#">Service 1</a>
+                <a href="#">Service 2</a>
+                <a href="#">Service 3</a>
+                 Add more service links as needed 
+            </div>
+        </li>
+    </ul>-->
+
                     <li><a href="projects.php" title="Portfolio">Portfolio</a></li>
                     <li><a class="smoothscroll" href="#clients" title="Testimonials">Testimonials</a></li>
                     <li><a href="careers.php" title="Join us">Join us</a></li>
