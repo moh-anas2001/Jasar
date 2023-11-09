@@ -711,12 +711,21 @@
                         </div>
                     </div>  -->
                     <!-- end masonry__brick -->
+                    
 
                 </div> <!-- end masonry -->
             </div> <!-- end col-full -->
         </div> <!-- end works-content -->
 
+        <div class="cen_div m-t-40">
+            <a class="btn btn--stroke " href="#0">See More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        
+
     </section> <!-- end s-works -->
+
+    
 
 
 
