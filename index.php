@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- script
     ================================================== -->
     <script src="js/modernizr.js"></script>
@@ -119,19 +121,19 @@
 
                 <ul class="header-nav__social">
                     <li>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-whatsapp"></i></a>
+                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                     </li>
                 </ul>
 
@@ -188,19 +190,19 @@
 
         <ul class="home-social">
             <li>
-                <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a>
+                <a href="#0"><i class="fa-brands fa-facebook"></i><span>Facebook</span></a>
             </li>
             <li>
-                <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twitter</span></a>
+                <a href="#0"><i class="fa-brands fa-x-twitter"></i><span>Twitter</span></a>
             </li>
             <li>
-                <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
+                <a href="#0"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a>
             </li>
             <li>
-                <a href="#0"><i class="fa fa-whatsapp" aria-hidden="true"></i><span>Whatsapp</span></a>
+                <a href="#0"><i class="fa-brands fa-whatsapp"></i><span>Whatsapp</span></a>
             </li>
             <li>
-                <a href="#0"><i class="fa fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
+                <a href="#0"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
             </li>
         </ul>
         <!-- end home-social -->
