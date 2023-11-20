@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -38,53 +39,147 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
 </head>
+
+
+
+
 <style>
-           /* Style for the dropdown menu */
-           .dropdown {
-            position: relative;
-            display: inline-block;
-        }
+ 
 
-        /* Style for the dropdown content */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
 
-        /* Style for the dropdown items */
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
+/*   End media query   */
 
-        /* Change the color of the dropdown items when hovered */
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
 
-        /* Show the dropdown content when hovering over the dropdown */
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
 </style>
+
+
+
+    
+
+
+
+
+
+<!-- <style>
+          body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            padding: 15px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            flex-shrink: 0;
+        }
+
+        .site-logo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-right: 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Responsive Styling */
+        @media only screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+                text-align: center;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin-right: 0;
+                margin-bottom: 8px;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+</style> -->
 
 <body id="top">
 
+
+    <div style="width: 100%; background-color: #343a40; padding: 10px; color: #ffffff;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex;">
+                <a style="text-decoration: none; color: #ffffff; margin-right: 10px;" href="">FAQs</a>
+                <span style="color: #6c757d;">|</span>
+                <a style="text-decoration: none; color: #ffffff; margin-left: 10px; margin-right: 10px;" href="">Help</a>
+                <span style="color: #6c757d;">|</span>
+                <a style="text-decoration: none; color: #ffffff; margin-left: 10px;" href="">Support</a>
+            </div>
+            <div style="display: flex;">
+                <a style="text-decoration: none; color: #ffffff; margin-right: 10px;" href="">
+                    <i style="margin-right: 5px;" class="fab fa-facebook-f"></i>
+                </a>
+                <a style="text-decoration: none; color: #ffffff; margin-right: 10px;" href="">
+                    <i style="margin-right: 5px;" class="fab fa-twitter"></i>
+                </a>
+                <a style="text-decoration: none; color: #ffffff; margin-right: 10px;" href="">
+                    <i style="margin-right: 5px;" class="fab fa-linkedin-in"></i>
+                </a>
+                <a style="text-decoration: none; color: #ffffff; margin-right: 10px;" href="">
+                    <i style="margin-right: 5px;" class="fab fa-instagram"></i>
+                </a>
+                <a style="text-decoration: none; color: #ffffff;" href="">
+                    <i style="margin-right: 5px;" class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+
+
     <!-- header
     ================================================== -->
-    <header class="s-header">
+    <!-- <header class="s-header">
 
-        <div class="header-logo">
-            <a class="site-logo" href="index.php">
-                <img src="images/logo-footer.png" alt="Homepage" class="m-t-90">
-            </a>
-        </div>
+        
 
         <nav class="header-nav">
 
@@ -98,17 +193,7 @@
                     <li><a class="smoothscroll" href="#about" title="about">About</a></li>
                     <li><a href="services.php" title="services">Services</a></li>
 
-                    <!-- <ul>
-        <li class="dropdown">
-            <a href="services.php" title="services">Services</a>
-            <div class="dropdown-content">
-                <a href="#">Service 1</a>
-                <a href="#">Service 2</a>
-                <a href="#">Service 3</a>
-                 Add more service links as needed 
-            </div>
-        </li>
-    </ul>-->
+                  
 
                     <li><a href="projects.php" title="Portfolio">Portfolio</a></li>
                     <li><a class="smoothscroll" href="#clients" title="Testimonials">Testimonials</a></li>
@@ -137,17 +222,58 @@
                     </li>
                 </ul>
 
-            </div> <!-- end header-nav__content -->
+            </div> 
 
-        </nav> <!-- end header-nav -->
+        </nav> 
 
         <a class="header-menu-toggle" href="#0">
             <span class="header-menu-text">Menu</span>
             <span class="header-menu-icon"></span>
         </a>
 
-    </header> <!-- end s-header -->
+    </header>  -->
 
+
+
+    <!-- <header>
+        <nav>
+            <div class="logo">
+            <a class="site-logo" href="index.php">
+                <img src="" alt=""  >
+            </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="services.php">Services</a></li>
+                <li><a href="projects.php">Portfolio</a></li>
+                <li><a href="#clients">Testimonials</a></li>
+                <li><a href="careers.php">Join us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header> -->
+
+
+
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="http://www.mrkzgulf.com/do.php?img=429440" />
+        </div>
+        <div class="icon">
+          <span class="toggle">☰</span>
+        </div>
+        <ul class="list-item">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Categorys</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">About us</a></li>
+        </ul>
+      </nav>
+    </header>
 
     <!-- home
     ================================================== -->
@@ -1128,6 +1254,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
+    
+
+
     <script>
         function Send() {
 
@@ -1178,6 +1307,25 @@
                 });
             }
         }
+    </script>
+
+
+
+    <script>
+        $('.toggle').click(function () {
+    "use strict";
+    $('nav ul').slideToggle();
+});
+
+
+
+$(window).resize(function () {
+    "use strict";
+    if ($(window).width() > 780) {
+        $('nav ul').removeAttr('style');
+    }
+});
+
     </script>
 
 
