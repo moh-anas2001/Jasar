@@ -1182,7 +1182,10 @@
             <div class="col-six tab-full left footer-desc">
 
                 <div class="footer-logo"></div>
-                Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Nulla porttitor accumsan tincidunt. Nulla porttitor accumsan tincidunt. Quaerat voluptas autem necessitatibus vitae aut.
+                Jasar Al Sukhar Technical Services LLC (Just Fix) established in year 2009 and registered in Dubai
+                accordance to the requirements of UAE law. More than 11 years of existence, we grew in to one of the
+                reputed company in United Arab Emirates. We are proud to have been trusted by many Companies/Clients in
+                our field of expertise.
 
             </div>
 
