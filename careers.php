@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="css/vendor.css">
   <link rel="stylesheet" href="css/main.css">
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js" integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- script
     ================================================== -->
   <script src="js/modernizr.js"></script>
@@ -40,9 +41,62 @@
 </head>
 
 <body id="top" style="background-color: white; ">
+    <div style="width: 100%; background-color: #343a40; padding: 10px; color: #ffffff;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex;">
+                <a style="text-decoration: none; color: #ffffff; margin-right: 10px;" href="">FAQs</a>
+                <span style="color: #6c757d;">|</span>
+                <a style="text-decoration: none; color: #ffffff; margin-left: 10px; margin-right: 10px;" href="">Help</a>
+                <span style="color: #6c757d;">|</span>
+                <a style="text-decoration: none; color: #ffffff; margin-left: 10px;" href="">Support</a>
+            </div>
+            <div style="display: flex;">
+                <a style="text-decoration: none; color: #ffffff; margin-right: 10px;" href="">
+                    <i style="margin-right: 5px;" class="fab fa-facebook-f"></i>
+                </a>
+                <a style="text-decoration: none; color: #ffffff; margin-right: 10px;" href="">
+                    <i style="margin-right: 5px;" class="fab fa-twitter"></i>
+                </a>
+                <a style="text-decoration: none; color: #ffffff; margin-right: 10px;" href="">
+                    <i style="margin-right: 5px;" class="fab fa-linkedin-in"></i>
+                </a>
+                <a style="text-decoration: none; color: #ffffff; margin-right: 10px;" href="">
+                    <i style="margin-right: 5px;" class="fab fa-instagram"></i>
+                </a>
+                <a style="text-decoration: none; color: #ffffff;" href="">
+                    <i style="margin-right: 5px;" class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="http://www.mrkzgulf.com/do.php?img=429440" />
+        </div>
+        <div class="icon">
+          <span class="toggle">☰</span>
+        </div>
+        <ul class="list-item">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Categorys</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">About us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+
+
+
   <!-- header
     ================================================== -->
-  <header class="s-header">
+  <!-- <header class="s-header">
 
     <div class="header-logo">
       <a class="site-logo" href="index.php">
@@ -61,8 +115,8 @@
           <li class="current"><a href="index.php" title="home">Home</a></li>
           <li><a href="index.php#about" title="about">About</a></li>
           <li><a href="services.php" title="services">Services</a></li>
-          <li><a href="projects.php" title="Portfolio">Portfolio</a></li>
-          <!-- <li><a href="index.php#clients" title="Testimonials">Testimonials</a></li> -->
+          <li><a href="projects.php" title="Portfolio">Portfolio</a></li> -->
+          <!-- <li><a href="index.php#clients" title="Testimonials">Testimonials</a></li> --
           <li><a href="careers.php" title="Join us">Join us</a></li>
           <li><a href="index.php#contact" title="contact">Contact</a></li>
         </ul>
@@ -88,9 +142,9 @@
           </li>
         </ul>
 
-      </div> <!-- end header-nav__content -->
+      </div> <!-- end header-nav__content --
 
-    </nav> <!-- end header-nav -->
+    </nav> <!-- end header-nav --
 
     <a class="header-menu-toggle" href="#0">
       <span class="header-menu-text">Menu</span>
