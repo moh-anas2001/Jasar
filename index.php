@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/theme.css">
+    <!-- <link rel="stylesheet" href="css/theme.css"> -->
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
