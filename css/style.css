@@ -312,6 +312,62 @@
 }
 
 
+
+
+
+
+
+
+#gtco-our-team .heading {
+    position: relative;
+  }
+  #gtco-our-team .heading .subtle-text {
+    position: absolute;
+    bottom: -1.6em;
+    left: 0;
+    text-transform: uppercase;
+    font-size: 208px;
+    color: #F8F8F8;
+    font-weight: 900;
+    z-index: -1;
+    line-height: 1;
+  }
+  #gtco-our-team .heading .subtle-text span {
+    display: block;
+  }
+  #gtco-our-team .team-item {
+    margin-bottom: 9em;
+  }
+  #gtco-our-team .team-item:last-child {
+    margin-bottom: 0;
+  }
+  #gtco-our-team .gtco-team-reverse .img-shadow,
+  #gtco-our-team .gtco-team .img-shadow {
+    position: relative;
+    background: #7ED321;
+    width: 100%;
+    float: left;
+    margin-bottom: 30px;
+  }
+  #gtco-our-team .gtco-team-reverse .img-shadow img,
+  #gtco-our-team .gtco-team .img-shadow img {
+    position: relative;
+    top: -20px;
+    right: -20px;
+  }
+  #gtco-our-team .gtco-team .img-shadow img {
+    top: -20px;
+    left: -20px;
+  }
+
+
+
+
+
+
+
+
+
 /*** Service ***/
 .service-item img {
     transition: .5s;
