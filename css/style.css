@@ -862,13 +862,13 @@
 
 .pos-fixed {
     position: fixed;
-    left: 10px;
+    /* left: 10px; */
     z-index: 999;
-    top: 62%;
+    top: 80%;
     /* margin-top: 20%; */
 }
 .pos-fixed li{list-style:none;margin-bottom:5px;transition:0.5s;border-radius:50%;}
 .pos-fixed li img{padding:5px;}
-.pos-fixed li:first-child{background:rgb(41, 41, 187);}
+/* .pos-fixed li:first-child{background:rgb(41, 41, 187);}
 .pos-fixed li:nth-child(2){background:#009F00;}
-.pos-fixed li:last-child{background:#2e9a2e;}
+.pos-fixed li:last-child{background:#2e9a2e;} */
