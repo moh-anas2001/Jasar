@@ -1,0 +1,116 @@
+
+
+#gtco-about,
+#gtco-practice-areas,
+#gtco-our-team,
+#gtco-contact {
+  padding: 7em 0;
+  clear: both;
+}
+
+#gtco-about .img-shadow {
+  position: relative;
+  background: #7ED321;
+  width: 100%;
+  float: left;
+}
+#gtco-about .img-shadow img {
+  position: relative;
+  top: -20px;
+  left: -20px;
+}
+#gtco-about .heading {
+  position: relative;
+}
+#gtco-about .heading .subtle-text {
+  position: absolute;
+  bottom: -1.6em;
+  left: 0;
+  text-transform: uppercase;
+  font-size: 208px;
+  color: #F8F8F8;
+  font-weight: 900;
+  z-index: -1;
+}
+
+#gtco-practice-areas .heading {
+  position: relative;
+}
+#gtco-practice-areas .heading .subtle-text {
+  position: absolute;
+  bottom: -1.6em;
+  left: 0;
+  text-transform: uppercase;
+  font-size: 208px;
+  color: #F8F8F8;
+  font-weight: 900;
+  z-index: -1;
+  line-height: 1;
+}
+#gtco-practice-areas .heading .subtle-text span {
+  display: block;
+}
+#gtco-practice-areas .gtco-practice-area-item {
+  margin-bottom: 30px;
+}
+#gtco-practice-areas .gtco-practice-area-item .gtco-icon,
+#gtco-practice-areas .gtco-practice-area-item .gtco-copy {
+  display: table-cell;
+  vertical-align: top;
+}
+#gtco-practice-areas .gtco-practice-area-item .gtco-icon {
+  width: 100px;
+}
+@media screen and (max-width: 768px) {
+  #gtco-practice-areas .gtco-practice-area-item .gtco-icon {
+    width: 70px;
+  }
+}
+#gtco-practice-areas .gtco-practice-area-item .gtco-copy h3 {
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+
+
+#gtco-our-team .heading {
+  position: relative;
+}
+#gtco-our-team .heading .subtle-text {
+  position: absolute;
+  bottom: -1.6em;
+  left: 0;
+  text-transform: uppercase;
+  font-size: 208px;
+  color: #F8F8F8;
+  font-weight: 900;
+  z-index: -1;
+  line-height: 1;
+}
+#gtco-our-team .heading .subtle-text span {
+  display: block;
+}
+#gtco-our-team .team-item {
+  margin-bottom: 9em;
+}
+#gtco-our-team .team-item:last-child {
+  margin-bottom: 0;
+}
+#gtco-our-team .gtco-team-reverse .img-shadow,
+#gtco-our-team .gtco-team .img-shadow {
+  position: relative;
+  background: #7ED321;
+  width: 100%;
+  float: left;
+  margin-bottom: 30px;
+}
+#gtco-our-team .gtco-team-reverse .img-shadow img,
+#gtco-our-team .gtco-team .img-shadow img {
+  position: relative;
+  top: -20px;
+  right: -20px;
+}
+#gtco-our-team .gtco-team .img-shadow img {
+  top: -20px;
+  left: -20px;
+}
