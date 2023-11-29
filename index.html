@@ -966,42 +966,42 @@
 
 
     <div class="badge-image">
-        <a href="#"> <img src="img\badge.png" class="fixed-badge"></a>
+        <a href="#"><img src="img\badge.png" class="fixed-badge"></a>
     </div>
-
+    
     <div class="pos-fixed">
-        <ul>
+        <ul class="horizontal-icons">
             <li title="call" id="mainIcon">
                 <a onclick="toggleAdditionalIcons()">
                     <img src="img/operator.png" alt="Contact"
-                        style="width: 15%; height: auto; transition: transform 0.3s ease-in-out;"
+                        style="width: 10%; height: auto; transition: transform 0.3s ease-in-out;"
                         onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"
                         alt="">
                 </a>
             </li>
-              <!-- Cancel icon -->
-              <li class="cancel-icon" style="display: none;">
+            <!-- Cancel icon -->
+            <li class="cancel-icon" style="display: none;">
                 <a href="#" onclick="toggleAdditionalIcons()" class="fadeInDownAnimation">
                     <img src="img/cancel.png" alt="Close" class="close-icon" style="width: 9%; height: auto; transition: transform 0.3s ease-in-out;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
                 </a>
             </li>
             <!-- Additional icons initially hidden -->
             <li class="additional-icon" style="display: none;">
-                <a href="#" class="slideInUpAnimation">
+                <a href="#" class="slideInLeftAnimation">
                     <img src="img/whatsapp.png" alt="Mail"
-                        style="width: 9%; height: auto; transition: transform 0.3s ease-in-out; "onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                        style="width: 9%; height: auto; transition: transform 0.3s ease-in-out; " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
                 </a>
             </li>
             <!-- Add more additional icons as needed -->
             <li class="additional-icon" style="display: none;">
-                <a href="tel:055-6601516" class="slideInUpAnimation">
+                <a href="tel:055-6601516" class="slideInLeftAnimation">
                     <img src="img/phone-call.png" alt="Mail"
-                        style="width: 9%; height: auto; transition: transform 0.3s ease-in-out;"onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                        style="width: 9%; height: auto; transition: transform 0.3s ease-in-out;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
                 </a>
             </li>
-          
         </ul>
     </div>
+    
     
     
 
@@ -1035,8 +1035,9 @@
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
 
-    <!-- Template Javascript -->
+        <!-- Template Javascript -->
     <script src="js/main.js"></script>
+   
     <script>
         // Initialize WOW.js
         new WOW().init();
