@@ -850,15 +850,19 @@
 
 .badge-image{
     position: fixed;
-    bottom: 18px;
-    right: 15px;z-index: 100;
+    bottom: -5px;
+    right: -25px;
+    z-index: 100;
     margin-top: 10px;
     margin-left: 50%;
-    
-    
 }
 
-
+@media (max-width: 992px) {
+    .badge-image{
+        display: none;
+        
+    }
+}
 
 .pos-fixed {
     position: fixed;
