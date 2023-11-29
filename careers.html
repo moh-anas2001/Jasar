@@ -554,8 +554,12 @@
     z-index: 999;
     top: 80%;" >
         <ul>
-            <li title="Whatsapp"><a href="wa.me/" target="_blank"><img src="img/whatsapp1.png" alt="whatsapp" style="width: 10%;height: auto; transition: transform 0.3s ease-in-out;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"alt=""></a></li>
-            
+            <li title="Whatsapp"><a href="" target="_blank"><img src="img/whatsapp1.png" alt="whatsapp" style="width: 10%;height: auto; transition: transform 0.3s ease-in-out;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"alt=""></a></li>
+            <li class="additional-icons" style="display: none;">
+                <a href="mailto:info@vistasadindia.com">
+                    <img src="assets/img/mail.png" alt="Mail" width="40" height="40">
+                </a>
+            </li>
             <li title="call"><a href="tel:055-6601516"><img src="img\phone-call.png" alt="Contact"  style="width: 9%; height: auto;  transition: transform 0.3s ease-in-out;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"alt=""></a></li>
             
             <!-- <li title="Mail"><a href="mailto:info@vistasadindia.com"><img src="assets/img/mail.png" alt="Mail" width="40" height="40"></a></li> -->
@@ -650,6 +654,23 @@
             }
         });
     });
+</script>
+
+<script>
+// Get the main icon and additional icons
+const mainIcon = document.getElementById('mainIcon');
+const additionalIcons = document.querySelector('.additional-icon');
+
+// Add a click event listener to the main icon
+mainIcon.addEventListener('click', function() {
+    // Toggle the display of additional icons when the main icon is clicked
+    if (additionalIcons.style.display === 'none') {
+        additionalIcons.style.display = 'block';
+    } else {
+        additionalIcons.style.display = 'none';
+    }
+});
+
 </script>
 
 
