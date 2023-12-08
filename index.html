@@ -182,9 +182,9 @@
                                 <!-- <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor
                                     at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
                                     elitr.</p> -->
-                                    <a href="" class="btn btn-primary py-md-2 px-md-3 me-3 animated slideInLeft">Read
-                                        More</a>
-                                    <a href="" class="btn btn-light py-md-2 px-md-3 animated slideInRight">Free Quote</a>
+                                <a href="" class="btn btn-primary py-md-2 px-md-3 me-3 animated slideInLeft">Read
+                                    More</a>
+                                <a href="" class="btn btn-light py-md-2 px-md-3 animated slideInRight">Free Quote</a>
                             </div>
                         </div>
                     </div>
@@ -228,9 +228,9 @@
                                 <!-- <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor
                                     at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
                                     elitr.</p> -->
-                                    <a href="" class="btn btn-primary py-md-2 px-md-3 me-3 animated slideInLeft">Read
-                                        More</a>
-                                    <a href="" class="btn btn-light py-md-2 px-md-3 animated slideInRight">Free Quote</a>
+                                <a href="" class="btn btn-primary py-md-2 px-md-3 me-3 animated slideInLeft">Read
+                                    More</a>
+                                <a href="" class="btn btn-light py-md-2 px-md-3 animated slideInRight">Free Quote</a>
                             </div>
                         </div>
                     </div>
@@ -740,7 +740,8 @@
     </div>
     <div style="display: flex;align-items: center;justify-content: center;margin-top: 20px;" class="wow fadeInUp"
         data-wow-delay="0.7s">
-        <a href="project.html" class="btn btn-primary py-3 px-5 ">More Projects <i class="fa fa-arrow-right ms-3"></i></a>
+        <a href="project.html" class="btn btn-primary py-3 px-5 ">More Projects <i
+                class="fa fa-arrow-right ms-3"></i></a>
     </div>
     </div>
 
@@ -966,7 +967,7 @@
     <div class="badge-image">
         <a href="#"><img src="img\badge.png" class="fixed-badge"></a>
     </div>
-    
+
     <div class="pos-fixed">
         <ul class="horizontal-icons">
             <li title="call" id="mainIcon">
@@ -980,28 +981,32 @@
             <!-- Cancel icon -->
             <li class="cancel-icon" style="display: none;">
                 <a onclick="toggleAdditionalIcons()" class="fadeInDownAnimation">
-                    <img src="img/cancel.png" alt="Close" class="close-icon" style="width: 9%; height: auto; transition: transform 0.3s ease-in-out;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                    <img src="img/cancel.png" alt="Close" class="close-icon"
+                        style="width: 9%; height: auto; transition: transform 0.3s ease-in-out;"
+                        onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
                 </a>
             </li>
             <!-- Additional icons initially hidden -->
             <li class="additional-icon" style="display: none;">
                 <a href="#" class="slideInLeftAnimation">
                     <img src="img/whatsapp.png" alt="Mail"
-                        style="width: 9%; height: auto; transition: transform 0.3s ease-in-out; " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                        style="width: 9%; height: auto; transition: transform 0.3s ease-in-out; "
+                        onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
                 </a>
             </li>
             <!-- Add more additional icons as needed -->
             <li class="additional-icon" style="display: none;">
                 <a href="tel:055-6601516" class="slideInLeftAnimation">
                     <img src="img/phone-call.png" alt="Mail"
-                        style="width: 9%; height: auto; transition: transform 0.3s ease-in-out;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                        style="width: 9%; height: auto; transition: transform 0.3s ease-in-out;"
+                        onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
                 </a>
             </li>
         </ul>
     </div>
-    
-    
-    
+
+
+
 
     <!-- <div class="pos-fixed">
         <ul>
@@ -1033,26 +1038,26 @@
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
 
-        <!-- Template Javascript -->
+    <!-- Template Javascript -->
     <script src="js/main.js"></script>
-   
+
     <script>
         // Initialize WOW.js
         new WOW().init();
-    
+
         // Function to toggle additional icons and cancel icon
         function toggleAdditionalIcons() {
             const mainIcon = document.getElementById('mainIcon');
             const additionalIcons = document.querySelectorAll('.additional-icon');
             const cancelIcon = document.querySelector('.cancel-icon');
-    
+
             // Toggle main icon, additional icons, and cancel icon
             mainIcon.style.display = mainIcon.style.display === 'none' ? 'block' : 'none';
-    
+
             additionalIcons.forEach(icon => {
                 icon.style.display = icon.style.display === 'none' ? 'block' : 'none';
             });
-    
+
             cancelIcon.style.display = cancelIcon.style.display === 'none' ? 'block' : 'none';
         }
     </script>
