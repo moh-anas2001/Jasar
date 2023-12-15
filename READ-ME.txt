@@ -1,4 +1,4 @@
-  =>  Template Name    : Just FIxTemplate
+  =>  Template Name    : Just Fix
 
   =>  Template Link    : https://htmlcodex.com/carpenter-website-template-free
 
