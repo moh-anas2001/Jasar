@@ -257,17 +257,14 @@
                     <form action="" method="post" role="form" class="php-email-form">
                         <div class="row">
                             <div class="col-md-6 form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
-                                    required>
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                             </div>
                             <div class="col-md-6 form-group mt-3 mt-md-0">
-                                <input type="email" class="form-control" name="email" id="email"
-                                    placeholder="Your Email" required>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
                             </div>
                         </div>
                         <div class="form-group mt-3">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
-                                required>
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
                         </div>
                         <div class="form-group mt-3">
                             <textarea class="form-control" name="message" placeholder="Message" required></textarea>
@@ -450,6 +447,52 @@
             cancelIcon.style.display = cancelIcon.style.display === 'none' ? 'block' : 'none';
         }
     </script>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+
+
+<script>
+    function Send() {
+
+        var senderEmail = "anas@dacentrictechnologies.com";
+        var name = document.getElementById("Name").value;
+        var email = document.getElementById("Email").value;
+        var sub = document.getElementById("subject").value;
+        var mess = document.getElementById("message").value;
+
+
+        var body = "Name: " + name + "<br/> Email:" + email + "<br/> Subject:" + sub + "<br/> Message:" + mess;
+
+        console.log(body);
+        Email.send({
+
+            SecureToken: "bfd1dc7e-3f3e-48d4-bc04-b73986851d65",
+            To: senderEmail,
+            From: senderEmail,
+            Subject: sub,
+            Body: body
+        }).then(
+            message => {
+                if (message == 'OK') {
+
+                    Swal.fire(
+                        'Recieved',
+                        'Our team will contact you soon',
+                        'success'
+                    )
+                } else {
+
+                    Swal.fire("Something went Wrong", "Your Data is not Received", "error");
+                }
+            }
+        );
+    }
+</script>
+
 </body>
 
 </html>
