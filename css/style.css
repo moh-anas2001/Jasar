@@ -265,7 +265,7 @@
   padding-left: 0;
 }
 
-.section-title h1::before,
+/* .section-title h1::before,
 .section-title h1::after {
   position: absolute;
   content: "";
@@ -273,9 +273,9 @@
   height: 5px;
   bottom: 0;
   background: var(--dark);
-}
+} */
 
-.section-title h1::before {
+/* .section-title h1::before {
   left: 0;
 }
 
@@ -285,7 +285,7 @@
 
 .section-title.text-start h1::before {
   display: none;
-}
+} */
 
 
 /*** About ***/
@@ -546,6 +546,13 @@
 
 
 /*** Service ***/
+/* .service-box {
+  height: 800px; /* Adjust this value as needed */
+  /* overflow-y: auto; Adding a vertical scroll when content exceeds the height */
+    /* padding: 15px; Adding padding to the box */
+    /* border: 5px solid #f8f9fa; */
+  /* } */ 
+
 .service-item img {
   transition: .5s;
  
