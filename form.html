@@ -641,6 +641,108 @@
     }
 </script>
 
+
+<script>
+  function Send() {
+    var senderEmail = "anas@dacentrictechnologies.com";
+    var firstname = document.getElementById("firstname").value;
+    var lastname = document.getElementById("lastname").value;
+    var email = document.getElementById("Email").value;
+    var gender = document.getElementById("Gender").value;
+    var phone = document.getElementById("Phone").value;
+    var title = document.getElementById("Title").value;
+    var jobCode = document.getElementById("Job-code").value;
+
+    var attachmentInput = document.getElementById("attachment");
+
+    var body = `
+  <html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="email-template">
+      <h1>Applicant details</h1>
+      <p>First Name: ${firstname}</p>
+      <p>Last Name: ${lastname}</p>
+      <p>Email: ${email}</p>
+      <p>Phone: ${phone}</p>
+      <p>Title: ${title}</p>
+      <p>Job Code: ${jobCode}</p>
+      <p>Gender: ${gender}</p>
+    </div>
+  </body>
+  </html>
+`;
+
+
+    function convertFile(file, callback) {
+      var reader = new FileReader();
+      reader.onload = function() {
+        callback(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+
+    var allConvertedFiles = [];
+    var filesToConvert = attachmentInput.files;
+    var filesConverted = 0;
+
+    if (filesToConvert.length > 0) {
+      for (var i = 0; i < filesToConvert.length; i++) {
+        // Use a closure function to capture the current value of i
+        (function(i) {
+          convertFile(filesToConvert[i], function(dataUri) {
+            allConvertedFiles.push({
+              name: filesToConvert[i].name,
+              data: dataUri
+            });
+
+            filesConverted++;
+            if (filesConverted === filesToConvert.length) {
+              // All files have been converted, now send the email
+              sendEmail();
+            }
+          });
+        })(i);
+      }
+    } else {
+      // No files to convert, directly send the email
+      sendEmail();
+    }
+
+    function sendEmail() {
+
+      Email.send({
+        SecureToken: "bfd1dc7e-3f3e-48d4-bc04-b73986851d65",
+        // Host: "smtp.elasticemail.com",
+        // Username: "anas@dacentrictechnologies.com",
+        // Password: "8475109070CCED91F87A940C228F4D666FA1",
+        To: senderEmail,
+        From: senderEmail,
+        Subject: "Applicant for " + title,
+        Body: body,
+        Attachments: allConvertedFiles
+      }).then(function(message) {
+        if (message === "OK") {
+          Swal.fire(
+            "Received",
+            "Your Application was received Successfully",
+            "success"
+          );
+        } else {
+          Swal.fire(
+            "Something Went Wrong",
+            "Please apply manually with the job title and job code",
+            "error"
+          );
+        }
+      });
+    }
+  }
+</script>
+
+
 </body>
 
 </html>
