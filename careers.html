@@ -136,6 +136,255 @@
     <!-- Page Header End -->
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .formbold-mb-3 {
+      margin-bottom: 15px;
+    }
+
+    .formbold-main-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px;
+    }
+
+    .formbold-form-wrapper {
+      margin: 0 auto;
+      max-width: 570px;
+      width: 100%;
+      background: white;
+      padding: 40px;
+    }
+
+    .formbold-img {
+      display: block;
+      margin: 0 auto 45px;
+    }
+
+    .formbold-input-wrapp>div {
+      display: flex;
+      gap: 20px;
+    }
+
+    .formbold-input-flex {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 15px;
+    }
+
+    .formbold-input-flex>div {
+      width: 50%;
+    }
+
+    .formbold-form-input {
+      width: 100%;
+      padding: 13px 22px;
+      border-radius: 5px;
+      border: 1px solid #dde3ec;
+      background: #ffffff;
+      font-weight: 500;
+      font-size: 16px;
+      color: #536387;
+      outline: none;
+      resize: none;
+    }
+
+    .formbold-form-input::placeholder,
+    select.formbold-form-input,
+    .formbold-form-input[type='date']::-webkit-datetime-edit-text,
+    .formbold-form-input[type='date']::-webkit-datetime-edit-month-field,
+    .formbold-form-input[type='date']::-webkit-datetime-edit-day-field,
+    .formbold-form-input[type='date']::-webkit-datetime-edit-year-field {
+      color: rgba(83, 99, 135, 0.5);
+    }
+
+    .formbold-form-input:focus {
+      border-color: #6a64f1;
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .formbold-form-label {
+      color: #07074D;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .formbold-form-file-flex {
+      display: flex;
+      /* align-items: center; */
+      gap: 20px;
+    }
+
+    .formbold-form-file-flex .formbold-form-label {
+      margin-bottom: 0;
+    }
+
+    .formbold-form-file {
+      font-size: 14px;
+      line-height: 24px;
+      color: #536387;
+    }
+
+    .formbold-form-file::-webkit-file-upload-button {
+      display: none;
+    }
+
+    .formbold-form-file:before {
+      content: 'Upload file';
+      display: inline-block;
+      background: #EEEEEE;
+      border: 0.5px solid #FBFBFB;
+      box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25);
+      border-radius: 3px;
+      padding: 3px 12px;
+      outline: none;
+      white-space: nowrap;
+      /* -webkit-user-select: none; */
+      cursor: pointer;
+      color: #637381;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      margin-right: 10px;
+    }
+
+    .formbold-btn {
+      text-align: center;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 5px;
+      /* padding: 14px 25px; */
+      border: none;
+      font-weight: 500;
+      background-color: #6a64f1;
+      color: white;
+      cursor: pointer;
+      margin-top: 25px;
+    }
+
+    .formbold-btn:hover {
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .formbold-w-45 {
+      width: 45%;
+    }
+
+    .email-template {
+      font-family: Arial, sans-serif;
+      border: 2px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #f8f8f8;
+      text-align: left;
+      margin: 20px auto;
+      width: 80%;
+    }
+
+    .email-template h1 {
+      font-size: 20px;
+      text-align: center;
+      margin: 0;
+    }
+
+    .email-template p {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .email-template span {
+      font-weight: bold;
+    }
+  </style>
+
+
+
+  <div class="email-template" style="display: none;">
+    <h1>Contact Information</h1>
+    <p>First Name: <span id="first-name"></span></p>
+    <p>Last Name: <span id="last-name"></span></p>
+    <p>Email: <span id="email"></span></p>
+    <p>Phone: <span id="phone"></span></p>
+    <p>Title: <span id="title"></span></p>
+    <p>Job Code: <span id="job-code"></span></p>
+    <p>Gender: <span id="gender"></span></p>
+  </div>
+
+  <div class="formbold-main-wrapper">
+    <div class="formbold-form-wrapper">
+      <!-- <img src="images/bg-2.png"> -->
+      <form method="POST" action="" enctype="multipart/form-data">
+        <div class="formbold-input-flex">
+          <div>
+            <label for="firstname" class="formbold-form-label"> First Name </label>
+            <input type="text" name="firstname" id="firstname" placeholder="Your first name" class="formbold-form-input" required />
+          </div>
+  
+          <div>
+            <label for="lastname" class="formbold-form-label"> Last Name </label>
+            <input type="text" name="lastname" id="lastname" placeholder="Your last name" class="formbold-form-input" required />
+          </div>
+        </div>
+  
+        <div class="formbold-input-flex">
+          <div>
+            <label for="email" class="formbold-form-label"> Email </label>
+            <input type="email" name="email" id="Email" placeholder="example@email.com" class="formbold-form-input" required />
+          </div>
+  
+          <div>
+            <label class="formbold-form-label">Gender</label>
+            <select class="formbold-form-input" name="gender" id="Gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+        </div>
+  
+        <div class="formbold-mb-3 formbold-input-wrapp">
+          <label for="phone" class="formbold-form-label"> Phone </label>
+          <input type="text" name="phone" id="Phone" placeholder="+123 45676543" class="formbold-form-input" required />
+        </div>
+  
+        <div class="formbold-mb-3">
+          <label for="age" class="formbold-form-label"> Applying for Position: </label>
+          <input type="text" name="title" id="Title" value="Job Title" class="formbold-form-input" required readonly />
+        </div>
+  
+        <div class="formbold-mb-3">
+          <label for="job-code" class="formbold-form-label">Job Code </label>
+          <input type="text" name="job-code" id="Job-code" value="Job Code" class="formbold-form-input" required readonly />
+        </div>
+  
+        <div class="formbold-form-file-flex">
+          <label for="upload" class="formbold-form-label">
+            Upload Resume
+          </label>
+          <input type="file" name="upload" id="attachment" required class="formbold-form-file" accept=".pdf,.docx" />
+        </div>
+  
+        <button class="btn btn-primary mt-3 col-12" type="button" onclick="Send()">Apply Now</button>
+      </form>
+    </div>
+  </div>
+
+
+  <style>
     /* Reset some default styles */
     * {
       margin: 0;
@@ -283,7 +532,6 @@
       /* Change the background color when the button is clicked (active) */
     }
 
-
   li {
 
     text-align: center; /* Aligns the content to the left */
@@ -315,18 +563,6 @@
 
     }
   </style>
-
-
-
-
-
-
-
-
-
-
-
-
 
   <!-- <section class="job-listings row-row">
     <?php
@@ -501,6 +737,7 @@
          <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>PO Box:186302,<br><span style="margin-left:30px ;">Al
              Nahda-1,</span><br><span style="margin-left:30px ;">Dubai,</span><br><span
              style="margin-left:30px ;">United Arab Emirates</span></p>
+             <p class="mb-2 ms-0"><b>TRN:</b> 100460189200003</p> 
          <p class="mb-2" style="margin-left: -5px;"><i class="fab fa-whatsapp fa-lg fa-fw me-2"></i>055-6601516</p>
          <p class="mb-2 ms-0"><i class="fa fa-phone-alt me-3"></i>055-6601516</p>
          <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@jasaruae.com</p>
