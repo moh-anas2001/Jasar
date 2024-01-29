@@ -1,4 +1,3 @@
-<!-- delete_project.php -->
 <?php
 // require_once('../includes/database.php');
 
@@ -39,5 +38,5 @@ if (isset($_GET['id'])) {
 
 // Redirect back to the add_testimonial.php page after deleting
 header("Location: ../admin_testimonial.php");
-exit;
+exit();
 ?>

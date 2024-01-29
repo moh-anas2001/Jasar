@@ -12,12 +12,12 @@ if (isset($_SESSION['id'])) {
 
 if (isset($_POST['email']) && isset($_POST['password'])) {
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $enteredPassword = $_POST['password'];
 
-    // Prepare and execute a SQL query to fetch the user with the provided email and password
-    $sql = "SELECT * FROM users WHERE email = ? AND password = ?";
+    // Prepare and execute a SQL query to fetch the user with the provided email
+    $sql = "SELECT * FROM users WHERE email = ?";
     if ($stmt = $connect->prepare($sql)) {
-        $stmt->bind_param('ss', $email, $password);
+        $stmt->bind_param('s', $email);
         $stmt->execute();
 
         $result = $stmt->get_result();
@@ -26,22 +26,29 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         $stmt->close();
 
         if ($user) {
-            // Successful login, set user information in the session
-            $_SESSION['id'] = $user['id'];
-            $_SESSION['email'] = $user['email'];
-            $_SESSION['username'] = $user['username'];
+            // Verify the entered password against the stored hash
+            if (password_verify($enteredPassword, $user['password'])) {
+                // Successful login, set user information in the session
+                $_SESSION['id'] = $user['id'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['username'] = $user['username'];
 
-            // Redirect to the desired page after successful login
-            header('Location: add_projects.php');
-            exit();
+                // Redirect to the desired page after successful login
+                header('Location: add_projects.php');
+                exit();
+            } else {
+                echo '<script>alert("Invalid email or password");</script>';
+            }
         } else {
             echo '<script>alert("Invalid email or password");</script>';
         }
     } else {
-        echo 'Could not prepare statement!';
+        echo '<script>alert("Could not prepare statement!");</script>';
     }
 }
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -100,3 +107,4 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 </body>
 
 </html>
+

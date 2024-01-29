@@ -81,6 +81,7 @@
             $stmt->close();
 
             header("Location: ../admin_testimonial.php");
+            exit();
         } else {
             // Display the testimonial details for editing
             $testimonialId = $_GET["id"];

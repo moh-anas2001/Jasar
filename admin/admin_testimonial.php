@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Handle the image upload
-    $uploadDirectory = "../images/clients/"; // Specify the directory where you want to store images
+    $uploadDirectory = "../img/clients/"; // Specify the directory where you want to store images
     $uploadedImagePath = $uploadDirectory . basename($_FILES["image"]["name"]);
 
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $uploadedImagePath)) {

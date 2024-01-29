@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "";
         } else {
             // Handle the image upload
-            $uploadDirectory = "../images/portfolio/"; // Specify the directory where you want to store images
+            $uploadDirectory = "../img/projects/"; // Specify the directory where you want to store images
             $uploadedImagePath = $uploadDirectory . basename($_FILES["image"]["name"]);
 
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $uploadedImagePath)) {

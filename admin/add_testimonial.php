@@ -5,7 +5,7 @@ require_once('includes/database.php');
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Handle the image upload
-    $uploadDirectory = "/images/clients/"; // Specify the directory where you want to store images
+    $uploadDirectory = "/img/clients/"; // Specify the directory where you want to store images
     $uploadedImagePath = $uploadDirectory . basename($_FILES["image"]["name"]);
 
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $uploadedImagePath)) {
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow">
-    <title>Qplus Admin</title>
+    <title>Jasar Admin</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">

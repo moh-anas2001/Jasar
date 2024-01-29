@@ -1,4 +1,3 @@
-<!-- delete_project.php -->
 <?php
 require_once('../includes/database.php');
 
@@ -14,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["id"])) {
 
     // Redirect back to the projects list page
     header("Location: ../add_projects.php");
+    exit();
 } else {
     echo "Invalid request!";
 }

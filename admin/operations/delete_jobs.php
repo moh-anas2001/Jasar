@@ -17,5 +17,5 @@ if (isset($_GET['id'])) {
 
 // Redirect back to the add_testimonial.php page after deleting
 header("Location: ../add_jobs.php");
-exit;
+exit();
 ?>

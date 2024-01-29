@@ -82,6 +82,7 @@
             $stmt->close();
 
             header("Location: ../add_projects.php");
+            exit();
         } else {
             // Display the project details for editing
             $projectId = $_GET["id"];
